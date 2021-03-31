@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 15:36:20 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 10:41:55 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 08:32:35 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ t_bool	parse_color_empty_texture(t_level *level, \
 {
 	char			**splitted;
 
+	if (*empty_texture != NULL)
+		destroy_empty_texture(empty_texture);
 	*empty_texture = create_empty_texture();
 	if (empty_texture == NULL)
-	{
 		set_log_tlevel(level, ERROR, "empty_texture allocation failed.");
+	if (empty_texture == NULL)
 		return (FALSE);
-	}
 	splitted = ft_split(color, ",");
 	if (splitted == NULL)
 	{

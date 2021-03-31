@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 14:40:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 11:31:13 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 09:07:32 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ t_bool	parse_param(t_level *level,
 		return (parse_west_param(level, splitted, splitted_size));
 	else if (param_type == EAST_PARAM)
 		return (parse_east_param(level, splitted, splitted_size));
+	else if (param_type == SPRITE_PARAM)
+		return (parse_sprite_param(level, splitted, splitted_size));
+	else if (param_type == FLOOR_PARAM)
+		return (parse_floor_param(level, splitted, splitted_size));
+	else if (param_type == CEILING_PARAM)
+		return (parse_ceiling_param(level, splitted, splitted_size));
 	else if (param_type == UNKNOWN)
 	{
 		set_log_tlevel(level, ERROR, "Unknown param type in level file.");

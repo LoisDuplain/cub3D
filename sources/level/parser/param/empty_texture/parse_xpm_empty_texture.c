@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 15:23:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 10:48:09 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 08:26:05 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ t_bool	parse_xpm_empty_texture(t_level *level, \
 	file = ft_open_file(path, O_RDONLY);
 	if (file == NULL)
 	{
-		set_log_tlevel(level, ERROR, \
-		"Can't open texture file.");
+		set_log_tlevel(level, ERROR, "Can't open texture file.");
 		return (FALSE);
 	}
 	ft_close_file(file);
+	if (*empty_texture != NULL)
+		destroy_empty_texture(empty_texture);
 	*empty_texture = create_empty_texture();
 	if (*empty_texture == NULL)
 	{
-		set_log_tlevel(level, ERROR, \
-		"(t_empty_texture *)empty_texture allocation failed.");
+		set_log_tlevel(level, ERROR, "empty_texture allocation failed.");
 		return (FALSE);
 	}
 	(*empty_texture)->texture_file_path = ft_strdup(path, FALSE);

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:14:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 11:37:36 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 10:38:55 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 */
 
 /*
-**	Parse level.
-**	./level/parser/parse_level.c
+**	Parse level parameters.
+**	./level/parser/parse_level_params.c
 */
-t_bool			parse_level(t_level *level);
+t_bool			parse_level_params(t_level *level);
 
 /*
 **	Get param type from string (char *)param_type_str.
@@ -64,7 +64,7 @@ t_bool			parse_north_param(t_level *level, \
 **	Parse south param contained in level file.
 **	./level/parser/parse_south_param.c
 */
-t_bool	parse_south_param(t_level *level, \
+t_bool			parse_south_param(t_level *level, \
 	char **splitted, \
 	size_t splitted_size);
 
@@ -72,20 +72,44 @@ t_bool	parse_south_param(t_level *level, \
 **	Parse west param contained in level file.
 **	./level/parser/parse_west_param.c
 */
-t_bool	parse_west_param(t_level *level,
-	char **splitted,
+t_bool			parse_west_param(t_level *level, \
+	char **splitted, \
 	size_t splitted_size);
 
 /*
 **	Parse east param contained in level file.
-**	./level/parser/parse_west_param.c
+**	./level/parser/parse_east_param.c
 */
-t_bool	parse_east_param(t_level *level,
-	char **splitted,
+t_bool			parse_east_param(t_level *level, \
+	char **splitted, \
 	size_t splitted_size);
 
 /*
-**	Parse a new empty_texture.
+**	Parse sprite param contained in level file.
+**	./level/parser/parse_sprite_param.c
+*/
+t_bool			parse_sprite_param(t_level *level, \
+	char **splitted, \
+	size_t splitted_size);
+
+/*
+**	Parse floor param contained in level file.
+**	./level/parser/parse_floor_param.c
+*/
+t_bool			parse_floor_param(t_level *level, \
+	char **splitted, \
+	size_t splitted_size);
+
+/*
+**	Parse ceiling param contained in level file.
+**	./level/parser/parse_ceiling_param.c
+*/
+t_bool			parse_ceiling_param(t_level *level, \
+	char **splitted, \
+	size_t splitted_size);
+
+/*
+**	Parse a new empty_texture (color or texture file path).
 **	./level/parser/parse_empty_texture.c
 */
 t_bool			parse_empty_texture(t_level *level, \
@@ -112,8 +136,14 @@ t_bool			parse_color_empty_texture(t_level *level, \
 **	Parse splitted color into empty texture.
 **	./level/parser/parse_splitted_color_in_empty_texture.c
 */
-t_bool	parse_splitted_color_in_empty_texture(t_level *level, \
+t_bool			parse_splitted_color_in_empty_texture(t_level *level, \
 	t_empty_texture **empty_texture, \
 	char **splitted_color);
+
+/*
+**	Check if level have parsed all required parameters.
+**	./level/parser/check_required_params.c
+*/
+t_bool			check_required_params(t_level *level);
 
 #endif

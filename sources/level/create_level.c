@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:20:00 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 11:01:36 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/03/31 09:07:05 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ t_level	*create_level(void)
 	level->south_empty_texture = NULL;
 	level->west_empty_texture = NULL;
 	level->east_empty_texture = NULL;
+	level->sprite_empty_texture = NULL;
+	level->floor_empty_texture = NULL;
+	level->ceiling_is_skybox = FALSE;
+	level->ceiling_empty_texture = NULL;
 	level->have_required_params = FALSE;
 	level->log_type = NONE;
 	level->log_message = NULL;

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_game.c                                        :+:      :+:    :+:   */
+/*   parse_sprite_param.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 14:34:10 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 15:51:02 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 08:11:59 by lduplain          #+#    #+#             */
+/*   Updated: 2021/03/31 09:43:14 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	exit_game(t_game **game, t_log_type log_type, char *message)
+t_bool	parse_sprite_param(t_level *level,
+	char **splitted,
+	size_t splitted_size)
 {
-	display_log_type(log_type);
-	ft_putchar('\n');
-	ft_putstr_nl(message);
-	if (*game != NULL)
-		destroy_game(game);
-	exit(0);
+	if (splitted_size < 2)
+	{
+		set_log_tlevel(level, ERROR, "Not enough arguments in sprite param.");
+		return (FALSE);
+	}
+	if (splitted_size > 2)
+	{
+		set_log_tlevel(level, ERROR, "Too many arguments in sprite param.");
+		return (FALSE);
+	}
+	return (parse_xpm_empty_texture(level, \
+	&level->sprite_empty_texture, splitted[1]));
 }

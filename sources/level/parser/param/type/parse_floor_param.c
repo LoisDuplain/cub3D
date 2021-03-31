@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_game.c                                        :+:      :+:    :+:   */
+/*   parse_floor_param.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 14:34:10 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 15:51:02 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 08:52:52 by lduplain          #+#    #+#             */
+/*   Updated: 2021/03/31 08:53:44 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	exit_game(t_game **game, t_log_type log_type, char *message)
+t_bool	parse_floor_param(t_level *level,
+	char **splitted,
+	size_t splitted_size)
 {
-	display_log_type(log_type);
-	ft_putchar('\n');
-	ft_putstr_nl(message);
-	if (*game != NULL)
-		destroy_game(game);
-	exit(0);
+	if (splitted_size < 2)
+	{
+		set_log_tlevel(level, ERROR, "Not enough arguments in floor param.");
+		return (FALSE);
+	}
+	if (splitted_size > 2)
+	{
+		set_log_tlevel(level, ERROR, "Too many arguments in floor param.");
+		return (FALSE);
+	}
+	return (parse_empty_texture(level, \
+	&level->floor_empty_texture, splitted[1]));
 }
