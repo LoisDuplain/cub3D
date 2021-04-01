@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_game.c                                       :+:      :+:    :+:   */
+/*   get_map_width.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/01 19:22:34 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 14:23:06 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/01 11:57:39 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	start_game(char *level_file_path, t_bool screenshot)
+size_t	get_map_width(t_level *level)
 {
-	t_game	*game;
+	size_t	max_width;
+	size_t	current_width;
+	size_t	line_index;
 
-	(void)screenshot;
-	game = create_game();
-	game->current_level = load_level(level_file_path);
-	if (game->current_level->log_type != OK)
-		exit_game(&game, game->current_level->log_type,
-			game->current_level->log_message);
-	display_level(game->current_level);
-	log_tlevel(game->current_level);
-	exit_game(&game, OK, "Game exited successfully.");
+	max_width = 0;
+	current_width = 0;
+	line_index = level->params_line_index;
+	while (level->file_content[line_index])
+	{
+		current_width = ft_strlen(level->file_content[line_index]);
+		if (current_width > max_width)
+			max_width = current_width;
+		line_index++;
+	}
+	return (max_width);
 }

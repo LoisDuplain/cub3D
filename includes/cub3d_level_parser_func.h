@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:14:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 10:38:55 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 19:24:52 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 /*
 **	Parse level parameters.
-**	./level/parser/parse_level_params.c
+**	./level/parser/parse_level_params.c-
 */
 t_bool			parse_level_params(t_level *level);
 
@@ -145,5 +145,83 @@ t_bool			parse_splitted_color_in_empty_texture(t_level *level, \
 **	./level/parser/check_required_params.c
 */
 t_bool			check_required_params(t_level *level);
+
+/*
+**	Parse level map.
+**	./level/parser/parse_level_map.c
+*/
+t_bool			parse_level_map(t_level *level);
+
+/*
+**	Get map width in level->file_content.
+**	./level/parser/get_map_width.c
+*/
+size_t			get_map_width(t_level *level);
+
+/*
+**	Get map height in level->file_content.
+**	./level/parser/get_map_width.c
+*/
+size_t			get_map_height(t_level *level);
+
+/*
+**	Check if char c is a valid char to be contained in map.
+**	./level/parser/is_valid_map_char.c
+*/
+t_bool			is_valid_map_char(char c);
+
+/*
+**	Check if char c is a valid player char.
+**	./level/parser/is_player_char.c
+*/
+t_bool			is_player_char(char c);
+
+/*
+**	Check if lines in map level->file_content are valid.
+**	./level/parser/is_valid_map_char.c
+*/
+t_bool			are_valid_map_lines(t_level *level);
+
+/*
+**	Create map content.
+**	./level/parser/create_map_content.c
+*/
+t_bool			create_map_content(t_level *level);
+
+/*
+**	Duplicates map lines into level->map_content.
+**	./level/parser/fill_map_content.c
+*/
+t_bool			fill_map_content(t_level *level);
+
+/*
+**	Find player in level->map_content.
+**	./level/parser/find_player.c
+*/
+void			find_player(t_level *level);
+
+/*
+**	Check if map contains one player.
+**	./level/parser/single_player_map.c
+*/
+t_bool			single_player_map(t_level *level);
+
+/*
+**	Get player spawn facing.
+**	./level/parser/get_player_spawn_facing.c
+*/
+t_spawn_facing	get_player_spawn_facing(char c);
+
+/*
+**	Convert map with basic chars.
+**	./level/parser/convert_map.c
+*/
+void			convert_map(t_level *level);
+
+/*
+**	Validate map.
+**	./level/parser/validate_map.c
+*/
+t_bool			validate_map(t_level *level, int x, int y);
 
 #endif

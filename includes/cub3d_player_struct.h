@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_log_struct.h                                 :+:      :+:    :+:   */
+/*   cub3d_player_struch.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 12:28:08 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 16:38:56 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/01 15:01:02 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/01 15:09:18 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_LOG_STRUCT_H
-# define CUB3D_LOG_STRUCT_H
+#ifndef CUB3D_PLAYER_STRUCT_H
+# define CUB3D_PLAYER_STRUCT_H
 
 /*
 **	START CUSTOM INCLUDES
@@ -27,12 +27,21 @@
 **	START DEFINES
 */
 
-typedef enum e_log_type
+typedef enum e_spawn_facing
 {
-	NONE = -1,
-	OK = 0,
-	ERROR = 1,
-}	t_log_type;
+	NORTH = 0,
+	EAST = 90,
+	SOUTH = 180,
+	WEST = 270,
+}	t_spawn_facing;
+
+typedef struct s_player
+{
+	t_vector3		location;
+	float			yaw;
+	float			pitch;
+	t_spawn_facing	spawn_facing;
+}	t_player;
 
 /*
 **	END DEFINES

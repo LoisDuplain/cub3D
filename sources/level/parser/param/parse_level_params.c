@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_level.c                                      :+:      :+:    :+:   */
+/*   parse_level_params.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:13:19 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 10:37:58 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:47:22 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,24 @@
 t_bool	parse_level_params(t_level *level)
 {
 	t_bool			valid_parsing;
-	size_t			line_index;
 	char			**splitted;
+	size_t			splt_size;
 	t_param_type	param_type;
 
 	valid_parsing = TRUE;
-	line_index = 0;
-	while (level->file_content[line_index] && valid_parsing)
+	while (level->file_content[level->params_line_index] && valid_parsing)
 	{
-		if (!level->have_required_params)
+		splitted = ft_split(level->file_content[level->params_line_index], " ");
+		splt_size = ft_get_splitted_size(splitted);
+		if (splt_size > 0)
 		{
-			splitted = ft_split(level->file_content[line_index], " ");
-			if (ft_get_splitted_size(splitted) > 0)
-			{
-				param_type = get_param_type(splitted[0]);
-				valid_parsing = parse_param(level, param_type, \
-				splitted, ft_get_splitted_size(splitted));
-			}
-			ft_destroy_splitted(&splitted);
-			if (check_required_params(level))
-				break ;
+			param_type = get_param_type(splitted[0]);
+			valid_parsing = parse_param(level, param_type, splitted, splt_size);
 		}
-		line_index++;
+		ft_destroy_splitted(&splitted);
+		if (!valid_parsing)
+			break ;
+		level->params_line_index++;
 	}
-	return (valid_parsing);
+	return (check_required_params(level));
 }

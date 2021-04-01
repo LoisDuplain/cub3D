@@ -1,18 +1,18 @@
 1.	Regarder en haut et en bas			-	A faire
-2.	Texture sol + plafond				-	A faire
-3.	Skybox au lieu de plafond			-	A faire
+2.	Texture sol + plafond				-	A faire	(PARSER OK)
+3.	Skybox au lieu de plafond			-	A faire	(PARSER OK)
 4.	Collision contre les murs			-	A faire
 5.	Collision avec les objets			-	A faire
 6.	Sauter								-	A faire
 7.	S’accroupir							-	A faire
 8.	Brouillard							-	A faire
 9.	Afficher barre de vie				-	A faire
-10.	Multi niveaux						-	A faire
+10.	Multi niveaux						-	A faire	(PARSER OK)
 11.	Changement de FOV					-	A faire
 12.	Crosshair							-	A faire
-13.	Minimap								-	A faire
+13.	Minimap								-	A faire	(PARSER OK)
 14.	Menu pause							-	A faire
 15.	Bouger la caméra avec la souris		-	A faire
 16.	Multi threading						-	A faire
 17.	Barre de vie fonctionnelle			-	A faire
-18.	Couleur a la place de texture		-	A faire
+18.	Couleur a la place de texture		-	A faire	(PARSER OK)

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_game.c                                       :+:      :+:    :+:   */
+/*   are_valid_map_lines.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/01 19:22:34 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 17:20:56 by lduplain          #+#    #+#             */
+/*   Updated: 2021/03/31 17:24:01 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	start_game(char *level_file_path, t_bool screenshot)
+t_bool	are_valid_map_lines(t_level *level)
 {
-	t_game	*game;
+	size_t	line_index;
+	size_t	char_index;
 
-	(void)screenshot;
-	game = create_game();
-	game->current_level = load_level(level_file_path);
-	if (game->current_level->log_type != OK)
-		exit_game(&game, game->current_level->log_type,
-			game->current_level->log_message);
-	display_level(game->current_level);
-	log_tlevel(game->current_level);
-	exit_game(&game, OK, "Game exited successfully.");
+	line_index = level->params_line_index;
+	while (level->file_content[line_index])
+	{
+		char_index = 0;
+		while (level->file_content[line_index][char_index])
+		{
+			if (!is_valid_map_char(level->file_content[line_index][char_index]))
+				return (FALSE);
+			char_index++;
+		}
+		line_index++;
+	}
+	return (TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:24:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 10:22:32 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 14:19:49 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
 	if (argc <= 1)
 		exit_game(NULL, ERROR, "You must specify a map path.");
 	else if (argc == 2)

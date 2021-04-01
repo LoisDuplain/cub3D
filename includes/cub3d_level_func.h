@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:44:26 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 09:55:40 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 11:15:53 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,6 @@ t_level	*create_level(void);
 **	./level/load_level_file_content.c
 */
 t_level	*load_level(char *level_file_path);
-
-/*
-**	Get the file content of a level file lcoated at (char *)level_file_path.
-**	./level/load_level_file_content.c
-*/
-char	**load_level_file_content(char *level_file_path);
 
 /*
 **	Destroy and free level.

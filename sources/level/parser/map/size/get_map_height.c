@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_game.c                                       :+:      :+:    :+:   */
+/*   get_map_height.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/01 19:22:34 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/03/31 14:50:21 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/01 14:16:31 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	start_game(char *level_file_path, t_bool screenshot)
+size_t	get_map_height(t_level *level)
 {
-	t_game	*game;
+	size_t	eof_line_index;
 
-	(void)screenshot;
-	game = create_game();
-	game->current_level = load_level(level_file_path);
-	if (game->current_level->log_type != OK)
-		exit_game(&game, game->current_level->log_type,
-			game->current_level->log_message);
-	display_level(game->current_level);
-	log_tlevel(game->current_level);
-	exit_game(&game, OK, "Game exited successfully.");
+	eof_line_index = ft_get_splitted_size(level->file_content) - 1;
+	return (eof_line_index - level->params_line_index + 1);
 }

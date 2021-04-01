@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:21:48 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 09:07:20 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 19:06:44 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	*destroy_level(t_level **level)
 		destroy_empty_texture(&(*level)->sprite_empty_texture);
 		destroy_empty_texture(&(*level)->floor_empty_texture);
 		destroy_empty_texture(&(*level)->ceiling_empty_texture);
+		ft_destroy_file_content(&(*level)->map_content);
 		free(*level);
 		*level = NULL;
 	}

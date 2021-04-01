@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 09:54:21 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 09:15:54 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/01 17:51:18 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ void	display_level(t_level *level)
 	dprintf(1, "Level:\n");
 	
 	dprintf(1, "   File content:\n");
-	int i = -1;
+	size_t i = -1;
 	while (level->file_content[++i])
 		dprintf(1, "      \"%s\"\n", level->file_content[i]);
+
+	dprintf(1, "   Params line index: {%zu}\n", level->params_line_index);
 
 	dprintf(1, "   Window:\n");
 	dprintf(1, "      Width: {%d}\n", level->window_width);
@@ -89,7 +91,36 @@ void	display_level(t_level *level)
 	else
 		dprintf(1, "      NULL\n");
 	
-	dprintf(1, "   Have required params: {%s}\n", (level->have_required_params) ? "TRUE" : "FALSE");
+	dprintf(1, "   Map width: {%zu}\n", level->map_width);
+	dprintf(1, "   Map height: {%zu}\n", level->map_height);
+	
+	dprintf(1, "   Map content:\n");
+	i = -1;
+	while (level->map_content[++i])
+	{
+		size_t j = -1;
+		while (++j < level->map_width)
+		{
+			if (level->map_content[i][j] == -2)
+				ft_putchar('-');
+			else if (level->map_content[i][j] == -1)
+				ft_putchar('_');
+			else if (level->map_content[i][j] == 0)
+				ft_putchar(' ');
+			else if (level->map_content[i][j] == 1)
+				ft_putchar('*');
+			else
+				ft_putchar(level->map_content[i][j] + 48);
+		}
+		ft_putchar('\n');
+	}
+
+	dprintf(1, "   Player:\n");
+	dprintf(1, "      Location: {vx: %f, vy: %f, vz: %f}\n", level->player.location.vx, level->player.location.vy, level->player.location.vz);
+	dprintf(1, "      Yaw: %f\n", level->player.yaw);
+	dprintf(1, "      Pitch: %f\n", level->player.pitch);
+	dprintf(1, "      Spawn facing: %d\n", level->player.spawn_facing);
+
 	dprintf(1, "   Log:\n");
 	dprintf(1, "      Type: {");
 	display_log_type(level->log_type);
