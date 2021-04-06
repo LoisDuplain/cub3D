@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 08:53:02 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 16:49:06 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,17 @@ void	start_game(char *level_file_path, t_bool screenshot);
 **	./game/exit_game.c
 */
 void	exit_game(t_game **game, t_log_type log_type, char *message);
+
+/*
+**	Set current level in game.
+**	./game/set_current_level.c
+*/
+void	set_current_level(t_game *game, t_level *level);
+
+/*
+**	Initialize player.
+**	./game/set_current_level.c
+*/
+void	init_player(t_game *game);
 
 #endif

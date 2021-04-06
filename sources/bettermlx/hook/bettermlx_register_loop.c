@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_game.c                                      :+:      :+:    :+:   */
+/*   bettermlx_register_loop.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 15:07:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 17:04:48 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/02 14:00:42 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/02 14:05:33 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_game	*create_game(void)
+void	bettermlx_register_loop(t_window *window,
+	void *param, int (*funct_ptr)())
 {
-	t_game	*game;
-
-	game = ft_calloc(1, sizeof(t_game));
-	if (game == NULL)
-		exit_game(&game, ERROR, "(t_game *)game allocation failed.");
-	game->current_level = NULL;
-	game->window = NULL;
-	game->rays = NULL;
-	return (game);
+	mlx_loop_hook(window->mlx_ptr, funct_ptr, param);
+	mlx_loop(window->mlx_ptr);
 }

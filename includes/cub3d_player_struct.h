@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_player_struch.h                              :+:      :+:    :+:   */
+/*   cub3d_player_struct.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:01:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/01 15:09:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 16:41:27 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,13 @@
 **	START DEFINES
 */
 
-typedef enum e_spawn_facing
-{
-	NORTH = 0,
-	EAST = 90,
-	SOUTH = 180,
-	WEST = 270,
-}	t_spawn_facing;
-
 typedef struct s_player
 {
 	t_vector3		location;
 	float			yaw;
 	float			pitch;
-	t_spawn_facing	spawn_facing;
+	int				fov_x;
+	int				fov_y;
 }	t_player;
 
 /*

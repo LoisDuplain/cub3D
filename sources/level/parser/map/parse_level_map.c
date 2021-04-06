@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:21:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/01 19:21:33 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/02 13:54:03 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,18 @@ t_bool	parse_level_map(t_level *level)
 		set_log_tlevel(level, ERROR, "Map line contains forbidden char.");
 		return (FALSE);
 	}
-	if (!create_map_content(level))
-		return (FALSE);
-	if (!fill_map_content(level))
+	if (!create_map_content(level) || !fill_map_content(level))
 		return (FALSE);
 	if (!single_player_map(level))
 		return (FALSE);
 	find_player(level);
-	if (!validate_map(level, level->player.location.vx, level->player.location.vy))
+	if (!validate_map(level, level->player.location.vx,
+			level->player.location.vy))
 	{
 		set_log_tlevel(level, ERROR, "Player can go in void.");
 		return (FALSE);
 	}
-	if (!create_map_content(level))
-		return (FALSE);
-	if (!fill_map_content(level))
+	if (!create_map_content(level) || !fill_map_content(level))
 		return (FALSE);
 	convert_map(level);
 	return (TRUE);

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:42:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 08:57:40 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 14:04:50 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,13 @@ void			bettermlx_hook(t_window *window, \
 			t_x11event x11event, \
 			int (*funct)(), \
 			void *param);
+
+/*
+**	Register loop hook.
+**	./bettermlx/hook/bettermlx_register_loop.c
+*/
+void			bettermlx_register_loop(t_window *window, \
+	void *param, int (*funct_ptr)());
 
 /*
 **	Get the current time. (in milliseconds)

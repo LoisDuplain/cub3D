@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:04:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/24 12:27:58 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 17:02:42 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@
 
 typedef struct s_game
 {
-	t_level	*current_level;
+	t_level		*current_level;
+	t_window	*window;
+	t_player	player;
+	t_ray		*rays;
 }	t_game;
 
 /*

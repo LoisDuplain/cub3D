@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_log_func.h                                   :+:      :+:    :+:   */
+/*   cub3d_loop_func.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 12:51:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 16:26:18 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/06 13:36:50 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/06 13:47:43 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_LOG_FUNC_H
-# define CUB3D_LOG_FUNC_H
+#ifndef CUB3D_LOOP_FUNC_H
+# define CUB3D_LOOP_FUNC_H
 
 /*
 **	START CUSTOM INCLUDES
@@ -24,27 +24,21 @@
 */
 
 /*
-**	Display log type (t_log_type)log_type whithout line break at the end.
-**	./log/display_log_type.c
+**	The main game loop who runs render_loop and update_loop.
+**	./loop/game_loop.c
 */
-void	display_log_type(t_log_type log_type);
+int		game_loop(t_game *game);
 
 /*
-**	Display log message.
-**	./log/log.c
+**	The render loop.
+**	./loop/render_loop.c
 */
-void	log_error(t_log_type log_type, char *message);
+void	render_loop(t_game *game, t_window *window);
 
 /*
-**	Set log in (t_level *)level.
-**	./log/set_log_tlevel.c
+**	The update loop.
+**	./loop/update_loop.c
 */
-t_level	*set_log_tlevel(t_level *level, t_log_type log_type, char *log_message);
-
-/*
-**	Log (t_level *)level.
-**	./log/log_tlevel.c
-*/
-void	log_tlevel(t_level *level);
+void	update_loop(t_game *game, long delta, t_bool keyboard[384]);
 
 #endif

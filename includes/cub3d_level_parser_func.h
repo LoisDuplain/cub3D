@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:14:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/01 19:24:52 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 16:43:05 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,10 +207,10 @@ void			find_player(t_level *level);
 t_bool			single_player_map(t_level *level);
 
 /*
-**	Get player spawn facing.
+**	Get the player spawn yaw.
 **	./level/parser/get_player_spawn_facing.c
 */
-t_spawn_facing	get_player_spawn_facing(char c);
+float			get_player_spawn_facing(char c);
 
 /*
 **	Convert map with basic chars.

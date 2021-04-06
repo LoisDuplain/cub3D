@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 13:03:48 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/24 13:14:00 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 16:26:18 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	log_tlevel(t_level *level)
 {
-	display_log_type(level->log_type);
-	ft_putstr(": ");
-	ft_putstr_nl(level->log_message);
+	log_error(level->log_type, level->log_message);
 }

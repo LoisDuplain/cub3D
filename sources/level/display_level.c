@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 09:54:21 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/01 17:51:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 16:41:41 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,6 @@ void	display_level(t_level *level)
 	dprintf(1, "      Location: {vx: %f, vy: %f, vz: %f}\n", level->player.location.vx, level->player.location.vy, level->player.location.vz);
 	dprintf(1, "      Yaw: %f\n", level->player.yaw);
 	dprintf(1, "      Pitch: %f\n", level->player.pitch);
-	dprintf(1, "      Spawn facing: %d\n", level->player.spawn_facing);
 
 	dprintf(1, "   Log:\n");
 	dprintf(1, "      Type: {");
