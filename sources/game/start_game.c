@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 17:00:40 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 18:24:26 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ void	start_game(char *level_file_path, t_bool screenshot)
 			level->window_width, level->window_height, 1);
 	if (game->window == NULL)
 		exit_game(&game, ERROR, "Window creation failed.");
+	init_player(game);
+	init_rays(game);
 	bettermlx_register_loop(game->window, game, game_loop);
 }

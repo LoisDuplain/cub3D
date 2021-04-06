@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_current_level.c                                :+:      :+:    :+:   */
+/*   create_plane.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 15:54:01 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 18:24:22 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/06 18:34:36 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/06 18:35:13 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	set_current_level(t_game *game, t_level *level)
+t_plane	create_plane(int wx, int wy, int wz, int distance)
 {
-	if (game->current_level == NULL)
-		destroy_level(&game->current_level);
-	game->current_level = level;
+	
 }

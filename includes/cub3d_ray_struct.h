@@ -1,19 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_rays.c                                        :+:      :+:    :+:   */
+/*   cub3d_ray_struct.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 16:51:35 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 17:05:40 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/06 17:18:07 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/06 17:19:01 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef CUB3D_RAY_STRUCT_H
+# define CUB3D_RAY_STRUCT_H
 
-void	init_rays(t_game *game)
+/*
+**	START CUSTOM INCLUDES
+*/
+
+# include "./cub3d.h"
+
+/*
+**	END CUSTOM INCLUDES
+*/
+
+/*
+**	START DEFINES
+*/
+
+typedef struct s_ray
 {
-	(void)game;
-	game->rays = ft_calloc(game->window->real_width * game->window->real_height, sizeof(t_ray));
-}
+	t_vector3	direction;
+	t_vector3	pixel;
+}	t_ray;
+
+/*
+**	END DEFINES
+*/
+
+#endif

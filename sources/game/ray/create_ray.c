@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_current_level.c                                :+:      :+:    :+:   */
+/*   create_ray.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 15:54:01 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 18:24:22 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/06 18:19:15 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/06 18:31:43 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	set_current_level(t_game *game, t_level *level)
+t_ray	create_ray(t_vector3 direction, int x, int y)
 {
-	if (game->current_level == NULL)
-		destroy_level(&game->current_level);
-	game->current_level = level;
+	t_ray	ray;
+
+	ray.direction = direction;
+	ray.pixel = create_vector(x, y, 0);
+	return (ray);
 }

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/06 13:44:07 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/06 17:19:27 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # include "../mlx/mlx.h"
 
 # include "./bettermlx_struct.h"
+# include "./cub3d_ray_struct.h"
 # include "./cub3d_player_struct.h"
 # include "./cub3d_texture_struct.h"
 # include "./cub3d_empty_texture_struct.h"
