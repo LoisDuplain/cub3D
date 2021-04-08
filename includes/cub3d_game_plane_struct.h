@@ -1,22 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_loop.c                                        :+:      :+:    :+:   */
+/*   cub3d_plane_struct.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 16:41:09 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/08 14:59:15 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/08 15:44:54 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef CUB3D_GAME_PLANE_STRUCT_H
+# define CUB3D_GAME_PLANE_STRUCT_H
 
-int	game_loop(t_game *game)
+/*
+**	START CUSTOM INCLUDES
+*/
+
+# include "./cub3d.h"
+
+/*
+**	END CUSTOM INCLUDES
+*/
+
+/*
+**	START DEFINES
+*/
+
+typedef struct s_plane
 {
-	render_loop(game, game->window);
-	update_loop(game, 1, game->window->keyboard);
-	if (game->window->keyboard[KEY_ESCAPE])
-		exit_game(&game, OK, "Game exited successfully.");
-	return (1);
-}
+	float	px;
+	float	py;
+	float	pz;
+	float	dist;
+}	t_plane;
+
+/*
+**	END DEFINES
+*/
+
+#endif

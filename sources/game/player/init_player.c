@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:32:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 18:22:32 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 16:19:35 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	init_player(t_game *game)
 {
-	game->player = game->current_level->player;
-	game->player.location.vx += 0.5;
-	game->player.location.vy += 0.5;
-	game->player.pitch = 0;
-	game->player.fov_x = 120;
-	game->player.fov_y = 90;
-	dprintf(1, "Player{location: Vector3{vx: %f, vy: %f, vz: %f}, yaw: %f, pitch %f, fov_x: %d, fov_y: %d}\n", game->player.location.vx, game->player.location.vy, game->player.location.vz, game->player.yaw, game->player.pitch, game->player.fov_x, game->player.fov_y);
+	game->world.player = game->current_level->player;
+	game->world.player.location.vx += 0.5;
+	game->world.player.location.vy += 0.5;
+	game->world.player.pitch = 0;
+	game->world.player.fov_x = 120;
+	game->world.player.fov_y = 90;
+	dprintf(1, "Player{location: Vector3{vx: %f, vy: %f, vz: %f}, yaw: %f, pitch %f, fov_x: %d, fov_y: %d}\n", game->world.player.location.vx, game->world.player.location.vy, game->world.player.location.vz, game->world.player.yaw, game->world.player.pitch, game->world.player.fov_x, game->world.player.fov_y);
 }

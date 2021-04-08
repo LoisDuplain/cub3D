@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_loop.c                                        :+:      :+:    :+:   */
+/*   cub3d_game_player_func.h                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 16:41:09 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/08 15:17:24 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/08 15:18:31 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef CUB3D_GAME_PLAYER_FUNC_H
+# define CUB3D_GAME_PLAYER_FUNC_H
 
-int	game_loop(t_game *game)
-{
-	render_loop(game, game->window);
-	update_loop(game, 1, game->window->keyboard);
-	if (game->window->keyboard[KEY_ESCAPE])
-		exit_game(&game, OK, "Game exited successfully.");
-	return (1);
-}
+/*
+**	START CUSTOM INCLUDES
+*/
+
+# include "./cub3d.h"
+
+/*
+**	END CUSTOM INCLUDES
+*/
+
+/*
+**	Initialize player.
+**	./game/player/init_player.c
+*/
+void	init_player(t_game *game);
+
+#endif

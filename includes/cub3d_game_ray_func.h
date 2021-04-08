@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_loop.c                                        :+:      :+:    :+:   */
+/*   cub3d_game_ray_func.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 16:41:09 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/08 15:21:22 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/08 15:48:35 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef CUB3D_GAME_RAY_FUNC_H
+# define CUB3D_GAME_RAY_FUNC_H
 
-int	game_loop(t_game *game)
-{
-	render_loop(game, game->window);
-	update_loop(game, 1, game->window->keyboard);
-	if (game->window->keyboard[KEY_ESCAPE])
-		exit_game(&game, OK, "Game exited successfully.");
-	return (1);
-}
+/*
+**	START CUSTOM INCLUDES
+*/
+
+# include "./cub3d.h"
+
+/*
+**	END CUSTOM INCLUDES
+*/
+
+/*
+**	Create new ray.
+**	./game/create_ray.c
+*/
+t_ray	create_ray(t_vector3 direction, int x, int y);
+
+/*
+**	Initialize rays.
+**	./game/create_ray.c
+*/
+void	init_rays(t_game *game);
+
+
+#endif

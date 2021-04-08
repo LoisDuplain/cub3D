@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 18:20:40 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/08 15:46:07 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,23 +53,5 @@ void	exit_game(t_game **game, t_log_type log_type, char *message);
 **	./game/set_current_level.c
 */
 void	set_current_level(t_game *game, t_level *level);
-
-/*
-**	Initialize player.
-**	./game/set_current_level.c
-*/
-void	init_player(t_game *game);
-
-/*
-**	Create new ray.
-**	./game/create_ray.c
-*/
-t_ray	create_ray(t_vector3 direction, int x, int y);
-
-/*
-**	Initialize rays.
-**	./game/create_ray.c
-*/
-void	init_rays(t_game *game);
 
 #endif
