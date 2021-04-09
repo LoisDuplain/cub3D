@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 16:25:05 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/09 16:38:59 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	start_game(char *level_file_path, t_bool screenshot)
 	if (level->log_type != OK)
 		exit_game(&game, level->log_type, level->log_message);
 	game->window = bettermlx_init_window("Cub3d - Lois Duplain",
-			level->window_width, level->window_height, 1);
+			level->window_width, level->window_height, 2);
 	if (game->window == NULL)
 		exit_game(&game, ERROR, "Window creation failed.");
 	init_player(game);

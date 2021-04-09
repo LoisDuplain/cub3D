@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:04:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 16:31:52 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/09 14:37:30 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ typedef struct s_world
 	t_player	player;
 	t_plane		*x_planes;
 	t_plane		*y_planes;
+	t_plane		*z_planes;
 	int			x_planes_size;
 	int			y_planes_size;
+	int			z_planes_size;
 }	t_world;
 
 typedef struct s_game

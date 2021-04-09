@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 17:18:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 15:20:51 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/09 13:58:03 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,20 @@
 **	START DEFINES
 */
 
+
 typedef struct s_ray
 {
 	t_vector3	direction;
 	t_vector3	pixel;
 }	t_ray;
+
+typedef struct s_raycast_result
+{
+	t_vector3	p_loc;
+	t_vector3	r_dir;
+	float		distance;
+	t_color		color;
+}	t_raycast_result;
 
 /*
 **	END DEFINES

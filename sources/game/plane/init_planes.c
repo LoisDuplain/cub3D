@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:55:43 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 16:26:45 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/09 16:29:43 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,27 @@
 
 void	init_planes(t_game *game)
 {
-	t_plane	*x_planes;
-	t_plane	*y_planes;
 	int		x_index;
 	int		y_index;
 
-	game->world.x_planes_size = (int)game->current_level->map_width + 1;
-	game->world.y_planes_size = (int)game->current_level->map_height + 1;
-	x_planes = ft_calloc(game->world.x_planes_size , sizeof(t_plane));
-	if (x_planes == NULL)
+	game->world.x_planes_size = (int)game->current_level->map_width - 1;
+	game->world.y_planes_size = (int)game->current_level->map_height - 1;
+	game->world.z_planes_size = 2;
+	game->world.x_planes = ft_calloc(game->world.x_planes_size, sizeof(t_plane));
+	if (game->world.x_planes == NULL)
 		exit_game(&game, ERROR, "x_planes allocation failed.");
-	y_planes = ft_calloc(game->world.y_planes_size, sizeof(t_plane));
-	if (y_planes == NULL)
+	game->world.y_planes = ft_calloc(game->world.y_planes_size, sizeof(t_plane));
+	if (game->world.y_planes == NULL)
 		exit_game(&game, ERROR, "y_planes allocation failed.");
+	game->world.z_planes = ft_calloc(game->world.z_planes_size, sizeof(t_plane));
+	if (game->world.z_planes == NULL)
+		exit_game(&game, ERROR, "z_planes allocation failed.");
 	x_index = -1;
 	while (++x_index < game->world.x_planes_size )
-		x_planes[x_index] = create_plane(1, 0, 0, x_index);
-	game->world.x_planes = x_planes;
+		game->world.x_planes[x_index] = create_plane(1, 0, 0, x_index + 1);
 	y_index = -1;
 	while (++y_index < game->world.y_planes_size)
-		y_planes[y_index] = create_plane(0, 1, 0, y_index);
-	game->world.y_planes = y_planes;
+		game->world.y_planes[y_index] = create_plane(0, 1, 0, y_index + 1);
+	game->world.z_planes[0] = create_plane(0, 0, 1, 0);
+	game->world.z_planes[1] = create_plane(0, 0, 1, 1);
 }

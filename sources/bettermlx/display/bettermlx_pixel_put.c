@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:26:34 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 15:08:31 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/09 14:26:27 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	bettermlx_pixel_put(
 	t_color color,
 	float darkness)
 {
-	/* int				ay;
+	int				ay;
 	int				my;
 	int				ax;
 	int				mx;
@@ -37,7 +37,7 @@ void	bettermlx_pixel_put(
 			ax++;
 		}
 		ay++;
-	} */
-	(void)darkness;
-	bettermlx_set_color(window->image, pixel_coordinates.vx, pixel_coordinates.vy, color);
+	}
+	/* (void)darkness;
+	bettermlx_set_color(window->image, pixel_coordinates.vx, pixel_coordinates.vy, color); */
 }

@@ -6,97 +6,206 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 18:00:26 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/09 16:51:54 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	intrsct(t_game *game, t_world world, t_plane plane, t_vector3 ray_dir, t_player player)
+void	get_x_pos_planes(t_raycast_result *r_result, t_world world, char **map_content)
 {
-	float		divider;
+	int			x_index;
+	t_plane		plane;
 	float		distance;
-	t_vector3	intersect_point;
+	t_vector3	intrsct;
 
-	divider = plane.px * ray_dir.vx + plane.py * ray_dir.vy + plane.pz * ray_dir.vz;
-	if (divider == 0)
-		return (INT_MAX);
-	distance = -(plane.px * player.location.vx + plane.py * player.location.vy + plane.pz * player.location.vz - plane.dist) / divider;
-	if (distance >= 0)
+	x_index = (int)r_result->p_loc.vx - 1;
+	while (++x_index < world.x_planes_size)
 	{
-		intersect_point.vx = (player.location.vx + ray_dir.vx * distance);
-		intersect_point.vy = (player.location.vy + ray_dir.vy * distance);
-		intersect_point.vz = (player.location.vz + ray_dir.vz * distance);
-		if ((intersect_point.vx >= 0 && intersect_point.vx < world.x_planes_size - 1
-			&& intersect_point.vy >= 0 && intersect_point.vy < world.y_planes_size - 1
-			&& intersect_point.vz >= 0 && intersect_point.vz <= 1
-			&& game->current_level->map_content[(int)intersect_point.vy][(int)intersect_point.vx] == 1)
-			|| plane.pz == 1)
-			return (distance);
-		return (INT_MAX);
+		plane = world.x_planes[x_index];
+		distance = -(r_result->p_loc.vx - plane.dist) / r_result->r_dir.vx;
+		if (distance < 0)
+			continue;
+		if (distance > r_result->distance)
+			break;
+		intrsct.vx = (r_result->p_loc.vx + r_result->r_dir.vx * distance);
+		intrsct.vy = (r_result->p_loc.vy + r_result->r_dir.vy * distance);
+		intrsct.vz = (r_result->p_loc.vz + r_result->r_dir.vz * distance);
+		if (intrsct.vx >= 0 && intrsct.vx <= world.x_planes_size
+			&& intrsct.vy >= 0 && intrsct.vy <= world.y_planes_size
+			&& intrsct.vz >= 0 && intrsct.vz <= 1
+			&& map_content[(int)intrsct.vy][(int)intrsct.vx] == 1)
+		{
+			r_result->distance = distance;
+			r_result->color = create_color(0, 255, 0, 0);
+			break;
+		}
 	}
-	return (INT_MAX);
+}
+
+void	get_x_neg_planes(t_raycast_result *r_result, t_world world, char **map_content)
+{
+	int			x_index;
+	t_plane		plane;
+	float		distance;
+	t_vector3	intrsct;
+
+	x_index = (int)r_result->p_loc.vx + 1;
+	while (--x_index >= 0)
+	{
+		plane = world.x_planes[x_index];
+		distance = -(r_result->p_loc.vx - plane.dist) / r_result->r_dir.vx;
+		if (distance < 0)
+			continue;
+		if (distance > r_result->distance)
+			break;
+		intrsct.vx = (r_result->p_loc.vx + r_result->r_dir.vx * distance);
+		intrsct.vy = (r_result->p_loc.vy + r_result->r_dir.vy * distance);
+		intrsct.vz = (r_result->p_loc.vz + r_result->r_dir.vz * distance);
+		if (intrsct.vx >= 0 && intrsct.vx <= world.x_planes_size
+			&& intrsct.vy >= 0 && intrsct.vy <= world.y_planes_size
+			&& intrsct.vz >= 0 && intrsct.vz <= 1
+			&& map_content[(int)intrsct.vy][(int)intrsct.vx] == 1)
+		{
+			r_result->distance = distance;
+			r_result->color = create_color(0, 125, 0, 0);
+			break;
+		}
+	}
+}
+
+void	get_y_pos_planes(t_raycast_result *r_result, t_world world, char **map_content)
+{
+	int			y_index;
+	t_plane		plane;
+	float		distance;
+	t_vector3	intrsct;
+
+	y_index = (int)r_result->p_loc.vy - 1;
+	while (++y_index < world.y_planes_size)
+	{
+		plane = world.y_planes[y_index];
+		distance = -(r_result->p_loc.vy - plane.dist) / r_result->r_dir.vy;
+		if (distance < 0)
+			continue;
+		if (distance > r_result->distance)
+			break;
+		intrsct.vx = (r_result->p_loc.vx + r_result->r_dir.vx * distance);
+		intrsct.vy = (r_result->p_loc.vy + r_result->r_dir.vy * distance);
+		intrsct.vz = (r_result->p_loc.vz + r_result->r_dir.vz * distance);
+		if (intrsct.vx >= 0 && intrsct.vx <= world.x_planes_size
+			&& intrsct.vy >= 0 && intrsct.vy <= world.y_planes_size
+			&& intrsct.vz >= 0 && intrsct.vz <= 1
+			&& map_content[(int)intrsct.vy][(int)intrsct.vx] == 1)
+		{
+			r_result->distance = distance;
+			r_result->color = create_color(0, 0, 0, 255);
+			break;
+		}
+	}
+}
+
+void	get_y_neg_planes(t_raycast_result *r_result, t_world world, char **map_content)
+{
+	int			y_index;
+	t_plane		plane;
+	float		distance;
+	t_vector3	intrsct;
+
+	y_index = (int)r_result->p_loc.vy + 1;
+	while (--y_index >= 0)
+	{
+		plane = world.y_planes[y_index];
+		distance = -(r_result->p_loc.vy - plane.dist) / r_result->r_dir.vy;
+		if (distance < 0)
+			continue;
+		if (distance > r_result->distance)
+			break;
+		intrsct.vx = (r_result->p_loc.vx + r_result->r_dir.vx * distance);
+		intrsct.vy = (r_result->p_loc.vy + r_result->r_dir.vy * distance);
+		intrsct.vz = (r_result->p_loc.vz + r_result->r_dir.vz * distance);
+		if (intrsct.vx >= 0 && intrsct.vx <= world.x_planes_size
+			&& intrsct.vy >= 0 && intrsct.vy <= world.y_planes_size
+			&& intrsct.vz >= 0 && intrsct.vz <= 1
+			&& map_content[(int)intrsct.vy][(int)intrsct.vx] == 1)
+		{
+			r_result->distance = distance;
+			r_result->color = create_color(0, 0, 0, 125);
+			break;
+		}
+	}
+}
+
+void	get_z_pos_planes(t_raycast_result *r_result, t_world world)
+{
+	t_plane		plane;
+	float		distance;
+
+	plane = world.z_planes[1];
+	distance = -(r_result->p_loc.vz - plane.dist) / r_result->r_dir.vz;
+	if (distance < 0)
+		return ;
+	if (distance > r_result->distance)
+		return ;
+	r_result->distance = distance;
+	r_result->color = create_color(0, 0, 255, 0);
+}
+
+void	get_z_neg_planes(t_raycast_result *r_result, t_world world)
+{
+	t_plane		plane;
+	float		distance;
+
+	plane = world.z_planes[0];
+	distance = -(r_result->p_loc.vz - plane.dist) / r_result->r_dir.vz;
+	if (distance < 0)
+		return ;
+	if (distance > r_result->distance)
+		return ;
+	r_result->distance = distance;
+	r_result->color = create_color(0, 0, 125, 0);
 }
 
 void	render_loop(t_game *game, t_window *window)
 {
-	int			ray_index;
-	t_ray		ray;
-	t_world		world;
-	int			x_plane_index;
-	int			y_plane_index;
-	t_plane		plane;
-	int			x_raycast_result;
-	int			y_raycast_result;
-	int			z_raycast_result;
-	int			temp;
+	int					ray_index;
+	t_ray				ray;
+	t_raycast_result	r_result;
 
-	bettermlx_clean_display(window);
-	world = game->world;
 	ray_index = -1;
 	while (++ray_index < game->rays_size)
 	{
 		ray = game->rays[ray_index];
 		ray.direction = rotate_vector_z(ray.direction, game->world.player.yaw * RADIAN);
-		x_raycast_result = INT_MAX;
-		x_plane_index = -1;
-		while (++x_plane_index < world.x_planes_size)
+		r_result.distance = INT_MAX;
+		r_result.color = create_color(0, 0, 0, 0);
+		r_result.p_loc = game->world.player.location;
+		r_result.r_dir = ray.direction;
+		if (ray.direction.vx > 0)
 		{
-			plane = world.x_planes[x_plane_index];
-			temp = intrsct(game, world, plane, ray.direction, world.player);
-			if (temp < x_raycast_result)
-				x_raycast_result = temp;
-		}
-		y_raycast_result = INT_MAX;
-		y_plane_index = -1;
-		while (++y_plane_index < world.y_planes_size)
-		{
-			plane = world.y_planes[y_plane_index];
-			temp = intrsct(game, world, plane, ray.direction, world.player);
-			if (temp < y_raycast_result)
-				y_raycast_result = temp;
-		}
-		z_raycast_result = INT_MAX;
-		plane = create_plane(0, 0, 1, 0);
-		temp = intrsct(game, world, plane, ray.direction, world.player);
-		if (temp < z_raycast_result)
-			z_raycast_result = temp;
-		plane = create_plane(0, 0, 1, 1);
-		temp = intrsct(game, world, plane, ray.direction, world.player);
-		if (temp < z_raycast_result)
-			z_raycast_result = temp;
-		if (x_raycast_result < y_raycast_result && x_raycast_result < z_raycast_result)
-		{
-			bettermlx_pixel_put(window, ray.pixel, create_color(0, 255, 0, 0), 1);
-		}
-		else if (y_raycast_result < x_raycast_result && y_raycast_result < z_raycast_result)
-		{
-			bettermlx_pixel_put(window, ray.pixel, create_color(0, 0, 0, 255), 1);
+			get_x_pos_planes(&r_result, game->world, game->current_level->map_content);
 		}
 		else
 		{
-			bettermlx_pixel_put(window, ray.pixel, create_color(0, 0, 255, 0), 1);
+			get_x_neg_planes(&r_result, game->world, game->current_level->map_content);
 		}
+		if (ray.direction.vy > 0)
+		{
+			get_y_pos_planes(&r_result, game->world, game->current_level->map_content);
+		}
+		else
+		{
+			get_y_neg_planes(&r_result, game->world, game->current_level->map_content);
+		}
+		if (ray.direction.vz > 0)
+		{
+			get_z_pos_planes(&r_result, game->world);
+		}
+		else
+		{
+			get_z_neg_planes(&r_result, game->world);
+		}
+		bettermlx_pixel_put(window, ray.pixel, r_result.color, 1);
 	}
 	bettermlx_render(window);
 }
