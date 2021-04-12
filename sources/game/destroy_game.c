@@ -24,6 +24,8 @@ void	*destroy_game(t_game **game)
 		(*game)->world.x_planes = NULL;
 		free((*game)->world.y_planes);
 		(*game)->world.y_planes = NULL;
+		free((*game)->world.z_planes);
+		(*game)->world.z_planes = NULL;
 		free(*game);
 		*game = NULL;
 	}

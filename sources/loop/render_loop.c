@@ -182,29 +182,17 @@ void	render_loop(t_game *game, t_window *window)
 		r_result.p_loc = game->world.player.location;
 		r_result.r_dir = ray.direction;
 		if (ray.direction.vx > 0)
-		{
 			get_x_pos_planes(&r_result, game->world, game->current_level->map_content);
-		}
 		else
-		{
 			get_x_neg_planes(&r_result, game->world, game->current_level->map_content);
-		}
 		if (ray.direction.vy > 0)
-		{
 			get_y_pos_planes(&r_result, game->world, game->current_level->map_content);
-		}
 		else
-		{
 			get_y_neg_planes(&r_result, game->world, game->current_level->map_content);
-		}
 		if (ray.direction.vz > 0)
-		{
 			get_z_pos_planes(&r_result, game->world);
-		}
 		else
-		{
 			get_z_neg_planes(&r_result, game->world);
-		}
 		bettermlx_pixel_put(window, ray.pixel, r_result.color, 1);
 	}
 	bettermlx_render(window);
