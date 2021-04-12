@@ -37,6 +37,9 @@ void	init_rays(t_game *game)
 			direction = create_vector(2 * tan(game->world.player.fov_x * RADIAN * 0.5) / r_width * (x - r_width * 0.5),
 									-1,
 									-2 * tan(game->world.player.fov_y * RADIAN * 0.5) / r_height * (y - r_height * 0.5));
+			direction.vx /= distance3(direction.vx, direction.vy, direction.vz);
+			direction.vy /= distance3(direction.vx, direction.vy, direction.vz);
+			direction.vz /= distance3(direction.vx, direction.vy, direction.vz);
 			game->rays[ray_index] = create_ray(direction, x, y);
 			ray_index++;
 		}

@@ -12,15 +12,16 @@
 
 #include "cub3d.h"
 
-void	bettermlx_set_color(t_image *image, int x, int y, t_color color)
+void	bettermlx_set_color(t_image *image, t_vector3 pixel_coordinates, t_color color, float darkness)
 {
 	unsigned char	*position;
 
-	position = bettermlx_get_memory_position(image, x, y);
+	position = bettermlx_get_memory_position(image, pixel_coordinates.vx,
+		pixel_coordinates.vy);
 	if (position == NULL)
 		return ;
-	position[0] = color.b;
-	position[1] = color.g;
-	position[2] = color.r;
+	position[0] = color.b * darkness;
+	position[1] = color.g * darkness;
+	position[2] = color.r * darkness;
 	position[3] = color.a;
 }

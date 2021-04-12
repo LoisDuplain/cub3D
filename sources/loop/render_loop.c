@@ -176,7 +176,6 @@ void	render_loop(t_game *game, t_window *window)
 	while (++ray_index < game->rays_size)
 	{
 		ray = game->rays[ray_index];
-		// ray.direction = rotate_vector_z(ray.direction, game->world.player.yaw * RADIAN);
 		r_result.distance = INT_MAX;
 		r_result.color = create_color(0, 0, 0, 0);
 		r_result.p_loc = game->world.player.location;
@@ -193,7 +192,7 @@ void	render_loop(t_game *game, t_window *window)
 			get_z_pos_planes(&r_result);
 		else
 			get_z_neg_planes(&r_result);
-		bettermlx_pixel_put(window, ray.pixel, r_result.color, 1);
+		bettermlx_pixel_put(window, ray.pixel, r_result.color, ft_map(r_result.distance, create_interval(0, RENDER_DISTANCE), create_interval(1, 0)));
 	}
 	bettermlx_render(window);
 }

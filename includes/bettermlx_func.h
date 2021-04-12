@@ -82,9 +82,9 @@ t_color			bettermlx_get_color(t_image *image, \
 **	./bettermlx/display/bettermlx_set_color.c
 */
 void			bettermlx_set_color(t_image *image, \
-	int x, \
-	int y, \
-	t_color color);
+	t_vector3 pixel_coordinates, \
+	t_color color, \
+	float darkness);
 
 /*
 **	Put pixel of t_color color at (x,y) in window window.

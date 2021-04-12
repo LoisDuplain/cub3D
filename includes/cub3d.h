@@ -68,7 +68,7 @@
 # define MOVEMENT_SPEED		0.003
 # define ROTATION_SPEED		0.0015
 
-# define RENDER_DISTANCE	1
+# define RENDER_DISTANCE	3
 
 /*
 **	END DEFINES

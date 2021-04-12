@@ -18,10 +18,10 @@ void	bettermlx_pixel_put(
 	t_color color,
 	float darkness)
 {
-	int				ay;
-	int				my;
-	int				ax;
-	int				mx;
+	int		ay;
+	int		my;
+	int		ax;
+	int		mx;
 
 	if (darkness < 0)
 		darkness = 0;
@@ -33,11 +33,9 @@ void	bettermlx_pixel_put(
 		ax = ((int)pixel_coordinates.vx) * window->divider;
 		while (ax < mx)
 		{
-			bettermlx_set_color(window->image, ax, ay, color);
+			bettermlx_set_color(window->image, create_vector(ax, ay, 0), color, darkness);
 			ax++;
 		}
 		ay++;
 	}
-	/* (void)darkness;
-	bettermlx_set_color(window->image, pixel_coordinates.vx, pixel_coordinates.vy, color); */
 }
