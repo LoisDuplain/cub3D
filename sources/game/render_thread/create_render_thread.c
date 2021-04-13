@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_player.c                                      :+:      :+:    :+:   */
+/*   create_render_thread.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 16:32:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/13 15:44:57 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/13 15:48:35 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/13 16:09:26 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	init_player(t_game *game)
+t_render_thread	create_render_thread(t_game *game, int p_start, int p_end)
 {
-	game->world.player = game->current_level->player;
-	game->world.player.location.vx += 0.5;
-	game->world.player.location.vy += 0.5;
-	game->world.player.pitch = 0;
-	game->world.player.fov_x = 120;
-	game->world.player.fov_y = 90;
+	t_render_thread	render_thread;
+
+	render_thread.game = game;
+	render_thread.window = game->window;
+	render_thread.world = game->world;
+	render_thread.m_content = game->current_level->map_content;
+	render_thread.p_start = p_start;
+	render_thread.p_end = p_end;
+	return (render_thread);
 }

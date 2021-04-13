@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:51:35 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 16:32:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 11:59:39 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	init_rays(t_game *game)
 	int			x;
 	int			y;
 	int			ray_index;
-	t_vector3	direction;
 
 	r_width = game->window->real_width;
 	r_height = game->window->real_height;
@@ -34,13 +33,9 @@ void	init_rays(t_game *game)
 		x = -1;
 		while (++x < r_width)
 		{
-			direction = create_vector(2 * tan(game->world.player.fov_x * RADIAN * 0.5) / r_width * (x - r_width * 0.5),
-									-1,
-									-2 * tan(game->world.player.fov_y * RADIAN * 0.5) / r_height * (y - r_height * 0.5));
-			direction.vx /= distance3(direction.vx, direction.vy, direction.vz);
-			direction.vy /= distance3(direction.vx, direction.vy, direction.vz);
-			direction.vz /= distance3(direction.vx, direction.vy, direction.vz);
-			game->rays[ray_index] = create_ray(direction, x, y);
+			game->rays[ray_index] = create_ray(
+					create_render_vector(game->world.player, game->window,
+						x, y), x, y);
 			ray_index++;
 		}
 	}

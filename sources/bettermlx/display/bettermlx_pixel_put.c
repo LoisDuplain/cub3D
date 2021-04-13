@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:26:34 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/09 14:26:27 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 11:50:06 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	bettermlx_pixel_put(
 		ax = ((int)pixel_coordinates.vx) * window->divider;
 		while (ax < mx)
 		{
-			bettermlx_set_color(window->image, create_vector(ax, ay, 0), color, darkness);
+			bettermlx_set_color(window->image, create_vector(ax, ay, 0),
+				color, darkness);
 			ax++;
 		}
 		ay++;

@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_game_ray_func.h                              :+:      :+:    :+:   */
+/*   create_render_vector.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/08 15:21:22 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/13 12:19:33 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/13 11:58:48 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/13 12:06:50 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_GAME_RAY_FUNC_H
-# define CUB3D_GAME_RAY_FUNC_H
+#include "cub3d.h"
 
-/*
-**	START CUSTOM INCLUDES
-*/
-
-# include "./cub3d.h"
-
-/*
-**	END CUSTOM INCLUDES
-*/
-
-/*
-**	Create new ray.
-**	./game/create_ray.c
-*/
-t_ray		create_ray(t_vector3 direction, int x, int y);
-
-/*
-**	Initialize rays.
-**	./game/create_ray.c
-*/
-void		init_rays(t_game *game);
-
-/*
-**	Create new render (rotated) vector.
-**	./game/create_render_vector.c
-*/
 t_vector3	create_render_vector(t_player player, t_window *window,
-				int r_x, int r_y);
+	int r_x, int r_y)
+{
+	t_vector3	direction;
+	float		norm;
 
-#endif
+	direction = create_vector(2 * tan(player.fov_x * RADIAN * 0.5)
+			/ window->real_width * (r_x - window->real_width * 0.5),
+			-1,
+			-2 * tan(player.fov_y * RADIAN * 0.5)
+			/ window->real_height * (r_y - window->real_height * 0.5));
+	norm = distance3(direction.vx, direction.vy, direction.vz);
+	direction.vx /= norm;
+	direction.vy /= norm;
+	direction.vz /= norm;
+	return (direction);
+}

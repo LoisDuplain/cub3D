@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:59:03 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 14:57:12 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 11:49:52 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ unsigned char	*bettermlx_get_memory_position(t_image *image, int x, int y)
 
 	if (x < 0 || y < 0 || x >= image->width || y >= image->height)
 		return (NULL);
-	position = ((unsigned char *)image->img_addr) + y * image->size_line + x * 4;
+	position = ((unsigned char *)image->img_addr) + y * image->size_line
+		+ x * 4;
 	return (position);
 }

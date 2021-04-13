@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 13:47:43 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 16:22:09 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		game_loop(t_game *game);
 **	The render loop.
 **	./loop/render_loop.c
 */
-void	render_loop(t_game *game, t_window *window);
+void	*render_loop(void *r_thread);
 
 /*
 **	The update loop.

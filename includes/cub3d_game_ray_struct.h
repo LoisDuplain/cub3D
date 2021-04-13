@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 17:18:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/09 13:58:03 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/13 12:19:18 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
 /*
 **	START DEFINES
 */
-
 
 typedef struct s_ray
 {
