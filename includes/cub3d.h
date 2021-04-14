@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/14 19:31:24 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 19:45:28 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@
 # define MOVEMENT_SPEED		0.003
 # define ROTATION_SPEED		0.0015
 
-# define RENDER_DISTANCE	20
+# define RENDER_DISTANCE	3
 # define THREADS			8
-# define DIVIDER			1
+# define DIVIDER			2
 
 /*
 **	END DEFINES
