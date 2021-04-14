@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_player.c                                      :+:      :+:    :+:   */
+/*   is_in_world.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 16:32:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 12:23:27 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/14 12:41:31 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/14 16:18:00 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	init_player(t_game *game)
+t_bool	is_in_world(t_vector3 intrsct, t_world world)
 {
-	game->world.player = game->current_level->player;
-	game->world.player.location.vx += 0.5;
-	game->world.player.location.vy += 0.5;
-	game->world.player.pitch = 0;
-	game->world.player.fov_x = 120;
-	game->world.player.fov_y = 90;
+	float vx;
+	float vy;
+	float vz;
+
+	vx = intrsct.vx;
+	if (vx < 0 || vx > world.x_planes_size)
+		return (FALSE);
+	vy = intrsct.vy;
+	if (vy < 0 || vy > world.y_planes_size)
+		return (FALSE);
+	vz = intrsct.vz;
+	if (vz < 0 || vz > 1)
+		return (FALSE);
+	return (TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/13 16:43:06 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 12:23:10 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ int	game_loop(t_game *game)
 	int				size;
 	int				ret;
 	int				i;
+	long long		start_time;
+	long long		f_time;
 
+	start_time = bettermlx_get_time();
 	size = game->rays_size / THREADS;
 	i = -1;
 	while (++i < THREADS)
@@ -37,6 +40,13 @@ int	game_loop(t_game *game)
 			exit_game(&game, ERROR, "Thread join failed.");
 	}
 	bettermlx_render(game->window);
+	f_time = 1000 / (bettermlx_get_time() - start_time);
+	char fps_text[9] = "FPS: ";
+	fps_text[5] = f_time / 100 + 48;
+	fps_text[6] = f_time / 10 + 48;
+	fps_text[7] = f_time % 10 + 48;
+	fps_text[8] = '\0';
+	mlx_string_put(game->window->mlx_ptr, game->window->win_ptr, 20, 20, 0x00FFFFFF, fps_text);
 	if (game->window->keyboard[KEY_ESCAPE])
 		exit_game(&game, OK, "Game exited successfully.");
 	update_loop(game, 1, game->window->keyboard);
