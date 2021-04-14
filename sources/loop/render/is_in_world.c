@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 12:41:31 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:18:00 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 16:40:31 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_bool	is_in_world(t_vector3 intrsct, t_world world)
 {
-	float vx;
-	float vy;
-	float vz;
+	float	vx;
+	float	vy;
+	float	vz;
 
 	vx = intrsct.vx;
 	if (vx < 0 || vx > world.x_planes_size)

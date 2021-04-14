@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:42:36 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:12:44 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 16:33:32 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ t_bool	intrsct_y_plane(t_raycast_result *r_result, t_world world,
 		&& map_content[(int)intrsct.vy - sub][(int)intrsct.vx] == 1)
 	{
 		r_result->distance = distance;
-		r_result->color = create_color(0, 0, 0, 255);
+		r_result->plane = plane;
+		r_result->intrsct = intrsct;
 		return (TRUE);
 	}
 	return (FALSE);

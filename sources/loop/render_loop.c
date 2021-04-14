@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:09:13 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 16:42:05 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	*render_loop(void *nr_thread)
 	{
 		ray = r_thread->game->rays[ray_index];
 		r_result.distance = INT_MAX;
-		r_result.color = create_color(0, 0, 0, 0);
 		r_result.p_loc = r_thread->world.player.location;
 		r_result.r_dir = ray.direction;
 		if (ray.direction.vx > 0)
@@ -39,11 +38,14 @@ void	*render_loop(void *nr_thread)
 		if (r_result.distance == INT_MAX)
 		{
 			if (ray.direction.vz > 0)
-				get_z_pos_planes(&r_result);
+				get_z_pos_planes(&r_result, r_thread->world.z_planes[1]);
 			else
-				get_z_neg_planes(&r_result);
+				get_z_neg_planes(&r_result, r_thread->world.z_planes[0]);
 		}
-		bettermlx_pixel_put(r_thread->window, ray.pixel, r_result.color, 1 - r_result.distance / RENDER_DISTANCE);
+		if (r_result.distance == INT_MAX)
+			bettermlx_pixel_put(r_thread->window, ray.pixel, create_icolor(0, 0, 0, 0), 1);
+		else
+			bettermlx_pixel_put(r_thread->window, ray.pixel, create_icolor(0, 255, 255, 255), 1 - r_result.distance / RENDER_DISTANCE);
 	}
 	return (NULL);
 }
