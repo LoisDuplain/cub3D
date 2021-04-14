@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:24:38 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/25 12:28:34 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 16:56:26 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,17 @@
 /*
 **	START DEFINES
 */
+
+typedef enum e_texture_id
+{
+	NORTH_TEXTURE = 0,
+	SOUTH_TEXTURE = 1,
+	WEST_TEXTURE = 2,
+	EAST_TEXTURE = 3,
+	SPRITE_TEXTURE = 4,
+	FLOOR_TEXTURE = 5,
+	CEILING_TEXTURE = 6,
+}	t_texture_id;
 
 typedef struct s_texture
 {

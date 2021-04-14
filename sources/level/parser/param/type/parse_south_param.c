@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 11:07:22 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 11:07:52 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 17:05:33 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ t_bool	parse_south_param(t_level *level,
 		return (FALSE);
 	}
 	return (parse_empty_texture(level, \
-	&level->south_empty_texture, splitted[1]));
+	&level->empty_textures[SOUTH_TEXTURE], splitted[1]));
 }

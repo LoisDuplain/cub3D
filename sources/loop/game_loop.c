@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 12:23:10 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 18:41:28 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,10 @@ int	game_loop(t_game *game)
 	}
 	bettermlx_render(game->window);
 	f_time = 1000 / (bettermlx_get_time() - start_time);
-	char fps_text[9] = "FPS: ";
-	fps_text[5] = f_time / 100 + 48;
-	fps_text[6] = f_time / 10 + 48;
-	fps_text[7] = f_time % 10 + 48;
-	fps_text[8] = '\0';
+	char fps_text[8] = "FPS: ";
+	fps_text[5] = f_time / 10 + 48;
+	fps_text[6] = f_time % 10 + 48;
+	fps_text[7] = '\0';
 	mlx_string_put(game->window->mlx_ptr, game->window->win_ptr, 20, 20, 0x00FFFFFF, fps_text);
 	if (game->window->keyboard[KEY_ESCAPE])
 		exit_game(&game, OK, "Game exited successfully.");

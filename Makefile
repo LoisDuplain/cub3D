@@ -30,7 +30,7 @@ INCLUDES		=	./includes
 OBJS			=	$(SRCS:.c=.o)
 
 GCC				=	gcc
-FLAGS			=	-Wall -Wextra -Werror
+FLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto -march=native -ffast-math
 RM				=	rm -f
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 08:11:59 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 16:46:45 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 17:05:45 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_bool	parse_sprite_param(t_level *level,
 	}
 	if (ft_str_endwith(splitted[1], ".xpm"))
 		return (parse_xpm_empty_texture(level, \
-		&level->sprite_empty_texture, splitted[1]));
+		&level->empty_textures[SPRITE_TEXTURE], splitted[1]));
 	else
 	{
 		set_log_tlevel(level, ERROR, "File don't end with .xpm.");

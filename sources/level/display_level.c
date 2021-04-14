@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 09:54:21 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 16:41:41 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 17:02:25 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	display_level(t_level *level)
 	dprintf(1, "      Width: {%d}\n", level->window_width);
 	dprintf(1, "      Height: {%d}\n", level->window_height);
 
-	dprintf(1, "   North empty texture:\n");
+	/* dprintf(1, "   North empty texture:\n");
 	if (level->north_empty_texture != NULL)
 	{
 		dprintf(1, "      Texture path: {%s}\n", level->north_empty_texture->texture_file_path);
@@ -89,7 +89,7 @@ void	display_level(t_level *level)
 		dprintf(1, "      Color: {r: %d, g: %d, b: %d}\n", level->ceiling_empty_texture->color.r, level->ceiling_empty_texture->color.g, level->ceiling_empty_texture->color.b);
 	}
 	else
-		dprintf(1, "      NULL\n");
+		dprintf(1, "      NULL\n"); */
 	
 	dprintf(1, "   Map width: {%zu}\n", level->map_width);
 	dprintf(1, "   Map height: {%zu}\n", level->map_height);

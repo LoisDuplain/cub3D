@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:35:52 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 17:39:44 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,13 @@ void		get_y_neg_planes(t_raycast_result *r_result, t_world world, char **map_con
 **	For all z positive planes.
 **	./loop/render/z/get_z_pos_planes.c
 */
-void		get_z_pos_planes(t_raycast_result *r_result, t_plane plane);
+void		get_z_pos_planes(t_raycast_result *r_result, t_world world);
 
 /*
 **	For all z negative planes.
 **	./loop/render/z/get_z_neg_planes.c
 */
-void		get_z_neg_planes(t_raycast_result *r_result, t_plane plane);
+void		get_z_neg_planes(t_raycast_result *r_result, t_world world);
 
 /*
 **	The update loop.

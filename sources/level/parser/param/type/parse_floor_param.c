@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 08:52:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 08:53:44 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 17:05:10 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ t_bool	parse_floor_param(t_level *level,
 		return (FALSE);
 	}
 	return (parse_empty_texture(level, \
-	&level->floor_empty_texture, splitted[1]));
+	&level->empty_textures[FLOOR_TEXTURE], splitted[1]));
 }

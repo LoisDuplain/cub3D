@@ -27,6 +27,7 @@ SRCS += sources/game/ray/init_rays.c
 SRCS += sources/game/render_thread/create_render_thread.c
 SRCS += sources/game/set_current_level.c
 SRCS += sources/game/start_game.c
+SRCS += sources/game/texture/init_textures.c
 SRCS += sources/level/create_level.c
 SRCS += sources/level/destroy_level.c
 SRCS += sources/level/display_level.c

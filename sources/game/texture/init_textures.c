@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_west_param.c                                 :+:      :+:    :+:   */
+/*   init_textures.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 11:36:00 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 17:05:55 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/14 16:49:37 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/14 17:24:52 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_bool	parse_west_param(t_level *level,
-	char **splitted,
-	size_t splitted_size)
+void	init_textures(t_game *game)
 {
-	if (splitted_size < 2)
+	int	texture_index;
+
+	texture_index = -1;
+	while (++texture_index < 7)
 	{
-		set_log_tlevel(level, ERROR, "Not enough arguments in west param.");
-		return (FALSE);
+		game->textures[texture_index] = create_texture(game->window, game->current_level->empty_textures[texture_index]);
+		if (game->textures[texture_index] == NULL)
+			exit_game(&game, ERROR, "Texture initialization failed.");
 	}
-	if (splitted_size > 2)
-	{
-		set_log_tlevel(level, ERROR, "Too many arguments in west param.");
-		return (FALSE);
-	}
-	return (parse_empty_texture(level, \
-	&level->empty_textures[WEST_TEXTURE], splitted[1]));
 }

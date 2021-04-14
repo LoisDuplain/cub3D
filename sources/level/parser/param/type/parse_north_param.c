@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 16:11:58 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 10:55:46 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 17:05:24 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ t_bool	parse_north_param(t_level *level,
 		return (FALSE);
 	}
 	return (parse_empty_texture(level, \
-	&level->north_empty_texture, splitted[1]));
+	&level->empty_textures[NORTH_TEXTURE], splitted[1]));
 }

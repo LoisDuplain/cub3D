@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/14 16:40:05 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 19:31:24 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@
 # include "./cub3d_game_render_thread_struct.h"
 
 # include "./bettermlx_func.h"
+# include "./cub3d_game_texture_func.h"
 # include "./cub3d_game_func.h"
 # include "./cub3d_game_player_func.h"
 # include "./cub3d_game_ray_func.h"
@@ -71,9 +72,9 @@
 # define MOVEMENT_SPEED		0.003
 # define ROTATION_SPEED		0.0015
 
-# define RENDER_DISTANCE	10
+# define RENDER_DISTANCE	20
 # define THREADS			8
-# define DIVIDER			4
+# define DIVIDER			1
 
 /*
 **	END DEFINES

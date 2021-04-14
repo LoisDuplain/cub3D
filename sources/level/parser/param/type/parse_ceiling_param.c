@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 09:07:55 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/31 09:19:05 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/14 17:04:33 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ t_bool	parse_ceiling_param(t_level *level,
 		}
 		level->ceiling_is_skybox = TRUE;
 		return (parse_empty_texture(level, \
-		&level->ceiling_empty_texture, splitted[2]));
+		&level->empty_textures[CEILING_TEXTURE], splitted[2]));
 	}
 	return (parse_empty_texture(level, \
-	&level->ceiling_empty_texture, splitted[1]));
+	&level->empty_textures[CEILING_TEXTURE], splitted[1]));
 }
