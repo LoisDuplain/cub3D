@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_game_plane_struct.h                          :+:      :+:    :+:   */
+/*   update_y_planes.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/08 14:59:15 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 19:48:58 by lduplain         ###   ########.fr       */
+/*   Created: 2021/04/15 19:59:01 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/15 19:59:07 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_GAME_PLANE_STRUCT_H
-# define CUB3D_GAME_PLANE_STRUCT_H
+#include "cub3d.h"
 
-/*
-**	START CUSTOM INCLUDES
-*/
-
-# include "./cub3d.h"
-
-/*
-**	END CUSTOM INCLUDES
-*/
-
-/*
-**	START DEFINES
-*/
-
-typedef struct s_plane
+void    update_y_planes(t_world *world)
 {
-	int		px;
-	int		py;
-	int		pz;
-	float	dist;
-	float	px_dist;
-	float	py_dist;
-	float	pz_dist;
-}	t_plane;
+	int		y_index;
+	t_plane	*plane;
 
-/*
-**	END DEFINES
-*/
-
-#endif
+	y_index = world->player.location.vy - RENDER_DISTANCE - 2;
+	while (++y_index < world->player.location.vy + RENDER_DISTANCE - 1)
+	{
+		if (y_index < 0 || y_index >= world->y_planes_size)
+			continue ;
+		plane = &world->y_planes[y_index];
+		plane->py_dist = plane->dist - world->player.location.vy;
+	}
+}

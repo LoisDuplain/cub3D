@@ -1,4 +1,4 @@
-1.	Regarder en haut et en bas			-	A faire
+1.	Regarder en haut et en bas			-	OK
 2.	Texture sol + plafond				-	OK
 3.	Collision contre les murs			-	A faire
 4.	Collision avec les sprites			-	A faire
@@ -12,5 +12,5 @@
 12.	Minimap								-	A faire	(PARSER OK)
 13.	Bouger la caméra avec la souris		-	A faire
 14.	Multi threading						-	OK
-15.	Barre de vie fonctionnelle			-	A faire
-16.	Couleur a la place de texture		-	OK
+15.	Couleur a la place de texture		-	OK
+16.	Render distance variable in-game	-	A faire

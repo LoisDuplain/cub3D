@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_loop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 15:35:34 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 20:28:02 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ void	*render_loop(void *nr_thread)
 		r_result.distance = INT_MAX;
 		r_result.p_loc = r_thread->world.player.location;
 		r_result.ray = ray;
-		if (ray.r_direction.vx > 0)
+		if (ray.r_dir.vx > 0)
 			get_x_pos_planes(&r_result, r_thread->world, r_thread->m_content);
 		else
 			get_x_neg_planes(&r_result, r_thread->world, r_thread->m_content);
-		if (ray.r_direction.vy > 0)
+		if (ray.r_dir.vy > 0)
 			get_y_pos_planes(&r_result, r_thread->world, r_thread->m_content);
 		else
 			get_y_neg_planes(&r_result, r_thread->world, r_thread->m_content);
 		if (r_result.distance == INT_MAX)
 		{
-			if (ray.r_direction.vz > 0)
+			if (ray.r_dir.vz > 0)
 				get_z_pos_planes(&r_result, r_thread->world);
 			else
 				get_z_neg_planes(&r_result, r_thread->world);
@@ -48,7 +48,7 @@ void	*render_loop(void *nr_thread)
 		{
 			if (r_result.plane.px == 1)
 			{
-				if (ray.r_direction.vx > 0)
+				if (ray.r_dir.vx > 0)
 				{
 					t_texture *east_texture = r_thread->game->textures[EAST_TEXTURE];
 					float tx = r_result.intrsct.vy - (int)r_result.intrsct.vy;
@@ -65,7 +65,7 @@ void	*render_loop(void *nr_thread)
 			}
 			else if (r_result.plane.py == 1)
 			{
-				if (ray.r_direction.vy > 0)
+				if (ray.r_dir.vy > 0)
 				{
 					t_texture *south_texture = r_thread->game->textures[SOUTH_TEXTURE];
 					float tx = 1 - (r_result.intrsct.vx - (int)r_result.intrsct.vx);
@@ -82,7 +82,7 @@ void	*render_loop(void *nr_thread)
 			}
 			else if (r_result.plane.pz == 1)
 			{
-				if (ray.r_direction.vz > 0)
+				if (ray.r_dir.vz > 0)
 				{
 					t_texture *ceiling_texture = r_thread->game->textures[CEILING_TEXTURE];
 					float tx;

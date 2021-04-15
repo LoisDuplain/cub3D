@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_game_ray_struct.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 17:18:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 16:04:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 20:30:54 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 
 typedef struct s_ray
 {
-	t_vector3	d_direction;
-	t_vector3	r_direction;
+	t_vector3	d_dir;
+	t_vector3	r_dir;
 	t_vector3	pixel;
 }	t_ray;
 

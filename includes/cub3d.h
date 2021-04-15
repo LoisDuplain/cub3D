@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/15 16:40:21 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 20:20:27 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@
 # define RADIAN				0.01745
 
 # define MOVEMENT_SPEED		0.003
-# define ROTATION_SPEED		0.0012
+# define ROTATION_SPEED		0.003
 
-# define RENDER_DISTANCE	20
+# define RENDER_DISTANCE	10
 # define THREADS			8
-# define DIVIDER			2
+# define DIVIDER			1
 
 /*
 **	END DEFINES

@@ -3,38 +3,58 @@
 /*                                                        :::      ::::::::   */
 /*   update_rays.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:17:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 16:15:10 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 20:44:56 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+t_vector3	rotate_pitch(t_vector3 d_dir, double p_cos, double p_sin)
+{
+	t_vector3	p_vector;
+
+	p_vector.vx = d_dir.vx;
+	p_vector.vy = p_cos * d_dir.vy - p_sin * d_dir.vz;
+	p_vector.vz = p_sin * d_dir.vy + p_cos * d_dir.vz;
+	return (p_vector);
+}
+
+t_vector3	rotate_yaw(t_vector3 p_vector, double y_cos, double y_sin)
+{
+	t_vector3	y_vector;
+
+	y_vector.vx = y_cos * p_vector.vx - y_sin * p_vector.vy;
+	y_vector.vy = y_sin * p_vector.vx + y_cos * p_vector.vy;
+	y_vector.vz = p_vector.vz;
+	return (y_vector);
+}
+
 void	update_rays(t_game *game)
 {
-	int		ray_index;
 	double	p_cos;
 	double	p_sin;
 	double	y_cos;
 	double	y_sin;
-	t_ray	*ray;
+	int		ray_index;
 
-	ray_index = -1;
 	p_cos = cos(game->world.player.pitch);
 	p_sin = sin(game->world.player.pitch);
 	y_cos = cos(game->world.player.yaw);
 	y_sin = sin(game->world.player.yaw);
+	ray_index = -1;
 	while (++ray_index < game->rays_size)
 	{
-		ray = &game->rays[ray_index];
-		
-		ray->r_direction.vx = ray->d_direction.vx;
-		ray->r_direction.vy = p_cos * ray->d_direction.vy - p_sin * ray->d_direction.vz;
-		ray->r_direction.vz = p_sin * ray->d_direction.vy + p_cos * ray->d_direction.vz;
-/* 		ray->r_direction = create_vector(y_cos * ray->r_direction.vx - y_cos * ray->r_direction.vy,
-										y_cos * ray->r_direction.vx + y_cos * ray->r_direction.vy,
-										ray->r_direction.vz); */
+		game->rays[ray_index].r_dir = rotate_yaw(
+				rotate_pitch(
+					game->rays[ray_index].d_dir,
+					p_cos,
+					p_sin
+					),
+				y_cos,
+				y_sin
+				);
 	}
 }
