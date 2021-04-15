@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 17:26:41 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 15:54:01 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ void	start_game(char *level_file_path, t_bool screenshot)
 	init_player(game);
 	init_rays(game);
 	init_planes(game);
+	update_rays(game);
 	bettermlx_register_loop(game->window, game, game_loop);
 }

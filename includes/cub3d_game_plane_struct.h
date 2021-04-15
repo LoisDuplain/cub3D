@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_plane_struct.h                               :+:      :+:    :+:   */
+/*   cub3d_game_plane_struct.h                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 14:59:15 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 15:44:54 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 13:10:45 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@
 
 typedef struct s_plane
 {
-	float	px;
-	float	py;
-	float	pz;
+	int		px;
+	int		py;
+	int		pz;
 	float	dist;
 }	t_plane;
 

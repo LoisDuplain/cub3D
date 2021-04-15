@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:19:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 08:50:56 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 11:59:28 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ t_texture	*create_texture(t_window *window, t_empty_texture *empty_texture);
 void		*destroy_texture(t_window *window, t_texture **texture);
 
 /*
-**	Get color contained in (t_texture *)texture at pixel ((int)x, (int)y).
+**	Get color contained in (t_texture *)texture at pixel ((float)perc(percentage)_x, (float)perc(percentage)_y).
 **	If ((t_texture *)texture)->image is NULL, function
 **	return ((t_texture *)texture)->color.
-**	If (t_texture *)texture is NULL, function return black color.
+**	If (t_texture *)texture is NULL, function return black transparent color.
 **	./texture/get_texture_color.c
 */
-t_color		get_texture_color(t_texture *texture, int x, int y);
+t_color		get_texture_color(t_texture *texture, float perc_x, float perc_y);
 
 #endif

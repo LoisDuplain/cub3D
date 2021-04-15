@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:21:22 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/13 12:19:33 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 15:54:23 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,11 @@ void		init_rays(t_game *game);
 */
 t_vector3	create_render_vector(t_player player, t_window *window,
 				int r_x, int r_y);
+
+/*
+**	Update all rays.
+**	./game/update_rays.c
+*/
+void		update_rays(t_game *game);
 
 #endif

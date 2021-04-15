@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:34:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 15:55:19 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 16:40:17 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,43 +15,24 @@
 void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 {
 	(void)delta;
-	if (keyboard[KEY_RIGHT])
+	if (keyboard[KEY_RIGHT] || keyboard[KEY_LEFT] || keyboard[KEY_UP] || keyboard[KEY_DOWN])
 	{
-		game->world.player.yaw += 0.01;
-		int i = -1;
-		while (++i < game->rays_size)
-		{
-			t_vector3	v;
-			float		cccooosss = cos(0.1);
-			float		sssiiinnn = sin(0.1);
-			v.vx = cccooosss * game->rays[i].direction.vx - sssiiinnn * game->rays[i].direction.vy;
-			v.vy = sssiiinnn * game->rays[i].direction.vx + cccooosss * game->rays[i].direction.vy;
-			v.vz = game->rays[i].direction.vz;
-			game->rays[i].direction = v;
-		}
-		game->world.player.yaw += 0.01;
-	}
-	if (keyboard[KEY_LEFT])
-	{
-		int i = -1;
-		while (++i < game->rays_size)
-		{
-			t_vector3	v;
-			float		cccooosss = cos(-0.1);
-			float		sssiiinnn = sin(-0.1);
-			v.vx = cccooosss * game->rays[i].direction.vx - sssiiinnn * game->rays[i].direction.vy;
-			v.vy = sssiiinnn * game->rays[i].direction.vx + cccooosss * game->rays[i].direction.vy;
-			v.vz = game->rays[i].direction.vz;
-			game->rays[i].direction = v;
-		}
-		game->world.player.yaw -= 0.01;
+		if (keyboard[KEY_RIGHT])
+			game->world.player.yaw += ROTATION_SPEED * delta;
+		if (keyboard[KEY_LEFT])
+			game->world.player.yaw -= ROTATION_SPEED * delta;
+		if (keyboard[KEY_UP])
+			game->world.player.pitch -= ROTATION_SPEED * delta;
+		if (keyboard[KEY_DOWN])
+			game->world.player.pitch += ROTATION_SPEED * delta;
+		update_rays(game);
 	}
 	if (keyboard[KEY_W])
-		game->world.player.location.vy -= 0.1;
+		game->world.player.location.vy -= MOVEMENT_SPEED * delta;
 	if (keyboard[KEY_S])
-		game->world.player.location.vy += 0.1;
+		game->world.player.location.vy += MOVEMENT_SPEED * delta;
 	if (keyboard[KEY_A])
-		game->world.player.location.vx -= 0.1;
+		game->world.player.location.vx -= MOVEMENT_SPEED * delta;
 	if (keyboard[KEY_D])
-		game->world.player.location.vx += 0.1;
+		game->world.player.location.vx += MOVEMENT_SPEED * delta;
 }

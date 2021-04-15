@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 18:41:28 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/15 11:45:56 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,21 @@ int	game_loop(t_game *game)
 		if (ret < 0)
 			exit_game(&game, ERROR, "Thread join failed.");
 	}
+	bettermlx_draw_line(game->window, create_vector(ceil(game->window->real_width / 2), ceil(game->window->real_height / 2) - 5, 0), create_vector(floor(game->window->real_width / 2), floor(game->window->real_height / 2) + 6, 0), create_color(0, 255, 255, 255));
+	bettermlx_draw_line(game->window, create_vector(ceil(game->window->real_width / 2) - 5, ceil(game->window->real_height / 2), 0), create_vector(floor(game->window->real_width / 2) + 6, floor(game->window->real_height / 2), 0), create_color(0, 255, 255, 255));
 	bettermlx_render(game->window);
+	
 	f_time = 1000 / (bettermlx_get_time() - start_time);
 	char fps_text[8] = "FPS: ";
 	fps_text[5] = f_time / 10 + 48;
 	fps_text[6] = f_time % 10 + 48;
 	fps_text[7] = '\0';
 	mlx_string_put(game->window->mlx_ptr, game->window->win_ptr, 20, 20, 0x00FFFFFF, fps_text);
+	
 	if (game->window->keyboard[KEY_ESCAPE])
 		exit_game(&game, OK, "Game exited successfully.");
-	update_loop(game, 1, game->window->keyboard);
+		
+	update_loop(game, bettermlx_get_time() - start_time, game->window->keyboard);
+	
 	return (1);
 }
