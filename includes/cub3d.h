@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/15 20:20:27 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:25:37 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@
 
 # define RENDER_DISTANCE	10
 # define THREADS			8
-# define DIVIDER			1
+# define DIVIDER			2
 
 /*
 **	END DEFINES
