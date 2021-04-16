@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 11:45:56 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 10:21:02 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	game_loop(t_game *game)
 	
 	if (game->window->keyboard[KEY_ESCAPE])
 		exit_game(&game, OK, "Game exited successfully.");
-		
+	
 	update_loop(game, bettermlx_get_time() - start_time, game->window->keyboard);
 	
 	return (1);

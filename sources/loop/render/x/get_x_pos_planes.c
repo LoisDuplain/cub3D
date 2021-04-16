@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 12:51:46 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:15:00 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 10:54:54 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	get_x_pos_planes(t_raycast_result *r_result, t_world world,
 
 	x_index = (int)r_result->p_loc.vx - 1;
 	while (++x_index < world.x_planes_size
-		&& x_index < r_result->p_loc.vx + RENDER_DISTANCE - 1)
+		&& x_index < r_result->p_loc.vx + world.player.render_distance - 1)
 	{
 		plane = world.x_planes[x_index];
 		intrsct = intrsct_x_plane(r_result, world, map_content, plane);

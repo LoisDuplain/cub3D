@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_loop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:34:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 20:02:34 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/04/16 11:00:09 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,34 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 				game->world.player.location.vx += MOVEMENT_SPEED * delta;
 			update_x_planes(&game->world);
 		}
+	}
+	if (keyboard[KEY_PLUS] || keyboard[KEY_MINUS])
+	{
+		if (keyboard[KEY_PLUS])
+		{
+			game->world.player.fov_x += 0.12 * delta;
+			if (game->world.player.fov_x > 179)
+				game->world.player.fov_x = 179;
+			game->world.player.fov_y = 9 * game->world.player.fov_x / 12;
+		}
+		if (keyboard[KEY_MINUS])
+		{
+			game->world.player.fov_x -= 0.12 * delta;
+			if (game->world.player.fov_x < 1)
+				game->world.player.fov_x = 1;
+			game->world.player.fov_y = 9 * game->world.player.fov_x / 12;
+		}
+		init_rays(game);
+		update_rays(game);
+	}
+	if (keyboard[KEY_K] || keyboard[KEY_L])
+	{
+		if (keyboard[KEY_K])
+			game->world.player.render_distance += 0.01 * delta;
+		if (keyboard[KEY_L])
+			game->world.player.render_distance -= 0.01 * delta;
+		update_x_planes(&game->world);
+		update_y_planes(&game->world);
+		update_z_planes(&game->world);
 	}
 }

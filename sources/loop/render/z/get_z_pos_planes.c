@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_z_pos_planes.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 16:08:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 20:28:02 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/04/16 10:53:28 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	get_z_pos_planes(t_raycast_result *r_result, t_world world)
 	plane = world.z_planes[1];
 	distance = plane.pz_dist / r_result->ray.r_dir.vz;
 	if (distance < 0 || distance > r_result->distance
-		|| distance > RENDER_DISTANCE)
+		|| distance > world.player.render_distance)
 		return ;
 	r_result->distance = distance;
 	r_result->plane = plane;

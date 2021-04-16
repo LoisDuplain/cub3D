@@ -7,10 +7,10 @@
 7.	Brouillard							-	OK
 8.	Afficher barre de vie				-	A faire
 9.	Multi niveaux						-	A faire	(PARSER OK)
-10.	Changement de FOV					-	A faire
-11.	Crosshair							-	Ok (A FAIRE EN IMAGE PCQ C'EST MIEUX)
+10.	Changement de FOV					-	OK
+11.	Crosshair							-	OK
 12.	Minimap								-	A faire	(PARSER OK)
 13.	Bouger la caméra avec la souris		-	A faire
 14.	Multi threading						-	OK
 15.	Couleur a la place de texture		-	OK
-16.	Render distance variable in-game	-	A faire
+16.	Render distance variable in-game	-	OK

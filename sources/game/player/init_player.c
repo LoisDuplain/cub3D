@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:32:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 12:23:27 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 10:51:25 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ void	init_player(t_game *game)
 	game->world.player.pitch = 0;
 	game->world.player.fov_x = 120;
 	game->world.player.fov_y = 90;
+	game->world.player.render_distance = 10;
 }

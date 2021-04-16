@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:01:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/08 15:19:41 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 10:58:44 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@
 
 typedef struct s_player
 {
-	t_vector3		location;
-	float			yaw;
-	float			pitch;
-	int				fov_x;
-	int				fov_y;
+	t_vector3	location;
+	float		yaw;
+	float		pitch;
+	float		fov_x;
+	float		fov_y;
+	float		render_distance;
 }	t_player;
 
 /*

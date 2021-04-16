@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:51:35 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/13 11:59:39 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 10:35:59 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	init_rays(t_game *game)
 	r_width = game->window->real_width;
 	r_height = game->window->real_height;
 	game->rays_size = r_width * r_height;
-	game->rays = ft_calloc(game->rays_size, sizeof(t_ray));
+	if (game->rays == NULL)
+		game->rays = ft_calloc(game->rays_size, sizeof(t_ray));
 	if (game->rays == NULL)
 		exit_game(&game, ERROR, "Rays allocation failed");
 	ray_index = 0;
@@ -33,9 +34,8 @@ void	init_rays(t_game *game)
 		x = -1;
 		while (++x < r_width)
 		{
-			game->rays[ray_index] = create_ray(
-					create_render_vector(game->world.player, game->window,
-						x, y), x, y);
+			game->rays[ray_index] = create_ray(create_render_vector(
+						game->world.player, game->window, x, y), x, y);
 			ray_index++;
 		}
 	}
