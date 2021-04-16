@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 14:46:00 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/30 09:25:54 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 11:55:10 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ t_bool	parse_resolution_param(t_level *level, \
 	level->window_width = ft_atoi(splitted[1]);
 	if (level->window_width <= 200)
 		level->window_width = 200;
+	if (level->window_width > 3200)
+		level->window_width = 3200;
 	level->window_height = ft_atoi(splitted[2]);
 	if (level->window_height <= 200)
 		level->window_height = 200;
+	if (level->window_height > 1800)
+		level->window_height = 1800;
 	return (TRUE);
 }

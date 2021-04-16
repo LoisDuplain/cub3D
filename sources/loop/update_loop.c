@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:34:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/16 11:00:09 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/16 11:32:29 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 	if (keyboard[KEY_K] || keyboard[KEY_L])
 	{
 		if (keyboard[KEY_K])
-			game->world.player.render_distance += 0.01 * delta;
-		if (keyboard[KEY_L])
 			game->world.player.render_distance -= 0.01 * delta;
+		if (keyboard[KEY_L])
+			game->world.player.render_distance += 0.01 * delta;
 		update_x_planes(&game->world);
 		update_y_planes(&game->world);
 		update_z_planes(&game->world);
