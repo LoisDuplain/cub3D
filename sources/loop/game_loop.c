@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/16 10:21:02 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 15:38:34 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	game_loop(t_game *game)
 	int				ret;
 	int				i;
 	long long		start_time;
-	long long		f_time;
+	// long long		f_time;
 
 	start_time = bettermlx_get_time();
 	size = game->rays_size / THREADS;
@@ -43,12 +43,12 @@ int	game_loop(t_game *game)
 	bettermlx_draw_line(game->window, create_vector(ceil(game->window->real_width / 2) - 5, ceil(game->window->real_height / 2), 0), create_vector(floor(game->window->real_width / 2) + 6, floor(game->window->real_height / 2), 0), create_color(0, 255, 255, 255));
 	bettermlx_render(game->window);
 	
-	f_time = 1000 / (bettermlx_get_time() - start_time);
+	/* f_time = 1000 / (bettermlx_get_time() - start_time);
 	char fps_text[8] = "FPS: ";
 	fps_text[5] = f_time / 10 + 48;
 	fps_text[6] = f_time % 10 + 48;
 	fps_text[7] = '\0';
-	mlx_string_put(game->window->mlx_ptr, game->window->win_ptr, 20, 20, 0x00FFFFFF, fps_text);
+	mlx_string_put(game->window->mlx_ptr, game->window->win_ptr, 20, 20, 0x00FFFFFF, fps_text); */
 	
 	if (game->window->keyboard[KEY_ESCAPE])
 		exit_game(&game, OK, "Game exited successfully.");

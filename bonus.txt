@@ -14,3 +14,4 @@
 14.	Multi threading						-	OK
 15.	Couleur a la place de texture		-	OK
 16.	Render distance variable in-game	-	OK
+17.	Divider modifianle in-game			-	A faire

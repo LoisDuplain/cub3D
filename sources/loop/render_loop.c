@@ -6,11 +6,104 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/16 10:55:28 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 17:09:47 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+t_color ft_get_pixel_texture_sprite(t_player player, \
+    t_sprite *sprite, t_vector3 r_result)
+{
+    int             x;
+    int             y;
+    float           temp;
+    unsigned char   *destination;
+    if (!sprite)
+        return (create_color(0, 0, 0, 0));
+    sprite_animation_with_time(sprite->current_animation);
+    temp = sqrt(pow(r_result.vx - sprite->location.vx, 2) + \
+        pow(r_result.vy - sprite->location.vy, 2));
+    x = ft_make_x_sprite(player, sprite->location, r_result.vx - sprite->location.vx, r_result.vy - sprite->location.vy) * sprite_width;
+    y = sprite_height - r_result.vz * sprite_height;
+    destination = (unsigned char *)sprite->current_animation->sprite->addr + y * sprite->current_animation->sprite->line_length + x * 4;
+    return (generate_color_by_parsing(destination));
+}
+
+void	draw_ew_texture(t_render_thread *r_thread, t_raycast_result r_result,
+	t_ray ray)
+{
+	t_texture_id	texture_id;
+	float			tx;
+	float			ty;
+
+	if (ray.r_dir.vx > 0)
+		texture_id = EAST_TEXTURE;
+	else
+		texture_id = WEST_TEXTURE;
+	if (texture_id == EAST_TEXTURE)
+		tx = r_result.intrsct.vy - (int)r_result.intrsct.vy;
+	else
+		tx = 1 - r_result.intrsct.vy + (int)r_result.intrsct.vy;
+	ty = 1 - r_result.intrsct.vz + (int)r_result.intrsct.vz;
+	bettermlx_pixel_put(r_thread->window,
+		ray.pixel,
+		get_texture_color(
+			r_thread->game->textures[texture_id],
+			tx,
+			ty),
+		1 - r_result.distance / r_thread->world.player.render_distance);
+}
+
+void	draw_sn_texture(t_render_thread *r_thread, t_raycast_result r_result,
+	t_ray ray)
+{
+	t_texture_id	texture_id;
+	float			tx;
+	float			ty;
+
+	if (ray.r_dir.vy > 0)
+		texture_id = SOUTH_TEXTURE;
+	else
+		texture_id = NORTH_TEXTURE;
+	if (texture_id == SOUTH_TEXTURE)
+		tx = 1 - r_result.intrsct.vx + (int)r_result.intrsct.vx;
+	else
+		tx = r_result.intrsct.vx - (int)r_result.intrsct.vx;
+	ty = 1 - r_result.intrsct.vz + (int)r_result.intrsct.vz;
+	bettermlx_pixel_put(r_thread->window,
+		ray.pixel,
+		get_texture_color(
+			r_thread->game->textures[texture_id],
+			tx,
+			ty),
+		1 - r_result.distance / r_thread->world.player.render_distance);
+}
+
+void	draw_cf_texture(t_render_thread *r_thread, t_raycast_result r_result,
+	t_ray ray)
+{
+	t_texture_id	texture_id;
+	float			tx;
+	float			ty;
+
+	if (ray.r_dir.vz > 0)
+		texture_id = CEILING_TEXTURE;
+	else
+		texture_id = FLOOR_TEXTURE;
+	if (texture_id == CEILING_TEXTURE)
+		ty = 1 - r_result.intrsct.vy + (int)r_result.intrsct.vy;
+	else
+		ty = r_result.intrsct.vy - (int)r_result.intrsct.vy;
+	tx = r_result.intrsct.vx - (int)r_result.intrsct.vx;
+	bettermlx_pixel_put(r_thread->window,
+		ray.pixel,
+		get_texture_color(
+			r_thread->game->textures[texture_id],
+			tx,
+			ty),
+		1 - r_result.distance / r_thread->world.player.render_distance);
+}
 
 void	*render_loop(void *nr_thread)
 {
@@ -18,8 +111,6 @@ void	*render_loop(void *nr_thread)
 	t_ray				ray;
 	t_raycast_result	r_result;
 	t_render_thread		*r_thread;
-	float				tx;
-	float				ty;
 
 	r_thread = (t_render_thread *)nr_thread;
 	ray_index = r_thread->p_start - 1;
@@ -44,61 +135,16 @@ void	*render_loop(void *nr_thread)
 			else
 				get_z_neg_planes(&r_result, r_thread->world);
 		}
-		if (r_result.distance == INT_MAX)
+		if (r_result.distance == INT_MAX || r_result.distance >= r_thread->game->world.player.render_distance)
 			bettermlx_pixel_put(r_thread->window, ray.pixel, create_icolor(0, 0, 0, 0), 1);
 		else
 		{
 			if (r_result.plane.px == 1)
-			{
-				if (ray.r_dir.vx > 0)
-				{
-					t_texture *east_texture = r_thread->game->textures[EAST_TEXTURE];
-					tx = r_result.intrsct.vy - (int)r_result.intrsct.vy;
-					ty = 1 - r_result.intrsct.vz + (int)r_result.intrsct.vz;
-					bettermlx_pixel_put(r_thread->window, ray.pixel, get_texture_color(east_texture, tx, ty), 1 - r_result.distance / r_thread->world.player.render_distance);
-				}
-				else
-				{
-					t_texture *west_texture = r_thread->game->textures[WEST_TEXTURE];
-					tx = 1 - r_result.intrsct.vy + (int)r_result.intrsct.vy;
-					ty = 1 - r_result.intrsct.vz + (int)r_result.intrsct.vz;
-					bettermlx_pixel_put(r_thread->window, ray.pixel, get_texture_color(west_texture, tx, ty), 1 - r_result.distance / r_thread->world.player.render_distance);
-				}
-			}
+				draw_ew_texture(r_thread, r_result, ray);
 			else if (r_result.plane.py == 1)
-			{
-				if (ray.r_dir.vy > 0)
-				{
-					t_texture *south_texture = r_thread->game->textures[SOUTH_TEXTURE];
-					tx = 1 - r_result.intrsct.vx + (int)r_result.intrsct.vx;
-					ty = 1 - r_result.intrsct.vz + (int)r_result.intrsct.vz;
-					bettermlx_pixel_put(r_thread->window, ray.pixel, get_texture_color(south_texture, tx, ty), 1 - r_result.distance / r_thread->world.player.render_distance);
-				}
-				else
-				{
-					t_texture *north_texture = r_thread->game->textures[NORTH_TEXTURE];
-					tx = r_result.intrsct.vx - (int)r_result.intrsct.vx;
-					ty = 1 - r_result.intrsct.vz + (int)r_result.intrsct.vz;
-					bettermlx_pixel_put(r_thread->window, ray.pixel, get_texture_color(north_texture, tx, ty), 1 - r_result.distance / r_thread->world.player.render_distance);
-				}
-			}
+				draw_sn_texture(r_thread, r_result, ray);
 			else if (r_result.plane.pz == 1)
-			{
-				if (ray.r_dir.vz > 0)
-				{
-					t_texture *ceiling_texture = r_thread->game->textures[CEILING_TEXTURE];
-					tx = r_result.intrsct.vx - (int)r_result.intrsct.vx;
-					ty = 1 - r_result.intrsct.vy + (int)r_result.intrsct.vy;
-					bettermlx_pixel_put(r_thread->window, ray.pixel, get_texture_color(ceiling_texture, tx, ty), 1 - r_result.distance / r_thread->world.player.render_distance);
-				}
-				else
-				{
-					t_texture *floor_texture = r_thread->game->textures[FLOOR_TEXTURE];
-					tx = r_result.intrsct.vx - (int)r_result.intrsct.vx;
-					ty = r_result.intrsct.vy - (int)r_result.intrsct.vy;
-					bettermlx_pixel_put(r_thread->window, ray.pixel, get_texture_color(floor_texture, tx, ty), 1 - r_result.distance / r_thread->world.player.render_distance);
-				}
-			}
+				draw_sn_texture(r_thread, r_result, ray);
 		}
 	}
 	return (NULL);
