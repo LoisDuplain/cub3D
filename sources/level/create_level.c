@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:20:00 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 17:01:12 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/20 11:59:52 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ t_level	*create_level(void)
 	level->map_content = NULL;
 	level->log_type = NONE;
 	level->log_message = NULL;
+	level->sprites = NULL;
 	return (level);
 }

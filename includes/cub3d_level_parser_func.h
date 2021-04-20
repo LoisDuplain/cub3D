@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:14:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 16:43:05 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/20 12:35:31 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,5 +223,23 @@ void			convert_map(t_level *level);
 **	./level/parser/validate_map.c
 */
 t_bool			validate_map(t_level *level, int x, int y);
+
+/*
+**	Count sprites in map.
+**	./level/parser/count_sprites.c
+*/
+int				count_sprites(t_level *level);
+
+/*
+**	Parse sprites in map.
+**	./level/parser/parse_sprites.c
+*/
+t_bool			parse_sprites(t_level *level);
+
+/*
+**	Create sprite.
+**	./level/parser/parse_sprites.c
+*/
+t_sprite	create_sprite(t_plane plane, t_vector3 position);
 
 #endif

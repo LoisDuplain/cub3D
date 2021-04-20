@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_level_struct.h                               :+:      :+:    :+:   */
+/*   cub3d_game_sprite_struct.h                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 16:40:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/20 11:58:39 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/20 11:32:35 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/20 12:27:58 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_LEVEL_STRUCT_H
-# define CUB3D_LEVEL_STRUCT_H
+#ifndef CUB3D_GAME_SPRITE_STRUCT_H
+# define CUB3D_GAME_SPRITE_STRUCT_H
 
 /*
 **	START CUSTOM INCLUDES
@@ -27,23 +27,11 @@
 **	START DEFINES
 */
 
-typedef struct s_level
+typedef struct s_sprite
 {
-	char			**file_content;
-	size_t			params_line_index;
-	int				window_width;
-	int				window_height;
-	t_empty_texture	*empty_textures[7];
-	t_bool			ceiling_is_skybox;
-	size_t			map_width;
-	size_t			map_height;
-	char			**map_content;
-	t_player		player;
-	t_log_type		log_type;
-	char			*log_message;
-	int				sprites_count;
-	t_sprite		*sprites;
-}	t_level;
+	t_plane		plane;
+	t_vector3	position;
+}	t_sprite;
 
 /*
 **	END DEFINES

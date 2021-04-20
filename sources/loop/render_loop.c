@@ -6,29 +6,11 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/19 17:09:47 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/20 11:48:18 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-t_color ft_get_pixel_texture_sprite(t_player player, \
-    t_sprite *sprite, t_vector3 r_result)
-{
-    int             x;
-    int             y;
-    float           temp;
-    unsigned char   *destination;
-    if (!sprite)
-        return (create_color(0, 0, 0, 0));
-    sprite_animation_with_time(sprite->current_animation);
-    temp = sqrt(pow(r_result.vx - sprite->location.vx, 2) + \
-        pow(r_result.vy - sprite->location.vy, 2));
-    x = ft_make_x_sprite(player, sprite->location, r_result.vx - sprite->location.vx, r_result.vy - sprite->location.vy) * sprite_width;
-    y = sprite_height - r_result.vz * sprite_height;
-    destination = (unsigned char *)sprite->current_animation->sprite->addr + y * sprite->current_animation->sprite->line_length + x * 4;
-    return (generate_color_by_parsing(destination));
-}
 
 void	draw_ew_texture(t_render_thread *r_thread, t_raycast_result r_result,
 	t_ray ray)
@@ -144,7 +126,7 @@ void	*render_loop(void *nr_thread)
 			else if (r_result.plane.py == 1)
 				draw_sn_texture(r_thread, r_result, ray);
 			else if (r_result.plane.pz == 1)
-				draw_sn_texture(r_thread, r_result, ray);
+				draw_cf_texture(r_thread, r_result, ray);
 		}
 	}
 	return (NULL);

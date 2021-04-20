@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   destroy_level.c                                    :+:      :+:    :+:   */
+/*   parse_sprites.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 17:21:48 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/20 12:31:03 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/20 11:56:41 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/20 12:01:12 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	*destroy_level(t_level **level)
+t_bool	parse_sprites(t_level *level)
 {
-	int		texture_index;
-
-	if (*level != NULL)
+	level->sprites_count = count_sprites(level);
+	level->sprites = ft_calloc(level->sprites_count, sizeof(t_sprite));
+	if (level->sprites == NULL)
 	{
-		ft_destroy_file_content(&(*level)->file_content);
-		texture_index = -1;
-		while (++texture_index < 7)
-			destroy_empty_texture(&(*level)->empty_textures[texture_index]);
-		ft_destroy_file_content(&(*level)->map_content);
-		free((*level)->sprites);
-		free(*level);
-		*level = NULL;
+		set_log_tlevel(level, ERROR, "Sprites allocation failed.");
+		return (FALSE);
 	}
-	return (NULL);
+	
+	return (TRUE);
 }
