@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 15:11:43 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/12 16:28:30 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 12:21:36 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	find_player(t_level *level)
 		{
 			if (!is_player_char(map[line_index][char_index]))
 				continue ;
-			level->player.location = create_vector(char_index, line_index, 0.5);
+			level->player.position = create_vector(char_index, line_index, 0.5);
 			level->player.yaw = \
 			get_player_spawn_facing(map[line_index][char_index]) * RADIAN;
 		}

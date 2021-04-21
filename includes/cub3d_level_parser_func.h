@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 12:14:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/20 12:35:31 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 11:57:21 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -240,6 +240,12 @@ t_bool			parse_sprites(t_level *level);
 **	Create sprite.
 **	./level/parser/parse_sprites.c
 */
-t_sprite	create_sprite(t_plane plane, t_vector3 position);
+t_sprite		create_sprite(t_plane plane, t_vector3 position);
+
+/*
+**	Fill sprites array.
+**	./level/parser/fill_sprites.c
+*/
+void			fill_sprites(t_level *level);
 
 #endif

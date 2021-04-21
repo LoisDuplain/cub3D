@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:30:32 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/16 11:04:45 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 12:21:37 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void    update_x_planes(t_world *world)
 	int		render_distance;
 
 	render_distance = world->player.render_distance;
-	x_index = world->player.location.vx - render_distance - 3;
-	while (++x_index < world->player.location.vx + render_distance)
+	x_index = world->player.position.vx - render_distance - 3;
+	while (++x_index < world->player.position.vx + render_distance)
 	{
 		if (x_index < 0 || x_index >= world->x_planes_size)
 			continue ;
 		plane = &world->x_planes[x_index];
-		plane->px_dist = plane->dist - world->player.location.vx;
+		plane->px_dist = plane->dist - world->player.position.vx;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_game_ray_struct.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 17:18:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 20:30:54 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/04/21 17:11:46 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 

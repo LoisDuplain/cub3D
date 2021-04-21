@@ -1,13 +1,13 @@
 R   3200    1800
 
-NO  ./textures/xpm/original/concrete.xpm
-SO  ./textures/xpm/original/concrete.xpm
-WE  ./textures/xpm/original/concrete.xpm
-EA  ./textures/xpm/original/concrete.xpm
+NO  ./textures/xpm/debug/north.xpm
+SO  ./textures/xpm/debug/south.xpm
+WE  ./textures/xpm/debug/west.xpm
+EA  ./textures/xpm/debug/east.xpm
 
 S   ./textures/xpm/debug/north.xpm
-F   ./textures/xpm/original/concrete.xpm
-C   ./textures/xpm/original/concrete.xpm
+F   ./textures/xpm/debug/floor.xpm
+C   ./textures/xpm/debug/ceiling.xpm
               1111111111
               1000000001
               1001111011

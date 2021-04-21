@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:34:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/16 11:32:29 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 14:53:11 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,28 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 		if (keyboard[KEY_W] || keyboard[KEY_S])
 		{
 			if (keyboard[KEY_W])
-				game->world.player.location.vy -= MOVEMENT_SPEED * delta;
+				game->world.player.position.vy -= MOVEMENT_SPEED * delta;
 			if (keyboard[KEY_S])
-				game->world.player.location.vy += MOVEMENT_SPEED * delta;
+				game->world.player.position.vy += MOVEMENT_SPEED * delta;
 			update_y_planes(&game->world);
 		}
 		if (keyboard[KEY_A] || keyboard[KEY_D])
 		{
 			if (keyboard[KEY_A])
-				game->world.player.location.vx -= MOVEMENT_SPEED * delta;
+				game->world.player.position.vx -= MOVEMENT_SPEED * delta;
 			if (keyboard[KEY_D])
-				game->world.player.location.vx += MOVEMENT_SPEED * delta;
+				game->world.player.position.vx += MOVEMENT_SPEED * delta;
 			update_x_planes(&game->world);
 		}
+		update_sprites(game);
+		puts("----------------------------------------------------------");
+		int i = -1;
+		while (++i < game->current_level->sprites_count)
+		{
+			t_sprite sprite = game->current_level->sprites[i];
+			dprintf(1, "Sprite: {(t_plane)plane:{%f, %f, %f, %f}, (t_vector3)position{%f, %f, %f}}\n", sprite.plane.px, sprite.plane.py, sprite.plane.pz, sprite.plane.dist, sprite.position.vx, sprite.position.vy, sprite.position.vz);
+		}
+		puts("----------------------------------------------------------");
 	}
 	if (keyboard[KEY_PLUS] || keyboard[KEY_MINUS])
 	{
@@ -76,6 +85,10 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 			game->world.player.render_distance -= 0.01 * delta;
 		if (keyboard[KEY_L])
 			game->world.player.render_distance += 0.01 * delta;
+		if (game->world.player.render_distance < 0.7)
+			game->world.player.render_distance = 0.7;
+		if (game->world.player.render_distance > 5000)
+			game->world.player.render_distance = 5000;
 		update_x_planes(&game->world);
 		update_y_planes(&game->world);
 		update_z_planes(&game->world);

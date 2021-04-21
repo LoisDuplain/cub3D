@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 11:21:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/02 13:54:03 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 12:21:36 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_bool	parse_level_map(t_level *level)
 	if (!single_player_map(level))
 		return (FALSE);
 	find_player(level);
-	if (!validate_map(level, level->player.location.vx,
-			level->player.location.vy))
+	if (!validate_map(level, level->player.position.vx,
+			level->player.position.vy))
 	{
 		set_log_tlevel(level, ERROR, "Player can go in void.");
 		return (FALSE);
@@ -35,5 +35,7 @@ t_bool	parse_level_map(t_level *level)
 	if (!create_map_content(level) || !fill_map_content(level))
 		return (FALSE);
 	convert_map(level);
+	if (!parse_sprites(level))
+		return (FALSE);
 	return (TRUE);
 }

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_game_plane_struct.h                          :+:      :+:    :+:   */
+/*   cub3d_game_sprite_func.h                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/08 14:59:15 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/21 12:17:52 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/21 12:26:29 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/21 12:28:13 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_GAME_PLANE_STRUCT_H
-# define CUB3D_GAME_PLANE_STRUCT_H
+#ifndef CUB3D_GAME_SPRITE_H
+# define CUB3D_GAME_SPRITE_H
 
 /*
 **	START CUSTOM INCLUDES
@@ -24,22 +24,9 @@
 */
 
 /*
-**	START DEFINES
+**	Update sprites.
+**	./game/sprite/update_sprites.c
 */
-
-typedef struct s_plane
-{
-	float	px;
-	float	py;
-	float	pz;
-	float	dist;
-	float	px_dist;
-	float	py_dist;
-	float	pz_dist;
-}	t_plane;
-
-/*
-**	END DEFINES
-*/
+void	update_sprites(t_game *game);
 
 #endif

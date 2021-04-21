@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/20 11:48:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 18:51:56 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,65 @@ void	draw_cf_texture(t_render_thread *r_thread, t_raycast_result r_result,
 		1 - r_result.distance / r_thread->world.player.render_distance);
 }
 
+void	draw_sprites(t_render_thread *r_thread, t_raycast_result r_result, t_ray ray)
+{
+	t_game		*game;
+	t_window	*window;
+	t_level		*current_level;
+	int			sprite_index;
+	t_sprite	sprite;
+	float		div;
+	float		distance;
+	t_vector3	intrsct;
+	t_vector3	projected;
+	t_vector3	u;
+	t_vector3	v;
+	t_vector3	v_prime;
+	t_vector3	v2;
+	float		r;
+
+	game = r_thread->game;
+	window = r_thread->window;
+	current_level = game->current_level;
+	sprite_index = -1;
+	while (++sprite_index < current_level->sprites_count)
+	{
+		sprite = current_level->sprites[sprite_index];
+		div = sprite.plane.px * ray.r_dir.vx + sprite.plane.py * ray.r_dir.vy;
+		if (div == 0)
+			continue ;
+		distance = -(sprite.plane.px * game->world.player.position.vx
+					+ sprite.plane.py * game->world.player.position.vy
+					+ sprite.plane.dist)
+					/ div;
+		if (distance <= 0 || distance > game->world.player.render_distance || distance > r_result.distance)
+			continue ;
+		intrsct.vx = game->world.player.position.vx + ray.r_dir.vx * distance;
+		intrsct.vy = game->world.player.position.vy + ray.r_dir.vy * distance;
+		intrsct.vz = game->world.player.position.vz + ray.r_dir.vz * distance;
+		if (distance_square2(
+			sprite.position.vx - intrsct.vx,
+			sprite.position.vy - intrsct.vy
+		) > 0.25)
+			continue ;
+		projected = create_vector(sprite.position.vx, intrsct.vy, 0);
+		u = sub_vector_vector(projected, intrsct);
+		v = sub_vector_vector(sprite.position, game->world.player.position);
+		v_prime = create_vector(v.vy, -v.vx, 0);
+		v2 = normalize_vector(v_prime);
+		r = (u.vx * v2.vx) + (u.vy * v2.vy) + (u.vz * v2.vz) + 0.5;
+		if (r < 0 || r > 1)
+			continue ;
+		bettermlx_pixel_put(r_thread->window,
+			ray.pixel,
+			get_texture_color(
+				r_thread->game->textures[SPRITE_TEXTURE],
+				/* Texture x */ r,
+				/* Texture y */ 1 - intrsct.vz),
+			1 - distance / r_thread->world.player.render_distance);
+	}
+}
+
 void	*render_loop(void *nr_thread)
 {
 	int					ray_index;
@@ -100,7 +159,7 @@ void	*render_loop(void *nr_thread)
 	{
 		ray = r_thread->game->rays[ray_index];
 		r_result.distance = INT_MAX;
-		r_result.p_loc = r_thread->world.player.location;
+		r_result.p_loc = r_thread->world.player.position;
 		r_result.ray = ray;
 		if (ray.r_dir.vx > 0)
 			get_x_pos_planes(&r_result, r_thread->world, r_thread->m_content);
@@ -128,6 +187,7 @@ void	*render_loop(void *nr_thread)
 			else if (r_result.plane.pz == 1)
 				draw_cf_texture(r_thread, r_result, ray);
 		}
+		draw_sprites(r_thread, r_result, ray);
 	}
 	return (NULL);
 }

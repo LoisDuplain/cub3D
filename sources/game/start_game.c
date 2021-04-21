@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 20:14:10 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/04/21 18:58:34 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	start_game(char *level_file_path, t_bool screenshot)
 	update_x_planes(&game->world);
 	update_y_planes(&game->world);
 	update_z_planes(&game->world);
+	update_sprites(game);
 	bettermlx_register_loop(game->window, game, game_loop);
 }

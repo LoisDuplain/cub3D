@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/20 11:59:23 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 18:57:53 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@
 
 # include "../libft/libft.h"
 # include "../mlx/mlx.h"
-
 # include "./bettermlx_struct.h"
 # include "./cub3d_log_struct.h"
 # include "./cub3d_texture_struct.h"
@@ -47,18 +46,19 @@
 # include "./cub3d_game_render_thread_struct.h"
 
 # include "./bettermlx_func.h"
-# include "./cub3d_game_texture_func.h"
-# include "./cub3d_game_func.h"
-# include "./cub3d_game_player_func.h"
-# include "./cub3d_game_ray_func.h"
-# include "./cub3d_game_plane_func.h"
-# include "./cub3d_loop_func.h"
-# include "./cub3d_texture_func.h"
-# include "./cub3d_empty_texture_func.h"
 # include "./cub3d_log_func.h"
+# include "./cub3d_texture_func.h"
+# include "./cub3d_game_texture_func.h"
+# include "./cub3d_game_player_func.h"
+# include "./cub3d_game_plane_func.h"
+# include "./cub3d_game_ray_func.h"
+# include "./cub3d_game_sprite_func.h"
+# include "./cub3d_empty_texture_func.h"
 # include "./cub3d_level_func.h"
 # include "./cub3d_level_parser_func.h"
+# include "./cub3d_game_func.h"
 # include "./cub3d_game_render_thread_func.h"
+# include "./cub3d_loop_func.h"
 
 /*
 **	END CUSTOM INCLUDES

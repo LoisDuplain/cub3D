@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:26:34 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/13 11:50:06 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/21 19:00:01 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	bettermlx_pixel_put(
 	int		ax;
 	int		mx;
 
-	if (darkness < 0)
-		darkness = 0;
 	ay = ((int)pixel_coordinates.vy) * window->divider;
 	my = ay + window->divider;
 	mx = ((int)pixel_coordinates.vx) * window->divider + window->divider;

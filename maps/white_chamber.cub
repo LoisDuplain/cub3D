@@ -1,11 +1,11 @@
-R   3200    1800
+R   1280    720
 
-NO  255,255,255
+NO  ./textures/xpm/debug/north.xpm
 SO  255,255,255
 WE  255,255,255
 EA  255,255,255
 
-S   ./textures/xpm/debug/north.xpm
+S   ./textures/xpm/debug/south.xpm
 F   255,255,255
 C   255,255,255
               1111111111
