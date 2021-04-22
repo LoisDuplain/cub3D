@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:17:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/22 19:10:09 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 19:44:09 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	update_sprites(t_game *game)
 		sprite->plane.py = v.vy;
 		sprite->plane.dist = -v.vx * sprite->position.vx
 			- v.vy * sprite->position.vy;
-		dprintf(1, "update_sprites - px: %f | py: %f | dist: %f\n", v.vx, v.vy, sprite->plane.dist);
 		sprite->to_render = TRUE;
 	}
 }

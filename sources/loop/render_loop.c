@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/22 19:38:23 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 19:42:28 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ float	get_sprite_distance(t_sprite sprite, t_ray ray, t_player player)
 	if (div == 0)
 		return (0);
 	return ((-sprite.plane.px * player.position.vx
-				- sprite.plane.py * player.position.vy
-				- sprite.plane.dist) / div);
+			- sprite.plane.py * player.position.vy
+			- sprite.plane.dist) / div);
 }
 
 t_vector3	get_sprite_intrsct_point(t_player player, t_ray ray, float distance)
@@ -126,7 +126,8 @@ float	get_sprite_ratio(t_vector3 intrsct, t_sprite sprite, t_player player)
 	return ((u.vx * v2.vx) + (u.vy * v2.vy) + 0.5);
 }
 
-void	draw_sprites(t_render_thread *r_thread, t_raycast_result *r_result, t_ray ray)
+void	draw_sprites(t_render_thread *r_thread, t_raycast_result *r_result,
+	t_ray ray)
 {
 	t_game		*game;
 	int			sprite_index;
@@ -134,6 +135,7 @@ void	draw_sprites(t_render_thread *r_thread, t_raycast_result *r_result, t_ray r
 	float		distance;
 	t_vector3	intrsct;
 	float		r;
+	t_color		color;
 
 	game = r_thread->game;
 	sprite_index = -1;
@@ -143,14 +145,16 @@ void	draw_sprites(t_render_thread *r_thread, t_raycast_result *r_result, t_ray r
 		if (!sprite.to_render)
 			continue ;
 		distance = get_sprite_distance(sprite, ray, game->world.player);
-		if (distance <= 0 || distance > r_result->distance || distance > game->world.player.render_distance)
+		if (distance <= 0 || distance > r_result->distance
+			|| distance > game->world.player.render_distance)
 			continue ;
 		intrsct = get_sprite_intrsct_point(game->world.player, ray, distance);
 		r = get_sprite_ratio(intrsct, sprite, game->world.player);
 		if (r < 0 || r > 1)
 			continue ;
-		t_color color = get_texture_color(
-			r_thread->game->textures[SPRITE_TEXTURE], 1 - r, 1 - intrsct.vz);
+		color = get_texture_color(
+				r_thread->game->textures[SPRITE_TEXTURE], 1 - r,
+				1 - intrsct.vz);
 		if (color.a == 255)
 			continue ;
 		r_result->distance = distance;
@@ -189,8 +193,10 @@ void	*render_loop(void *nr_thread)
 			else
 				get_z_neg_planes(&r_result, r_thread->world);
 		}
-		if (r_result.distance == INT_MAX || r_result.distance >= r_thread->game->world.player.render_distance)
-			bettermlx_pixel_put(r_thread->window, ray.pixel, create_icolor(0, 0, 0, 0), 1);
+		if (r_result.distance >= r_thread->game->world.player.render_distance
+			|| r_result.distance == INT_MAX)
+			bettermlx_pixel_put(r_thread->window, ray.pixel,
+				create_icolor(0, 0, 0, 0), 1);
 		else
 		{
 			if (r_result.plane.px == 1)
