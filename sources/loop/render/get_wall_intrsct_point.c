@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_intrsct_point.c                                :+:      :+:    :+:   */
+/*   get_wall_intrsct_point.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-t_vector3	get_intrsct_point(t_vector3 p_loc, t_vector3 r_dir, t_plane plane,
+t_vector3	get_wall_intrsct_point(t_vector3 p_loc, t_vector3 r_dir, t_plane plane,
 	float distance)
 {
 	t_vector3	intrsct;

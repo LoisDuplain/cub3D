@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:34:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/21 14:53:11 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 15:41:39 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,6 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 			update_x_planes(&game->world);
 		}
 		update_sprites(game);
-		puts("----------------------------------------------------------");
-		int i = -1;
-		while (++i < game->current_level->sprites_count)
-		{
-			t_sprite sprite = game->current_level->sprites[i];
-			dprintf(1, "Sprite: {(t_plane)plane:{%f, %f, %f, %f}, (t_vector3)position{%f, %f, %f}}\n", sprite.plane.px, sprite.plane.py, sprite.plane.pz, sprite.plane.dist, sprite.position.vx, sprite.position.vy, sprite.position.vz);
-		}
-		puts("----------------------------------------------------------");
 	}
 	if (keyboard[KEY_PLUS] || keyboard[KEY_MINUS])
 	{

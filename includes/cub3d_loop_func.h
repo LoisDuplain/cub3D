@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/16 10:20:07 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 19:14:32 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ t_bool		is_in_world(t_vector3 intrsct, t_world world);
 
 /*
 **	Get intersection point.
-**	./loop/render/get_intrsct_point.c
+**	./loop/render/get_wall_intrsct_point.c
 */
-t_vector3	get_intrsct_point(t_vector3 p_loc, t_vector3 r_dir, t_plane plane,
+t_vector3	get_wall_intrsct_point(t_vector3 p_loc, t_vector3 r_dir, t_plane plane,
 				float distance);
 
 /*

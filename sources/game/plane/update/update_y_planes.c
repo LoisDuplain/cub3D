@@ -6,13 +6,13 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 19:59:01 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/21 12:21:37 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 16:18:59 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void    update_y_planes(t_world *world)
+void	update_y_planes(t_world *world)
 {
 	int		y_index;
 	t_plane	*plane;

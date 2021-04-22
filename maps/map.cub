@@ -1,13 +1,13 @@
-R   3200    1800
+R   1920    1080
 
-NO  ./textures/xpm/debug/north.xpm
-SO  ./textures/xpm/debug/south.xpm
-WE  ./textures/xpm/debug/west.xpm
-EA  ./textures/xpm/debug/east.xpm
+NO  ./textures/xpm/original/concrete.xpm
+SO  ./textures/xpm/original/concrete.xpm
+WE  ./textures/xpm/original/concrete.xpm
+EA  ./textures/xpm/original/concrete.xpm
 
-S   ./textures/xpm/debug/north.xpm
-F   ./textures/xpm/debug/floor.xpm
-C   ./textures/xpm/debug/ceiling.xpm
+S   ./textures/xpm/original/barrel.xpm
+F   ./textures/xpm/original/concrete.xpm
+C   ./textures/xpm/original/concrete.xpm
               1111111111
               1000000001
               1001111011
@@ -18,16 +18,16 @@ C   ./textures/xpm/debug/ceiling.xpm
               1000100001
         1111111111101111111111111
         1000000000001000000000001
-        1011000001111000002000001
-        1001000000000000000000001
-111111111011000001110000000000001
+        1011000001111000222220001
+        1001000000000N00022220001
+111111111011000001110002222220001
 100000000011000001110111111111111
 11110111111111011100000010001
 11110111111111011101010010001
 11000000110101011100000010001
 10002000000000001100000010001
 10000000000000001101010010001
-11000001110101011111011110N0111
+1100000111010101111101111000111
 10100111 1110101 101111010001
 10001111 1111111 111111111111
 11011

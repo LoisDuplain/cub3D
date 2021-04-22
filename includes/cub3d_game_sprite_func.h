@@ -6,12 +6,12 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:26:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/21 12:28:13 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 16:18:32 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_GAME_SPRITE_H
-# define CUB3D_GAME_SPRITE_H
+#ifndef CUB3D_GAME_SPRITE_FUNC_H
+# define CUB3D_GAME_SPRITE_FUNC_H
 
 /*
 **	START CUSTOM INCLUDES

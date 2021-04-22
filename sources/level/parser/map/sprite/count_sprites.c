@@ -6,13 +6,13 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 11:50:07 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/20 18:01:37 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 16:19:28 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		count_sprites(t_level *level)
+int	count_sprites(t_level *level)
 {
 	int	counter;
 	int	y;

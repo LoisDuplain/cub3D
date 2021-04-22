@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 11:32:35 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/20 12:27:58 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 18:57:04 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_sprite
 {
 	t_plane		plane;
 	t_vector3	position;
+	t_bool		to_render;
 }	t_sprite;
 
 /*
