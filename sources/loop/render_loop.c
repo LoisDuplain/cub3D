@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/22 19:42:28 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/23 12:52:46 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,13 @@ float	get_sprite_ratio(t_vector3 intrsct, t_sprite sprite, t_player player)
 	return ((u.vx * v2.vx) + (u.vy * v2.vy) + 0.5);
 }
 
+t_color	get_sprite_texture_color(t_render_thread *r_thread, t_vector3 intrsct, float ratio)
+{
+	return (get_texture_color(
+		r_thread->game->textures[SPRITE_TEXTURE], 1 - ratio,
+		1 - intrsct.vz));
+}
+
 void	draw_sprites(t_render_thread *r_thread, t_raycast_result *r_result,
 	t_ray ray)
 {
@@ -134,7 +141,7 @@ void	draw_sprites(t_render_thread *r_thread, t_raycast_result *r_result,
 	t_sprite	sprite;
 	float		distance;
 	t_vector3	intrsct;
-	float		r;
+	float		ratio;
 	t_color		color;
 
 	game = r_thread->game;
@@ -149,12 +156,10 @@ void	draw_sprites(t_render_thread *r_thread, t_raycast_result *r_result,
 			|| distance > game->world.player.render_distance)
 			continue ;
 		intrsct = get_sprite_intrsct_point(game->world.player, ray, distance);
-		r = get_sprite_ratio(intrsct, sprite, game->world.player);
-		if (r < 0 || r > 1)
+		ratio = get_sprite_ratio(intrsct, sprite, game->world.player);
+		if (ratio < 0 || ratio > 1)
 			continue ;
-		color = get_texture_color(
-				r_thread->game->textures[SPRITE_TEXTURE], 1 - r,
-				1 - intrsct.vz);
+		color = get_sprite_texture_color(r_thread, intrsct, ratio);
 		if (color.a == 255)
 			continue ;
 		r_result->distance = distance;
