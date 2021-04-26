@@ -5,7 +5,7 @@
 5.	Sauter								-	A faire
 6.	S’accroupir							-	A faire
 7.	Brouillard							-	OK
-8.	Multi niveaux						-	A faire	(PARSER OK)
+8.	Multi niveaux						-	OK
 9.	Changement de FOV in-game			-	OK
 10.	Crosshair							-	OK
 11.	Minimap								-	A faire	(PARSER OK)

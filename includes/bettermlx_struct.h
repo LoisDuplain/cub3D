@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:32:26 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/25 11:42:01 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:02:47 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,8 @@ typedef enum e_key
 	KEY_DOWN = 125,
 	KEY_UP = 126,
 	KEY_ESCAPE = 53,
+	KEY_LESS = 43,
+	KEY_GREATER = 47,
 }				t_key;
 
 typedef enum e_ecolor

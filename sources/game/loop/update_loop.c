@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:34:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:46:56 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:03:01 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,8 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 		update_y_planes(game->current_level);
 		update_z_planes(game->current_level);
 	}
-	if (keyboard[47])
-	{
+	if (keyboard[KEY_GREATER])
 		next_level(game);
-	}
+	if (keyboard[KEY_LESS])
+		previous_level(game);
 }

@@ -41,6 +41,7 @@ SRCS += sources/game/plane/y/intrsct_y_plane.c
 SRCS += sources/game/plane/z/get_z_neg_planes.c
 SRCS += sources/game/plane/z/get_z_pos_planes.c
 SRCS += sources/game/player/init_player.c
+SRCS += sources/game/previous_level.c
 SRCS += sources/game/ray/create_ray.c
 SRCS += sources/game/ray/create_render_vector.c
 SRCS += sources/game/ray/init_rays.c

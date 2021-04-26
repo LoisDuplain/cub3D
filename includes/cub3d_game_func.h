@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:08:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:01:11 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,15 @@ void	set_current_level(t_game *game, t_level *level);
 void	init_current_level(t_game *game);
 
 /*
-**	Initialize current level.
-**	./game/init_current_level.c
+**	Go to next level.
+**	./game/next_level.c
 */
 void	next_level(t_game *game);
+
+/*
+**	Go to previous level.
+**	./game/previous_level.c
+*/
+void	previous_level(t_game *game);
 
 #endif
