@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:17:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:41:23 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:51:25 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ void	update_rays(t_game *game)
 	double	y_sin;
 	int		ray_index;
 
-	p_cos = cos(game->current_level->player.pitch);
-	p_sin = sin(game->current_level->player.pitch);
-	y_cos = cos(game->current_level->player.yaw);
-	y_sin = sin(game->current_level->player.yaw);
+	p_cos = cos(game->cur_lvl->player.pitch);
+	p_sin = sin(game->cur_lvl->player.pitch);
+	y_cos = cos(game->cur_lvl->player.yaw);
+	y_sin = sin(game->cur_lvl->player.yaw);
 	ray_index = -1;
 	while (++ray_index < game->rays_size)
 	{

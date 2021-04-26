@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:04:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:33:09 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:51:47 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_game
 	int			level_size;
 	int			current_level_id;
 	char		**levels_file_path;
-	t_level		*current_level;
+	t_level		*cur_lvl;
 	t_window	*window;
 	t_ray		*rays;
 	int			rays_size;

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:13:05 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:22:12 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:51:23 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*destroy_game(t_game **game)
 
 	if (*game != NULL)
 	{
-		destroy_level(&(*game)->current_level);
+		destroy_level(&(*game)->cur_lvl);
 		texture_index = -1;
 		while (++texture_index < 7)
 			destroy_texture((*game)->window, &(*game)->textures[texture_index]);

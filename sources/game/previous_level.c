@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 18:59:53 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 19:40:43 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:52:57 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	previous_level(t_game *game)
 {
 	t_level	*new_level;
+	int		texture_index;
 
 	game->current_level_id--;
 	if (game->current_level_id <= 0)
@@ -31,8 +32,8 @@ void	previous_level(t_game *game)
 		destroy_level(&new_level);
 		return ;
 	}
-	destroy_level(&game->current_level);
-	int texture_index = -1;
+	destroy_level(&game->cur_lvl);
+	texture_index = -1;
 	while (++texture_index < 7)
 		destroy_texture(game->window, &game->textures[texture_index]);
 	set_current_level(game, new_level);

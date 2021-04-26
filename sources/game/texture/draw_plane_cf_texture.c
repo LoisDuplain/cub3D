@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 16:16:17 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:43:28 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:50:43 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	draw_plane_cf_texture(t_render_thread *r_thread,
 			r_thread->game->textures[texture_id],
 			tx,
 			ty),
-		1 - r_result.distance / r_thread->current_level->player.render_distance);
+		1 - r_result.distance / r_thread->lvl->player.render_distance);
 }

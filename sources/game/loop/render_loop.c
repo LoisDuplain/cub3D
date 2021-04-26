@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:46:08 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:51:25 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,24 @@ void	*render_loop(void *nr_thread)
 	{
 		ray = r_thread->game->rays[ray_index];
 		r_result.distance = INT_MAX;
-		r_result.p_loc = r_thread->current_level->player.position;
+		r_result.p_loc = r_thread->lvl->player.position;
 		r_result.ray = ray;
 		if (ray.r_dir.vx > 0)
-			get_x_pos_planes(&r_result, r_thread->current_level);
+			get_x_pos_planes(&r_result, r_thread->lvl);
 		else
-			get_x_neg_planes(&r_result, r_thread->current_level);
+			get_x_neg_planes(&r_result, r_thread->lvl);
 		if (ray.r_dir.vy > 0)
-			get_y_pos_planes(&r_result, r_thread->current_level);
+			get_y_pos_planes(&r_result, r_thread->lvl);
 		else
-			get_y_neg_planes(&r_result, r_thread->current_level);
+			get_y_neg_planes(&r_result, r_thread->lvl);
 		if (r_result.distance == INT_MAX)
 		{
 			if (ray.r_dir.vz > 0)
-				get_z_pos_planes(&r_result, r_thread->current_level);
+				get_z_pos_planes(&r_result, r_thread->lvl);
 			else
-				get_z_neg_planes(&r_result, r_thread->current_level);
+				get_z_neg_planes(&r_result, r_thread->lvl);
 		}
-		if (r_result.distance >= r_thread->game->current_level->player.render_distance
+		if (r_result.distance >= r_thread->game->cur_lvl->player.render_distance
 			|| r_result.distance == INT_MAX)
 			bettermlx_pixel_put(r_thread->window, ray.pixel,
 				create_icolor(0, 0, 0, 0), 1);

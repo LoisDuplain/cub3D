@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 15:26:03 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:42:27 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 19:50:43 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_render_thread
 {
 	t_game		*game;
 	t_window	*window;
-	t_level		*current_level;
+	t_level		*lvl;
 	char		**m_content;
 	int			p_start;
 	int			p_end;

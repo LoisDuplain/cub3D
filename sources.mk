@@ -65,7 +65,6 @@ SRCS += sources/game/texture/get_texture_color.c
 SRCS += sources/game/texture/init_textures.c
 SRCS += sources/level/create_level.c
 SRCS += sources/level/destroy_level.c
-SRCS += sources/level/display_level.c
 SRCS += sources/level/load_level.c
 SRCS += sources/level/parser/map/content/create_map_content.c
 SRCS += sources/level/parser/map/content/fill_map_content.c
