@@ -1,13 +1,13 @@
 R   1920    1080
 
-NO  ./textures/xpm/original/concrete.xpm
-SO  ./textures/xpm/original/concrete.xpm
-WE  ./textures/xpm/original/concrete.xpm
-EA  ./textures/xpm/original/concrete.xpm
+NO  ./textures/original/concrete.xpm
+SO  ./textures/original/concrete.xpm
+WE  ./textures/original/concrete.xpm
+EA  ./textures/original/concrete.xpm
 
-S   ./textures/xpm/original/barrel.xpm
-F   ./textures/xpm/original/concrete.xpm
-C   ./textures/xpm/original/concrete.xpm
+S   ./textures/original/barrel.xpm
+F   ./textures/original/concrete.xpm
+C   ./textures/original/concrete.xpm
               1111111111
               1000000001
               1001111011

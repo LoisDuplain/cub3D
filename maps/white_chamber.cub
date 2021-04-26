@@ -5,7 +5,7 @@ SO  255,255,255
 WE  255,255,255
 EA  255,255,255
 
-S   ./textures/xpm/debug/sprite.xpm
+S   ./textures/debug/sprite.xpm
 F   255,255,255
 C   255,255,255
               1111111111
