@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_in_world.c                                      :+:      :+:    :+:   */
+/*   get_sprite_texture_color.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 12:41:31 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:40:31 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/26 16:24:04 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/26 16:24:15 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_bool	is_in_world(t_vector3 intrsct, t_world world)
+t_color		get_sprite_texture_color(t_render_thread *r_thread, t_vector3 intrsct,
+	float ratio)
 {
-	float	vx;
-	float	vy;
-	float	vz;
-
-	vx = intrsct.vx;
-	if (vx < 0 || vx > world.x_planes_size)
-		return (FALSE);
-	vy = intrsct.vy;
-	if (vy < 0 || vy > world.y_planes_size)
-		return (FALSE);
-	vz = intrsct.vz;
-	if (vz < 0 || vz > 1)
-		return (FALSE);
-	return (TRUE);
+	return (get_texture_color(
+		r_thread->game->textures[SPRITE_TEXTURE], 1 - ratio,
+		1 - intrsct.vz));
 }

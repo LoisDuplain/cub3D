@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 12:50:48 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/22 19:14:49 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 16:55:58 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ t_bool 	intrsct_x_plane(t_raycast_result *r_result, t_world world,
 		return (FALSE);
 	if (dist > r_result->distance || dist > world.player.render_distance)
 		return (TRUE);
-	intrsct = get_wall_intrsct_point(r_result->p_loc, r_result->ray.r_dir,
+	intrsct = get_plane_intrsct_point(r_result->p_loc, r_result->ray.r_dir,
 			plane, dist);
 	if (intrsct.vz <= 0 || intrsct.vz >= 1)
 		return (TRUE);
 	sub = 0;
 	if (r_result->ray.r_dir.vx < 0)
 		sub = 1;
-	if (is_in_world(intrsct, world)
+	if (is_in_world(world, intrsct)
 		&& map_content[(int)intrsct.vy][(int)intrsct.vx - sub] == 1)
 	{
 		r_result->distance = dist;

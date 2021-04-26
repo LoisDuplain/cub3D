@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/22 15:43:21 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 16:47:16 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@
 # include "./cub3d_level_parser_func.h"
 # include "./cub3d_game_func.h"
 # include "./cub3d_game_render_thread_func.h"
-# include "./cub3d_loop_func.h"
+# include "./cub3d_game_loop_func.h"
 
 /*
 **	END CUSTOM INCLUDES

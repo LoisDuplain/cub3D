@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 16:08:44 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/22 19:14:49 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 16:56:19 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	get_z_neg_planes(t_raycast_result *r_result, t_world world)
 		return ;
 	r_result->distance = distance;
 	r_result->plane = plane;
-	r_result->intrsct = get_wall_intrsct_point(r_result->p_loc, r_result->ray.r_dir,
-			r_result->plane, distance);
+	r_result->intrsct = get_plane_intrsct_point(r_result->p_loc,
+			r_result->ray.r_dir, r_result->plane, distance);
 }

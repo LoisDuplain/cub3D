@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_wall_intrsct_point.c                                :+:      :+:    :+:   */
+/*   get_plane_intrsct_point.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/14 12:42:38 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:15:26 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/26 16:10:30 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/26 16:52:36 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_vector3	get_wall_intrsct_point(t_vector3 p_loc, t_vector3 r_dir, t_plane plane,
-	float distance)
+t_vector3	get_plane_intrsct_point(t_vector3 p_loc, t_vector3 r_dir,
+	t_plane plane, float distance)
 {
 	t_vector3	intrsct;
 
