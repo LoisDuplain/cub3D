@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:40:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/21 12:00:16 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:24:36 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_level
 	int				window_width;
 	int				window_height;
 	t_empty_texture	*empty_textures[7];
-	t_bool			ceiling_is_skybox;
 	size_t			map_width;
 	size_t			map_height;
 	char			**map_content;

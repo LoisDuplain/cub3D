@@ -6,12 +6,12 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:24:38 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 16:56:26 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:04:33 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_TEXTURE_STRUCT_H
-# define CUB3D_TEXTURE_STRUCT_H
+#ifndef CUB3D_GAME_TEXTURE_STRUCT_H
+# define CUB3D_GAME_TEXTURE_STRUCT_H
 
 /*
 **	START CUSTOM INCLUDES

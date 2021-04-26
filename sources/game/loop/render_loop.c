@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 16:40:07 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:12:10 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ void	*render_loop(void *nr_thread)
 		else
 		{
 			if (r_result.plane.px == 1)
-				draw_ew_texture(r_thread, r_result, ray);
+				draw_plane_ew_texture(r_thread, r_result, ray);
 			else if (r_result.plane.py == 1)
-				draw_sn_texture(r_thread, r_result, ray);
+				draw_plane_sn_texture(r_thread, r_result, ray);
 			else if (r_result.plane.pz == 1)
-				draw_cf_texture(r_thread, r_result, ray);
+				draw_plane_cf_texture(r_thread, r_result, ray);
 		}
 		draw_sprites(r_thread, &r_result, ray);
 	}

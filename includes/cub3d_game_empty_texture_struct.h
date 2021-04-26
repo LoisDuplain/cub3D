@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_empty_texture_struct.h                       :+:      :+:    :+:   */
+/*   cub3d_game_empty_texture_struct.h                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 19:03:30 by lduplain          #+#    #+#             */
-/*   Updated: 2021/03/25 12:21:20 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:22:18 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_EMPTY_TEXTURE_STRUCT_H
-# define CUB3D_EMPTY_TEXTURE_STRUCT_H
+#ifndef CUB3D_GAME_EMPTY_TEXTURE_STRUCT_H
+# define CUB3D_GAME_EMPTY_TEXTURE_STRUCT_H
 
 /*
 **	START CUSTOM INCLUDES

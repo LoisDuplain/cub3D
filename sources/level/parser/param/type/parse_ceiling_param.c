@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 09:07:55 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/14 17:04:33 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:25:21 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,10 @@ t_bool	parse_ceiling_param(t_level *level,
 		set_log_tlevel(level, ERROR, "Not enough arguments in ceiling param.");
 		return (FALSE);
 	}
-	if (splitted_size > 3)
+	if (splitted_size > 2)
 	{
 		set_log_tlevel(level, ERROR, "Too many arguments in ceiling param.");
 		return (FALSE);
-	}
-	if (splitted_size == 3)
-	{
-		if (ft_strcmp(splitted[1], "skybox") != 0)
-		{
-			set_log_tlevel(level, ERROR, "Wrong argument in ceiling param. \
-			\nDid you mean \"skybox\" ?");
-			return (FALSE);
-		}
-		level->ceiling_is_skybox = TRUE;
-		return (parse_empty_texture(level, \
-		&level->empty_textures[CEILING_TEXTURE], splitted[2]));
 	}
 	return (parse_empty_texture(level, \
 	&level->empty_textures[CEILING_TEXTURE], splitted[1]));

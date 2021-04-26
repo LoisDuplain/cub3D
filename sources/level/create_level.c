@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 17:20:00 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/20 11:59:52 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:24:38 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_level	*create_level(void)
 	texture_index = -1;
 	while (++texture_index < 7)
 		level->empty_textures[texture_index] = NULL;
-	level->ceiling_is_skybox = FALSE;
 	level->map_width = 0;
 	level->map_height = 0;
 	level->map_content = NULL;

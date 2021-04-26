@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:45:12 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 16:55:08 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:19:40 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,31 @@
 **	Create new plane.
 **	./game/plane/create_plane.c
 */
-t_plane	create_plane(int px, int py, int pz, int dist);
+t_plane		create_plane(int px, int py, int pz, int dist);
 
 /*
 **	Initialize planes.
 **	./game/plane/init_planes.c
 */
-void	init_planes(t_game *game);
+void		init_planes(t_game *game);
 
 /*
 **	Update x planes.
 **	./game/plane/update_x_planes.c
 */
-void	update_x_planes(t_world *world);
+void		update_x_planes(t_world *world);
 
 /*
 **	Update y planes.
 **	./game/plane/update_y_planes.c
 */
-void	update_y_planes(t_world *world);
+void		update_y_planes(t_world *world);
 
 /*
 **	Update z planes.
 **	./game/plane/update_z_planes.c
 */
-void	update_z_planes(t_world *world);
+void		update_z_planes(t_world *world);
 
 /*
 **	Check intersection with x plane.
@@ -111,8 +111,8 @@ void		get_z_neg_planes(t_raycast_result *r_result, t_world world);
 **	Get plane intersection point.
 **	./loop/render/get_plane_intrsct_point.c
 */
-t_vector3	get_plane_intrsct_point(t_vector3 p_loc, t_vector3 r_dir, t_plane plane,
-				float distance);
+t_vector3	get_plane_intrsct_point(t_vector3 p_loc, t_vector3 r_dir,
+				t_plane plane, float distance);
 
 /*
 **	Check if intersection point is in world or no.

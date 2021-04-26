@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 09:54:21 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/21 12:21:37 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:24:45 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void	display_level(t_level *level)
 	dprintf(1, "   Ceiling empty texture:\n");
 	if (level->ceiling_empty_texture != NULL)
 	{
-		dprintf(1, "      Is skybox: {%s}\n", (level->ceiling_is_skybox) ? "TRUE" : "FALSE");
 		dprintf(1, "      Texture path: {%s}\n", level->ceiling_empty_texture->texture_file_path);
 		dprintf(1, "      Color: {r: %d, g: %d, b: %d}\n", level->ceiling_empty_texture->color.r, level->ceiling_empty_texture->color.g, level->ceiling_empty_texture->color.b);
 	}
