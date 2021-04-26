@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_rays.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 15:17:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/15 20:44:56 by lduplain         ###   ########.fr       */
+/*   Updated: 2021/04/26 18:41:23 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ void	update_rays(t_game *game)
 	double	y_sin;
 	int		ray_index;
 
-	p_cos = cos(game->world.player.pitch);
-	p_sin = sin(game->world.player.pitch);
-	y_cos = cos(game->world.player.yaw);
-	y_sin = sin(game->world.player.yaw);
+	p_cos = cos(game->current_level->player.pitch);
+	p_sin = sin(game->current_level->player.pitch);
+	y_cos = cos(game->current_level->player.yaw);
+	y_sin = sin(game->current_level->player.yaw);
 	ray_index = -1;
 	while (++ray_index < game->rays_size)
 	{

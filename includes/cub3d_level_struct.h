@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:40:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 17:24:36 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 18:32:37 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,12 @@ typedef struct s_level
 	char			*log_message;
 	int				sprites_count;
 	t_sprite		*sprites;
+	t_plane			*x_planes;
+	t_plane			*y_planes;
+	t_plane			*z_planes;
+	int				x_planes_size;
+	int				y_planes_size;
+	int				z_planes_size;
 }	t_level;
 
 /*

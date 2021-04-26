@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 12:17:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/23 12:22:39 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 18:43:19 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	update_sprites(t_game *game)
 	while (++sprite_index < game->current_level->sprites_count)
 	{
 		sprite = &game->current_level->sprites[sprite_index];
-		v = sub_vector_vector(sprite->position, game->world.player.position);
-		if (distance_square2(v.vx, v.vy) > game->world.player.render_distance
-			* game->world.player.render_distance)
+		v = sub_vector_vector(sprite->position, game->current_level->player.position);
+		if (distance_square2(v.vx, v.vy) > game->current_level->player.render_distance
+			* game->current_level->player.render_distance)
 		{
 			sprite->to_render = FALSE;
 			continue ;

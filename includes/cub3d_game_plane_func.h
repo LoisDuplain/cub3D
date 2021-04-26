@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:45:12 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 17:19:40 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 18:37:35 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,73 +39,69 @@ void		init_planes(t_game *game);
 **	Update x planes.
 **	./game/plane/update_x_planes.c
 */
-void		update_x_planes(t_world *world);
+void		update_x_planes(t_level *level);
 
 /*
 **	Update y planes.
 **	./game/plane/update_y_planes.c
 */
-void		update_y_planes(t_world *world);
+void		update_y_planes(t_level *level);
 
 /*
 **	Update z planes.
 **	./game/plane/update_z_planes.c
 */
-void		update_z_planes(t_world *world);
+void		update_z_planes(t_level *level);
 
 /*
 **	Check intersection with x plane.
 **	./loop/render/x/intrsct_x_plane.c
 */
-t_bool		intrsct_x_plane(t_raycast_result *r_result, t_world world,
-				char **map_content, t_plane plane);
+t_bool		intrsct_x_plane(t_raycast_result *r_result, t_level *level,
+				t_plane plane);
 
 /*
 **	For all x positive planes.
 **	./loop/render/x/get_x_pos_planes.c
 */
-void		get_x_pos_planes(t_raycast_result *r_result, t_world world,
-				char **map_content);
+void		get_x_pos_planes(t_raycast_result *r_result, t_level *level);
 
 /*
 **	For all x negative planes.
 **	./loop/render/x/get_x_neg_planes.c
 */
-void		get_x_neg_planes(t_raycast_result *r_result, t_world world,
-				char **map_content);
+void		get_x_neg_planes(t_raycast_result *r_result, t_level *level);
 
 /*
 **	Check intersection with y plane.
 **	./loop/render/y/intrsct_y_plane.c
 */
-t_bool		intrsct_y_plane(t_raycast_result *r_result, t_world world,
-				char **map_content, t_plane plane);
+t_bool		intrsct_y_plane(t_raycast_result *r_result, t_level *level, 
+				t_plane plane);
 
 /*
 **	For all y positive planes.
 **	./loop/render/y/get_y_pos_planes.c
 */
-void		get_y_pos_planes(t_raycast_result *r_result, t_world world,
-				char **map_content);
+void		get_y_pos_planes(t_raycast_result *r_result, t_level *level);
 
 /*
 **	For all y negative planes.
 **	./loop/render/y/get_y_neg_planes.c
 */
-void		get_y_neg_planes(t_raycast_result *r_result, t_world world,
-				char **map_content);
+void		get_y_neg_planes(t_raycast_result *r_result, t_level *level);
 
 /*
 **	For all z positive planes.
 **	./loop/render/z/get_z_pos_planes.c
 */
-void		get_z_pos_planes(t_raycast_result *r_result, t_world world);
+void		get_z_pos_planes(t_raycast_result *r_result, t_level *level);
 
 /*
 **	For all z negative planes.
 **	./loop/render/z/get_z_neg_planes.c
 */
-void		get_z_neg_planes(t_raycast_result *r_result, t_world world);
+void		get_z_neg_planes(t_raycast_result *r_result, t_level *level);
 
 /*
 **	Get plane intersection point.
@@ -118,6 +114,6 @@ t_vector3	get_plane_intrsct_point(t_vector3 p_loc, t_vector3 r_dir,
 **	Check if intersection point is in world or no.
 **	./loop/render/is_in_world.c
 */
-t_bool		is_in_world(t_world world, t_vector3 intrsct);
+t_bool		is_in_world(t_level *level, t_vector3 intrsct);
 
 #endif

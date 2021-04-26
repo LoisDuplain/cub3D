@@ -6,37 +6,31 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/21 18:58:34 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 18:51:15 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	start_game(char *level_file_path, t_bool screenshot)
+void	start_game(char **argv, int level_size, t_bool screenshot)
 {
 	t_game	*game;
 	t_level	*level;
 
 	(void)screenshot;
 	game = create_game();
-	level = load_level(level_file_path);
+	game->levels_file_path = argv;
+	game->level_size = level_size;
+	level = load_level(argv[game->current_level_id]);
 	if (level == NULL)
 		exit_game(&game, ERROR, "First level loading failed.");
 	set_current_level(game, level);
 	if (level->log_type != OK)
 		exit_game(&game, level->log_type, level->log_message);
-	game->window = bettermlx_init_window("Cub3d - Lois Duplain",
+	game->window = bettermlx_init_window("cub3d - Lois Duplain",
 			level->window_width, level->window_height, DIVIDER);
 	if (game->window == NULL)
 		exit_game(&game, ERROR, "Window creation failed.");
-	init_textures(game);
-	init_player(game);
-	init_rays(game);
-	init_planes(game);
-	update_rays(game);
-	update_x_planes(&game->world);
-	update_y_planes(&game->world);
-	update_z_planes(&game->world);
-	update_sprites(game);
+	init_current_level(game);
 	bettermlx_register_loop(game->window, game, game_loop);
 }

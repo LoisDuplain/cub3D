@@ -5,13 +5,12 @@
 5.	Sauter								-	A faire
 6.	S’accroupir							-	A faire
 7.	Brouillard							-	OK
-8.	Afficher barre de vie				-	A faire
-9.	Multi niveaux						-	A faire	(PARSER OK)
-10.	Changement de FOV in-game			-	OK
-11.	Crosshair							-	OK
-12.	Minimap								-	A faire	(PARSER OK)
-13.	Bouger la caméra avec la souris		-	A faire
-14.	Multi threading						-	OK
-15.	Couleur a la place de texture		-	OK
-16.	Render distance variable in-game	-	OK
-17.	Divider modifiable in-game			-	A faire
+8.	Multi niveaux						-	A faire	(PARSER OK)
+9.	Changement de FOV in-game			-	OK
+10.	Crosshair							-	OK
+11.	Minimap								-	A faire	(PARSER OK)
+12.	Bouger la caméra avec la souris		-	A faire
+13.	Multi threading						-	OK
+14.	Couleur a la place de texture		-	OK
+15.	Render distance variable in-game	-	OK
+16.	Divider modifiable in-game			-	A faire

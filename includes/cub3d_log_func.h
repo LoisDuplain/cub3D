@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 12:51:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 16:26:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 18:03:13 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	display_log_type(t_log_type log_type);
 **	Display log message.
 **	./log/log.c
 */
-void	log_error(t_log_type log_type, char *message);
+void	log_message(t_log_type log_type, char *message);
 
 /*
 **	Set log in (t_level *)level.

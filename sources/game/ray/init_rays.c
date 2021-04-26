@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 16:51:35 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/16 10:35:59 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 18:41:11 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_rays(t_game *game)
 		while (++x < r_width)
 		{
 			game->rays[ray_index] = create_ray(create_render_vector(
-						game->world.player, game->window, x, y), x, y);
+						game->current_level->player, game->window, x, y), x, y);
 			ray_index++;
 		}
 	}
