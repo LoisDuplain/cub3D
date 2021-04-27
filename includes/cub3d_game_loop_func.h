@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 16:51:12 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/27 17:36:12 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,11 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384]);
 **	./game/loop/render_cross_hair.c
 */
 void	render_cross_hair(t_game *game);
+
+/*
+**	Render minimap.
+**	./game/loop/render_minimap.c
+*/
+void	render_minimap(t_game *game);
 
 #endif
