@@ -1,16 +1,15 @@
 1.	Regarder en haut et en bas			-	OK
 2.	Texture sol + plafond				-	OK
-3.	Collision contre les murs			-	A faire
-4.	Collision avec les sprites			-	A faire
-5.	Sauter								-	A faire
-6.	S’accroupir							-	A faire
-7.	Brouillard							-	OK
-8.	Multi niveaux						-	OK
-9.	Changement de FOV in-game			-	OK
-10.	Crosshair							-	OK
-11.	Minimap								-	A faire	(PARSER OK)
-12.	Bouger la caméra avec la souris		-	A faire
-13.	Multi threading						-	OK
-14.	Couleur a la place de texture		-	OK
-15.	Render distance variable in-game	-	OK
-16.	Divider modifiable in-game			-	A faire
+3.	Collision contre les murs			-	OK
+4.	Collision avec les sprites			-	OK
+5.	Brouillard							-	OK
+6.	Multi niveaux						-	OK
+7.	Changement de FOV in-game			-	OK
+8.	Crosshair							-	OK
+9.	Minimap								-	A faire	(PARSER OK)
+10.	Bouger la caméra avec la souris		-	A faire
+11.	Multi threading						-	OK
+12.	Couleur a la place de texture		-	OK
+13.	Render distance variable in-game	-	OK
+14.	Divider modifiable in-game			-	A faire
+15.	Max FPS / TPS						-	A faire

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 16:05:50 by jcambaki          #+#    #+#             */
-/*   Updated: 2021/04/26 17:22:13 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/27 14:56:49 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@
 
 # define RADIAN				0.01745
 
-# define MOVEMENT_SPEED		0.003
-# define ROTATION_SPEED		0.003
+# define MOVEMENT_SPEED		0.002
+# define ROTATION_SPEED		0.002
 
 # define RENDER_DISTANCE	10
 # define THREADS			8

@@ -6,20 +6,20 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:35:42 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 19:51:25 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/27 14:44:34 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	*render_loop(void *nr_thread)
+void	*render_loop(void *vr_thread)
 {
 	int					ray_index;
 	t_ray				ray;
 	t_raycast_result	r_result;
 	t_render_thread		*r_thread;
 
-	r_thread = (t_render_thread *)nr_thread;
+	r_thread = (t_render_thread *)vr_thread;
 	ray_index = r_thread->p_start - 1;
 	while (++ray_index < r_thread->p_end)
 	{
@@ -27,34 +27,13 @@ void	*render_loop(void *nr_thread)
 		r_result.distance = INT_MAX;
 		r_result.p_loc = r_thread->lvl->player.position;
 		r_result.ray = ray;
-		if (ray.r_dir.vx > 0)
-			get_x_pos_planes(&r_result, r_thread->lvl);
-		else
-			get_x_neg_planes(&r_result, r_thread->lvl);
-		if (ray.r_dir.vy > 0)
-			get_y_pos_planes(&r_result, r_thread->lvl);
-		else
-			get_y_neg_planes(&r_result, r_thread->lvl);
-		if (r_result.distance == INT_MAX)
-		{
-			if (ray.r_dir.vz > 0)
-				get_z_pos_planes(&r_result, r_thread->lvl);
-			else
-				get_z_neg_planes(&r_result, r_thread->lvl);
-		}
+		get_planes(r_thread, ray, &r_result);
 		if (r_result.distance >= r_thread->game->cur_lvl->player.render_distance
 			|| r_result.distance == INT_MAX)
 			bettermlx_pixel_put(r_thread->window, ray.pixel,
 				create_icolor(0, 0, 0, 0), 1);
 		else
-		{
-			if (r_result.plane.px == 1)
-				draw_plane_ew_texture(r_thread, r_result, ray);
-			else if (r_result.plane.py == 1)
-				draw_plane_sn_texture(r_thread, r_result, ray);
-			else if (r_result.plane.pz == 1)
-				draw_plane_cf_texture(r_thread, r_result, ray);
-		}
+			draw_plane_texture(r_thread, ray, r_result);
 		draw_sprites(r_thread, &r_result, ray);
 	}
 	return (NULL);

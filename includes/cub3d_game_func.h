@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 19:01:11 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/27 16:22:47 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,11 @@ void	next_level(t_game *game);
 **	./game/previous_level.c
 */
 void	previous_level(t_game *game);
+
+/*
+**	Next or previous level.
+**	./game/change_level.c
+*/
+void	change_level(t_game *game, t_bool keyboard[384]);
 
 #endif

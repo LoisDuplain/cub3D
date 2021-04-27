@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_game_player_struct.h                         :+:      :+:    :+:   */
+/*   draw_plane_texture.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 15:01:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 16:35:10 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/27 14:43:49 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/27 14:44:03 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_GAME_PLAYER_STRUCT_H
-# define CUB3D_GAME_PLAYER_STRUCT_H
+#include "cub3d.h"
 
-/*
-**	START CUSTOM INCLUDES
-*/
-
-# include "./cub3d.h"
-
-/*
-**	END CUSTOM INCLUDES
-*/
-
-/*
-**	START DEFINES
-*/
-
-typedef struct s_player
+void	draw_plane_texture(t_render_thread *r_thread, t_ray ray,
+	t_raycast_result r_result)
 {
-	t_vector3	position;
-	float		yaw;
-	float		pitch;
-	float		fov_x;
-	float		fov_y;
-	float		render_distance;
-}	t_player;
-
-/*
-**	END DEFINES
-*/
-
-#endif
+	if (r_result.plane.px == 1)
+		draw_plane_ew_texture(r_thread, r_result, ray);
+	else if (r_result.plane.py == 1)
+		draw_plane_sn_texture(r_thread, r_result, ray);
+	else if (r_result.plane.pz == 1)
+		draw_plane_cf_texture(r_thread, r_result, ray);
+}

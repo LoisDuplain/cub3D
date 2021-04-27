@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_game_player_struct.h                         :+:      :+:    :+:   */
+/*   sprite_collide_player.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 15:01:02 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 16:35:10 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/27 16:21:30 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/27 16:21:37 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_GAME_PLAYER_STRUCT_H
-# define CUB3D_GAME_PLAYER_STRUCT_H
+#include "cub3d.h"
 
-/*
-**	START CUSTOM INCLUDES
-*/
-
-# include "./cub3d.h"
-
-/*
-**	END CUSTOM INCLUDES
-*/
-
-/*
-**	START DEFINES
-*/
-
-typedef struct s_player
+t_bool	sprite_collide_player(t_game *game, float nx, float ny)
 {
-	t_vector3	position;
-	float		yaw;
-	float		pitch;
-	float		fov_x;
-	float		fov_y;
-	float		render_distance;
-}	t_player;
+	float		dist;
+	int			sprite_index;
+	t_sprite	sprite;
 
-/*
-**	END DEFINES
-*/
-
-#endif
+	sprite_index = 0;
+	while (++sprite_index < game->cur_lvl->sprites_count)
+	{
+		sprite = game->cur_lvl->sprites[sprite_index];
+		dist = distance_square2(sprite.position.vx - nx, sprite.position.vy - ny);
+		if (dist <= 0.0625)
+			return (TRUE);
+	}
+	return (FALSE);
+}
