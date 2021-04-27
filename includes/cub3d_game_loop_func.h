@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:50 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 14:40:58 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/27 16:51:12 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,26 @@
 
 /*
 **	The main game loop who runs render_loop and update_loop.
-**	./loop/game_loop.c
+**	./game/loop/game_loop.c
 */
-int			game_loop(t_game *game);
+int		game_loop(t_game *game);
 
 /*
 **	The render loop.
-**	./loop/render_loop.c
+**	./game/loop/render_loop.c
 */
-void		*render_loop(void *r_thread);
+void	*render_loop(void *r_thread);
 
 /*
 **	The update loop.
-**	./loop/update_loop.c
+**	./game/loop/update_loop.c
 */
-void		update_loop(t_game *game, long delta, t_bool keyboard[384]);
+void	update_loop(t_game *game, long delta, t_bool keyboard[384]);
+
+/*
+**	Render cross hair.
+**	./game/loop/render_cross_hair.c
+*/
+void	render_cross_hair(t_game *game);
 
 #endif

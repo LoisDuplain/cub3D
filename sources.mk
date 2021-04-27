@@ -26,6 +26,7 @@ SRCS += sources/game/level/next_level.c
 SRCS += sources/game/level/previous_level.c
 SRCS += sources/game/level/set_current_level.c
 SRCS += sources/game/loop/game_loop.c
+SRCS += sources/game/loop/render_cross_hair.c
 SRCS += sources/game/loop/render_loop.c
 SRCS += sources/game/loop/update_loop.c
 SRCS += sources/game/plane/create_plane.c
