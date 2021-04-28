@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 13:36:54 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 17:14:26 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,17 @@ void	change_level(t_game *game, t_bool keyboard[384]);
 **	./game/change_divider_kb.c
 */
 void	change_divider_kb(t_game *game, t_bool keyboard[384]);
+
+/*
+**	Key press hook.
+**	./game/key_press_hook.c
+*/
+int		key_press_hook(int key_code, t_game *game);
+
+/*
+**	Key release hook.
+**	./game/key_release_hook.c
+*/
+int		key_release_hook(int key_code, t_game *game);
 
 #endif

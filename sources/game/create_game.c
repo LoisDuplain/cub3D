@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:07:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 19:51:25 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 16:55:21 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ t_game	*create_game(void)
 	game->cur_lvl = NULL;
 	game->window = NULL;
 	game->rays = NULL;
+	game->last_render_time = bettermlx_get_time();
+	game->last_update_time = bettermlx_get_time();
 	return (game);
 }

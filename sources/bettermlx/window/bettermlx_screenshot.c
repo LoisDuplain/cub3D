@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 13:55:05 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 14:06:31 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 17:38:03 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,11 @@ void	bettermlx_screenshot(t_image *image, char *file_name)
 {
 	int	fd;
 
+	ft_putstr_nl("Taking screenshot...");
 	fd = open(file_name, O_CREAT | O_WRONLY | O_TRUNC, S_IRWXU);
 	ft_bfile(image, fd);
 	ft_binfo(image, fd);
 	ft_bdata(image, fd);
 	close(fd);
+	ft_putstr_nl("Screenshot saved.");
 }

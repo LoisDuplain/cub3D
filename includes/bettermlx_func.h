@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:42:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 14:03:14 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 17:10:23 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,18 +143,5 @@ void			bettermlx_register_loop(t_window *window, \
 **	./bettermlx/time/bettermlx_get_time.c
 */
 long long		bettermlx_get_time(void);
-
-/*
-**	Triggered when key is pressed in t_window window.
-**	./bettermlx/keyboard/key_press_hook.c
-*/
-int				key_press_hook(int key_code, \
-	t_window *window);
-
-/*
-**	Triggered when key is released in t_window window.
-**	./bettermlx/keyboard/key_release_hook.c
-*/
-int				key_release_hook(int key_code, t_window *window);
 
 #endif

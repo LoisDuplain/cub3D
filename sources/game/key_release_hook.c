@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_press_hook.c                                   :+:      :+:    :+:   */
+/*   key_release_hook.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 17:36:41 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/06 16:03:36 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/28 17:10:44 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/28 17:10:58 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	key_press_hook(int key_code, t_window *window)
+int	key_release_hook(int key_code, t_game *game)
 {
-	window->keyboard[key_code] = TRUE;
-	ft_printf("%d pressed.\n", key_code);
+	game->window->keyboard[key_code] = FALSE;
 	return (0);
 }

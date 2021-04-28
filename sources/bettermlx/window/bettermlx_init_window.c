@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 11:33:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 13:05:02 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 17:12:47 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ t_window	*bettermlx_init_window(
 	window->mlx_ptr = mlx_init();
 	window->win_ptr = mlx_new_window(window->mlx_ptr, width, height, title);
 	window->image = bettermlx_init_image(window, window->width, window->height);
-	bettermlx_hook(window, KEY_PRESS, key_press_hook, window);
-	bettermlx_hook(window, KEY_RELEASE, key_release_hook, window);
 	mlx_do_key_autorepeatoff(window->mlx_ptr);
 	return (window);
 }

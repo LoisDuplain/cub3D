@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:17:24 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 12:48:06 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 17:18:04 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	rotate_camera_kb(t_game *game, long delta, t_bool keyboard[384]);
 **	Change player fov.
 **	./game/player/change_fov.c
 */
-void	change_fov(t_game *game, long delta, t_bool keyboard[384]);
+void	change_fov(t_game *game, t_bool keyboard[384]);
 
 /*
 **	Changer player render distance.
 **	./game/player/change_render_distance.c
 */
-void	change_render_distance(t_game *game, long delta, t_bool keyboard[384]);
+void	change_render_distance(t_game *game, t_bool keyboard[384]);
 
 /*
 **	Move player.

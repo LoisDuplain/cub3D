@@ -13,3 +13,4 @@
 13.	Render distance variable in-game	-	OK
 14.	Divider modifiable in-game			-	OK
 15.	Max FPS / TPS						-	A faire
+16.	Prendre un screenshot				-	OK

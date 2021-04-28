@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:40:29 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 14:01:18 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 17:13:36 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	start_game(char **argv, int level_size, t_bool screenshot)
 			level->window_width, level->window_height, DIVIDER);
 	if (game->window == NULL)
 		exit_game(&game, ERROR, "Window creation failed.");
+	bettermlx_hook(game->window, KEY_PRESS, &key_press_hook, game);
+	bettermlx_hook(game->window, KEY_RELEASE, &key_release_hook, game);
 	init_mouse(game);
 	init_current_level(game);
 	bettermlx_register_loop(game->window, game, game_loop);
