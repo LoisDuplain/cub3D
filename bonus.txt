@@ -11,5 +11,5 @@
 11.	Multi threading						-	OK
 12.	Couleur a la place de texture		-	OK
 13.	Render distance variable in-game	-	OK
-14.	Divider modifiable in-game			-	A faire
+14.	Divider modifiable in-game			-	OK
 15.	Max FPS / TPS						-	A faire

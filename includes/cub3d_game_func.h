@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 13:36:04 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 13:36:54 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	*destroy_game(t_game **game);
 **	Hook mouse move events.
 **	./game/mouse_move_hook.c
 */
-int 	mouse_move_hook(int x, int y, t_game *game);
+int		mouse_move_hook(int x, int y, t_game *game);
 
 /*
 **	Init mouse.
