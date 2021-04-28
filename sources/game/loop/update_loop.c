@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:34:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 13:00:06 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 13:35:37 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,6 @@ void	update_loop(t_game *game, long delta, t_bool keyboard[384])
 	if (keyboard[KEY_K] || keyboard[KEY_L])
 		change_render_distance(game, delta, keyboard);
 	change_level(game, keyboard);
+	if (keyboard[KEY_PAGE_UP] || keyboard[KEY_PAGE_DOWN])
+		change_divider_kb(game, keyboard);
 }
