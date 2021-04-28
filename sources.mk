@@ -15,6 +15,7 @@ SRCS += sources/bettermlx/window/bettermlx_destroy_window.c
 SRCS += sources/bettermlx/window/bettermlx_init_image.c
 SRCS += sources/bettermlx/window/bettermlx_init_window.c
 SRCS += sources/bettermlx/window/bettermlx_init_xpm_image.c
+SRCS += sources/bettermlx/window/bettermlx_screenshot.c
 SRCS += sources/game/change_divider_kb.c
 SRCS += sources/game/create_game.c
 SRCS += sources/game/destroy_game.c

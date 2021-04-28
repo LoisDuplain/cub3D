@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 13:36:14 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 17:35:55 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 14:04:18 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ int	game_loop(t_game *game)
 	render_minimap(game);
 	render_cross_hair(game);
 	bettermlx_render(game->window);
-	if (game->window->keyboard[KEY_ESCAPE])
+	if (game->screenshot)
+		bettermlx_screenshot(game->window->image, "screenshot.bmp");
+	if (game->window->keyboard[KEY_ESCAPE] || game->screenshot)
 		exit_game(&game, OK, "Game exited successfully.");
 	update_loop(game, bettermlx_get_time() - start_time,
 		game->window->keyboard);

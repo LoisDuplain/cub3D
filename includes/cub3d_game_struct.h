@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 15:04:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 12:51:38 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 14:01:08 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_game
 	t_ray		*rays;
 	int			rays_size;
 	t_texture	*textures[7];
+	t_bool		screenshot;
 }	t_game;
 
 /*

@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:42:09 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 12:59:44 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 14:03:14 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ t_image			*bettermlx_init_image(t_window *window, \
 */
 t_image			*bettermlx_init_xpm_image(t_window *window, \
 	char *path);
+
+/*
+**	Screen (t_image *)image to file (char *)file_name;
+**	./bettermlx/window/bettermlx_screenshot.c
+*/
+void			bettermlx_screenshot(t_image *image, char *file_name);
 
 /*
 **	Destroy(free) image. (allocated)
