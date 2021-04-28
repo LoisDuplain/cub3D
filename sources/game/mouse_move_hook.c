@@ -1,46 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d_game_struct.h                                :+:      :+:    :+:   */
+/*   mouse_move_hook.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 15:04:13 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 12:51:38 by lduplain         ###   ########lyon.fr   */
+/*   Created: 2021/04/28 13:08:35 by lduplain          #+#    #+#             */
+/*   Updated: 2021/04/28 13:15:40 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_GAME_STRUCT_H
-# define CUB3D_GAME_STRUCT_H
+#include "cub3d.h"
 
-/*
-**	START CUSTOM INCLUDES
-*/
-
-# include "./cub3d.h"
-
-/*
-**	END CUSTOM INCLUDES
-*/
-
-/*
-**	START DEFINES
-*/
-
-typedef struct s_game
+int	mouse_move_hook(int x, int y, t_game *game)
 {
-	int			level_size;
-	int			current_level_id;
-	char		**levels_file_path;
-	t_level		*cur_lvl;
-	t_window	*window;
-	t_ray		*rays;
-	int			rays_size;
-	t_texture	*textures[7];
-}	t_game;
+	int	mx;
+	int	my;
 
-/*
-**	END DEFINES
-*/
-
-#endif
+	mx = x - game->window->width * 0.5;
+	my = y - game->window->height * 0.5;
+	rotate_camera(game, mx * ROTATION_SPEED, my * ROTATION_SPEED);
+	mlx_mouse_move(game->window->win_ptr,
+		game->window->width * 0.5,
+		game->window->height * 0.5);
+	return (0);
+}

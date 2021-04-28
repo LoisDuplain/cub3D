@@ -6,8 +6,8 @@
 6.	Multi niveaux						-	OK
 7.	Changement de FOV in-game			-	OK
 8.	Crosshair							-	OK
-9.	Minimap								-	A faire	(PARSER OK)
-10.	Bouger la caméra avec la souris		-	A faire
+9.	Minimap								-	OK
+10.	Bouger la caméra avec la souris		-	OK
 11.	Multi threading						-	OK
 12.	Couleur a la place de texture		-	OK
 13.	Render distance variable in-game	-	OK

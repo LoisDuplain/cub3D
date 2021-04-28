@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 16:22:47 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 13:12:15 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ t_game	*create_game(void);
 **	./game/destroy_game.c
 */
 void	*destroy_game(t_game **game);
+
+/*
+**	Hook mouse move events.
+**	./game/mouse_move_hook.c
+*/
+int 	mouse_move_hook(int x, int y, t_game *game);
+
+/*
+**	Init mouse.
+**	./game/init_mouse.c
+*/
+void	init_mouse(t_game *game);
 
 /*
 **	Start the game with a map file path char **argv[0] and if a screenshot

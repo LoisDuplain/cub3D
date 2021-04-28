@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:17:24 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 16:21:57 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/28 12:48:06 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,16 @@
 void	init_player(t_game *game);
 
 /*
-**	Rotate player camera.
+**	Rotate player camera. ayaw(add yaw) apitch(add pitch).
 **	./game/player/rotate_camera.c
 */
-void	rotate_camera(t_game *game, long delta, t_bool keyboard[384]);
+void	rotate_camera(t_game *game, float ayaw, float apitch);
+
+/*
+**	Rotate player camera (keyboard).
+**	./game/player/rotate_camera_kb.c
+*/
+void	rotate_camera_kb(t_game *game, long delta, t_bool keyboard[384]);
 
 /*
 **	Change player fov.
