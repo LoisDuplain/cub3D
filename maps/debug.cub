@@ -1,0 +1,20 @@
+R   1920    1080
+
+NO  ./textures/debug/north.xpm
+SO  ./textures/debug/south.xpm
+WE  ./textures/debug/west.xpm
+EA  ./textures/debug/east.xpm
+
+S   ./textures/debug/sprite.xpm
+F   ./textures/debug/floor.xpm
+C   ./textures/debug/ceiling.xpm
+1111111111111
+1000000000001
+1200000000021
+1001010101001
+120000S000021
+1001010101001
+1200000000021
+1000000000001
+1111111111111
+
