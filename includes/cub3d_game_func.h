@@ -6,7 +6,7 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 14:41:16 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/28 17:14:26 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/29 18:23:17 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,12 @@ void	init_mouse(t_game *game);
 **	./game/start_game.c
 */
 void	start_game(char **argv, int level_size, t_bool screenshot);
+
+/*
+**	Close game with red button.
+**	./game/start_game.c
+*/
+int		close_game(t_game *game);
 
 /*
 **	Exit game correctly with message char *message.
