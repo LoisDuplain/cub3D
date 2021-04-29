@@ -1,3 +1,4 @@
+#define GL_SILENCE_DEPRECATION
 /*
 **
 ** mlx_opengl.h 

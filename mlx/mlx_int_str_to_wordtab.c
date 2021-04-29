@@ -2,9 +2,12 @@
 // str 2 wordtab & co
 // by ol
 
+#define GL_SILENCE_DEPRECATION
 
 #include <stdlib.h>
 #include <string.h>
+
+
 
 int	mlx_int_str_str(char *str,char *find,int len)
 {

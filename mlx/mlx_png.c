@@ -1,4 +1,4 @@
-
+#define GL_SILENCE_DEPRECATION
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,6 +13,7 @@
 
 #include <OpenGL/gl3.h>
 #include	"mlx_int.h"
+
 
 
 #define	PNG_MAGIC_SIZE	8

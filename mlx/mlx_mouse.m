@@ -1,10 +1,14 @@
 #include	<stdio.h>
 
+#define GL_SILENCE_DEPRECATION
+
 #import <Cocoa/Cocoa.h>
 #import <OpenGL/gl3.h>
 
 #include	"mlx_int.h"
 #include	"mlx_new_window.h"
+
+
 
 int	mlx_mouse_hide()
 {

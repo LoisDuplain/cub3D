@@ -6,12 +6,14 @@
 /*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 16:11:52 by lduplain          #+#    #+#             */
-/*   Updated: 2021/02/16 16:12:31 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/04/29 13:28:59 by lduplain         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MLX_INT_H
 # define MLX_INT_H
+
+#define GL_SILENCE_DEPRECATION
 
 # define MAX_EVENT		32
 # define MAX_PIXEL_NB	200000

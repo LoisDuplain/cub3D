@@ -40,11 +40,13 @@
 ** images, et represente la transparence et non l'opacite comme
 ** c'est normalement le cas.
 */
-
+#define GL_SILENCE_DEPRECATION
 
 #ifndef MLX_H
 
 #define	MLX_H
+
+
 
 
 void	*mlx_init();

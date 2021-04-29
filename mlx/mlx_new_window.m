@@ -1,5 +1,7 @@
 //  mlx_new_window.m
 
+#define GL_SILENCE_DEPRECATION
+
 #import <Cocoa/Cocoa.h>
 #import <OpenGL/gl3.h>
 #import <AppKit/NSOpenGLView.h>
@@ -9,6 +11,7 @@
 
 #include "mlx_int.h"
 #include "mlx_new_window.h"
+
 
 
 NSOpenGLPixelFormatAttribute pfa_attrs[] =

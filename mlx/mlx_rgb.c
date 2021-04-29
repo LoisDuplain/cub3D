@@ -2,7 +2,7 @@
 ** This is a generated file with rgb2c.pl and rgb.txt from
 ** the XFree86 distribution.
 */
-
+#define GL_SILENCE_DEPRECATION
 
 struct s_col_name mlx_col_name[] =
 {
