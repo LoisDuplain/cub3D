@@ -1,4 +1,3 @@
-<!--
 <h1 align="center">🧱 Cub3D 🎥</h1>
 
 <p align="center">
@@ -29,24 +28,8 @@
 
 <h2 align="left">Compile</h2>
 <p align="left">To basically compile program:</p>
-```HTML
-<h2>Example of code</h2>
+<code>make</code>
 
-<pre>
-    <div class="container">
-        <div class="block two first">
-            <h2>Your title</h2>
-            <div class="wrap">
-            //Your content
-            </div>
-        </div>
-    </div>
-</pre>
-```
-
-```bash
-make
-```
 <p align="left">To recompile entire program:</p>
 ```bash
 make re
@@ -70,12 +53,15 @@ make fclean
 <h2 align="left">Run</h2>
 <h2 align="left">Controls</h2>
 <h2 align="left">Parsing</h2>
--->
 
+<!--
 # Galaxy simulation
 
-![release](https://img.shields.io/badge/release-v3.0-blueviolet)
-![language](https://img.shields.io/badge/language-C%2B%2B-0052cf)
-![library](https://img.shields.io/badge/library-SFML-00cf2c)
-![size](https://img.shields.io/badge/size-32%20Mo-f12222)
-![license](https://img.shields.io/badge/license-CC--0-0bb9ec)
+![platform: osx 10.14.x](https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square)
+![language: c](https://img.shields.io/badge/language-C%2B%2B-0052cf)
+![framework: opengl](https://img.shields.io/badge/library-SFML-00cf2c)
+![framework: appkit](https://img.shields.io/badge/size-32%20Mo-f12222)
+![library: minilibx](https://img.shields.io/badge/license-CC--0-0bb9ec)
+![library: best-libft](https://img.shields.io/badge/license-CC--0-0bb9ec)
+![42 login: lduplain](https://img.shields.io/badge/license-CC--0-0bb9ec)
+-->
