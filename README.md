@@ -59,9 +59,9 @@ make fclean
 # 🧱 Cub3D 🎥
 
 ![platform: osx 10.14.x](https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square)
-![language: c](https://img.shields.io/badge/language-C%2B%2B-0052cf)
-![framework: opengl](https://img.shields.io/badge/library-SFML-00cf2c)
-![framework: appkit](https://img.shields.io/badge/size-32%20Mo-f12222)
-![library: minilibx](https://img.shields.io/badge/license-CC--0-0bb9ec)
-![library: best-libft](https://img.shields.io/badge/license-CC--0-0bb9ec)
-![42 login: lduplain](https://img.shields.io/badge/license-CC--0-0bb9ec)
+![language: c](https://img.shields.io/badge/language-C-purple?style=flat-square)
+![framework: opengl](https://img.shields.io/badge/framework-OpenGL-blue?style=flat-square)
+![framework: appkit](https://img.shields.io/badge/framework-AppKit-blue?style=flat-square)
+![library: minilibx](https://img.shields.io/badge/library-MiniLibX-orange?style=flat-square)
+![library: best-libft](https://img.shields.io/badge/library-best--libft-orange?style=flat-square)
+![42 login: lduplain](https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square)
