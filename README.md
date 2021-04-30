@@ -65,3 +65,7 @@ make fclean
 ![library: minilibx](https://img.shields.io/badge/library-MiniLibX-orange?style=flat-square)
 ![library: best-libft](https://img.shields.io/badge/library-best--libft-orange?style=flat-square)
 ![42 login: lduplain](https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square)
+
+```bash
+make
+```
