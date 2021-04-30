@@ -23,7 +23,11 @@
     <img alt="42 login: lduplain" src="https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square" target="_blank" />
   </a>
 </p>
+
+<p align="left">Project description...</p>
+
 <h2 align="left">Compile</h2>
+<p align="left">To basically compile program:</p>
 <h2 align="left">Run</h2>
 <h2 align="left">Controls</h2>
 <h2 align="left">Parsing</h2>
