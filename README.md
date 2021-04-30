@@ -24,7 +24,7 @@
   </a>
 </p>
 
-<p align="left">Project description...</p>
+<p align="left">Readme in progress...</p>
 
 <h2 align="left">Compile</h2>
 <p align="left">To basically compile program:</p>
