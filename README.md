@@ -30,7 +30,7 @@
 <p align="left">To basically compile program:</p>
 
 ```bash
-make export
+make
 ```
 
 <p align="left">To recompile entire program:</p>
