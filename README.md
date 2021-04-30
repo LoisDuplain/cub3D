@@ -23,49 +23,8 @@
     <img alt="42 login: lduplain" src="https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square" target="_blank" />
   </a>
 </p>
-<!--
+
 <p align="left">Project description...</p>
-
-<h2 align="left">Compile</h2>
-<p align="left">To basically compile program:</p>
-<code>make</code>
-
-<p align="left">To recompile entire program:</p>
-```bash
-make re
-```
-
-<p align="left">To clean all *.o in project:</p>
-```bash
-make oclean
-```
-
-<p align="left">To clean all *.o in project and libraries:</p>
-```bash
-make clean
-```
-
-<p align="left">To clean all *.o and compiled things in project and libraries:</p>
-```bash
-make fclean
-```
-
-<h2 align="left">Run</h2>
-<h2 align="left">Controls</h2>
-<h2 align="left">Parsing</h2>
--->
-
-<!--
-# 🧱 Cub3D 🎥
-
-![platform: osx 10.14.x](https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square)
-![language: c](https://img.shields.io/badge/language-C-purple?style=flat-square)
-![framework: opengl](https://img.shields.io/badge/framework-OpenGL-blue?style=flat-square)
-![framework: appkit](https://img.shields.io/badge/framework-AppKit-blue?style=flat-square)
-![library: minilibx](https://img.shields.io/badge/library-MiniLibX-orange?style=flat-square)
-![library: best-libft](https://img.shields.io/badge/library-best--libft-orange?style=flat-square)
-![42 login: lduplain](https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square)
--->
 
 <h2 align="left">Compile</h2>
 <p align="left">To basically compile program:</p>
@@ -73,3 +32,31 @@ make fclean
 ```bash
 make
 ```
+
+<p align="left">To recompile entire program:</p>
+
+```bash
+make re
+```
+
+<p align="left">To clean all *.o in project:</p>
+
+```bash
+make oclean
+```
+
+<p align="left">To clean all *.o in project and libraries:</p>
+
+```bash
+make clean
+```
+
+<p align="left">To clean all *.o and compiled things in project and libraries:</p>
+
+```bash
+make fclean
+```
+
+<h2 align="left">Run</h2>
+<h2 align="left">Controls</h2>
+<h2 align="left">Parsing</h2>
