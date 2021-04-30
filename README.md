@@ -15,4 +15,7 @@
   <a href="https://github.com/LoisDuplain/best-libft">
     <img alt="library: best-libft" src="https://img.shields.io/badge/library-best--libft-orange?style=flat-square" target="_blank" />
   </a>
+  <a href="https://profile.intra.42.fr/users/lduplain">
+    <img alt="42 login: lduplain" src="https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square" target="_blank" />
+  </a>
 </p>
