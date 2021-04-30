@@ -28,6 +28,21 @@
 
 <h2 align="left">Compile</h2>
 <p align="left">To basically compile program:</p>
+```HTML
+<h2>Example of code</h2>
+
+<pre>
+    <div class="container">
+        <div class="block two first">
+            <h2>Your title</h2>
+            <div class="wrap">
+            //Your content
+            </div>
+        </div>
+    </div>
+</pre>
+```
+
 ```bash
 make
 ```
@@ -42,9 +57,7 @@ make oclean
 ```
 
 <p align="left">To clean all *.o in project and libraries:</p>
-```bash
-make clean
-```
+  $ make clean
 
 <p align="left">To clean all *.o and compiled things in project and libraries:</p>
 ```bash
