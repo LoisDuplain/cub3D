@@ -71,3 +71,11 @@ make fclean
 <h2 align="left">Controls</h2>
 <h2 align="left">Parsing</h2>
 -->
+
+# Galaxy simulation
+
+![release](https://img.shields.io/badge/release-v3.0-blueviolet)
+![language](https://img.shields.io/badge/language-C%2B%2B-0052cf)
+![library](https://img.shields.io/badge/library-SFML-00cf2c)
+![size](https://img.shields.io/badge/size-32%20Mo-f12222)
+![license](https://img.shields.io/badge/license-CC--0-0bb9ec)
