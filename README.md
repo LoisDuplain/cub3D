@@ -1,3 +1,4 @@
+<!--
 <h1 align="center">🧱 Cub3D 🎥</h1>
 
 <p align="center">
@@ -53,9 +54,9 @@ make fclean
 <h2 align="left">Run</h2>
 <h2 align="left">Controls</h2>
 <h2 align="left">Parsing</h2>
+-->
 
-<!--
-# Galaxy simulation
+# 🧱 Cub3D 🎥
 
 ![platform: osx 10.14.x](https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square)
 ![language: c](https://img.shields.io/badge/language-C%2B%2B-0052cf)
@@ -64,4 +65,3 @@ make fclean
 ![library: minilibx](https://img.shields.io/badge/license-CC--0-0bb9ec)
 ![library: best-libft](https://img.shields.io/badge/license-CC--0-0bb9ec)
 ![42 login: lduplain](https://img.shields.io/badge/license-CC--0-0bb9ec)
--->
