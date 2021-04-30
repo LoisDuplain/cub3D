@@ -1,5 +1,6 @@
 <h1 align="center">🧱 Cub3D 🎥</h1>
 
+<!--
 <p align="center">
   <a href="https://fr.wikipedia.org/wiki/MacOS_Mojave">
     <img alt="platform: osx 10.14.x" src="https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square" target="_blank" />
@@ -23,6 +24,7 @@
     <img alt="42 login: lduplain" src="https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square" target="_blank" />
   </a>
 </p>
+-->
 
 <p align="left">Project description...</p>
 
@@ -57,7 +59,9 @@ make oclean
 ```
 
 <p align="left">To clean all *.o in project and libraries:</p>
-  $ make clean
+```bash
+make clean
+```
 
 <p align="left">To clean all *.o and compiled things in project and libraries:</p>
 ```bash
