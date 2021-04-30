@@ -28,6 +28,29 @@
 
 <h2 align="left">Compile</h2>
 <p align="left">To basically compile program:</p>
+```bash
+make
+```
+<p align="left">To recompile entire program:</p>
+```bash
+make re
+```
+
+<p align="left">To clean all *.o in project:</p>
+```bash
+make oclean
+```
+
+<p align="left">To clean all *.o in project and libraries:</p>
+```bash
+make clean
+```
+
+<p align="left">To clean all *.o and compiled things in project and libraries:</p>
+```bash
+make fclean
+```
+
 <h2 align="left">Run</h2>
 <h2 align="left">Controls</h2>
 <h2 align="left">Parsing</h2>
