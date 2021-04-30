@@ -1,4 +1,3 @@
-<!--
 <h1 align="center">🧱 Cub3D 🎥</h1>
 
 <p align="center">
@@ -24,7 +23,7 @@
     <img alt="42 login: lduplain" src="https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square" target="_blank" />
   </a>
 </p>
-
+<!--
 <p align="left">Project description...</p>
 
 <h2 align="left">Compile</h2>
@@ -56,6 +55,7 @@ make fclean
 <h2 align="left">Parsing</h2>
 -->
 
+<!--
 # 🧱 Cub3D 🎥
 
 ![platform: osx 10.14.x](https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square)
@@ -65,6 +65,7 @@ make fclean
 ![library: minilibx](https://img.shields.io/badge/library-MiniLibX-orange?style=flat-square)
 ![library: best-libft](https://img.shields.io/badge/library-best--libft-orange?style=flat-square)
 ![42 login: lduplain](https://img.shields.io/badge/42%20login-lduplain-green?style=flat-square)
+-->
 
 ```bash
 make
