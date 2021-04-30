@@ -13,6 +13,6 @@
     <img alt="library: minilibx" src="https://img.shields.io/badge/library-MiniLibX-orange" target="_blank" />
   </a>
   <a href="https://github.com/LoisDuplain/best-libft">
-    <img alt="library: best-libft" src="https://img.shields.io/badge/library-best-libft-orange" target="_blank" />
+    <img alt="library: best-libft" src="https://img.shields.io/badge/library-bestlibft-orange" target="_blank" />
   </a>
 </p>
