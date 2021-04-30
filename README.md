@@ -1,7 +1,7 @@
 <h1 align="center">🧱 Cub3D 🎥</h1>
 <p align="center">
   <a href="https://fr.wikipedia.org/wiki/MacOS_Mojave">
-    <img alt="platform: osx 10.14.x" src="https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat" target="_blank" />
+    <img alt="platform: osx 10.14.x" src="https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square" target="_blank" />
   </a>
   <a href="https://fr.wikipedia.org/wiki/OpenGL">
     <img alt="framework: opengl" src="https://img.shields.io/badge/framework-OpenGL-blue?style=flat-square" target="_blank" />
