@@ -69,6 +69,7 @@ make fclean
 
 <h2 align="left">Compile</h2>
 <p align="left">To basically compile program:</p>
+
 ```bash
 make
 ```
