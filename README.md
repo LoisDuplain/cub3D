@@ -81,6 +81,7 @@ WASD
 ```
 
 <p align="left">Camera rotation:</p>
+
 ```
 ▲ ▼ ► ◄
 ```
