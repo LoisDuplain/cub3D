@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://fr.wikipedia.org/wiki/MacOS_Mojave" target="_blank">
-    <img alt="platform: osx 10.14.x" src="https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square"/>
+    <img alt="platform: osx 10.14.x" src="https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square" target="_blank"/>
   </a>
   <a href="https://fr.wikipedia.org/wiki/C_(langage)" target="_blank">
     <img alt="language: c" src="https://img.shields.io/badge/language-C-purple?style=flat-square"/>
