@@ -1,4 +1,4 @@
-<h1 align="center">🧱 Cub3D 🎥</h1>
+<h1 align="center">🧱 cub3D 🎥</h1>
 
 <p align="center">
   <a href="https://fr.wikipedia.org/wiki/MacOS_Mojave">
@@ -58,5 +58,18 @@ make fclean
 ```
 
 <h2 align="left">Run</h2>
+<p align="left">To basically run:</p>
+
+```bash
+./cub3D <map_path_1> <map_path_2> <map_path_...>
+```
+
+<p align="left">Automatically save first frame:</p>
+
+```bash
+./cub3D <map_path_1> <map_path_2> <map_path_...> --save
+```
+
 <h2 align="left">Controls</h2>
 <h2 align="left">Parsing</h2>
+<h2 align="left">Bonuses</h2>
