@@ -77,7 +77,7 @@ make fclean
 <p align="left">Player movement:</p>
 
 ```
-WASD
+W A S D
 ```
 
 <p align="left">Camera rotation:</p>
