@@ -72,7 +72,7 @@ make fclean
 ./cub3D <map_path_1> <map_path_2> <map_path_...> --save
 ```
 
-<h2 align="left">🎮 Controls</h2>
+<h2 align="left">🎮 Controls (QWERTY)</h2>
 
 <p align="left">Player movement:</p>
 
