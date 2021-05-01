@@ -75,18 +75,18 @@ make fclean
 <h2 align="left">✨ Bonuses</h2>
 
 - Look up and down
-- Texture sol + plafond
-- Collision contre les murs
-- Collision avec les sprites
-- Brouillard
-- Multi niveaux
-- Changement de FOV in-game
+- Texture on ground and ceiling
+- Collide with walls
+- Collide with sprites
+- Fog
+- Multi level
+- Changing FOV in-game
 - Crosshair
 - Minimap
-- Bouger la caméra avec la souris
+- Move camera with mouse
 - Multi threading
-- Couleur a la place de texture
-- Render distance variable in-game
-- Divider modifiable in-game
-- Max FPS / TPS
-- Prendre un screenshot
+- Replace texture by color in parsing
+- Changing render distance in-game
+- Changing pixel divider in-game
+- Max frames per second and ticks per second
+- Take a screenshot
