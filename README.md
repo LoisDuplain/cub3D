@@ -70,6 +70,23 @@ make fclean
 ./cub3D <map_path_1> <map_path_2> <map_path_...> --save
 ```
 
-<h2 align="left">Controls</h2>
-<h2 align="left">Parsing</h2>
-<h2 align="left">Bonuses</h2>
+<h2 align="left">🎮 Controls</h2>
+<h2 align="left">📝 Parsing</h2>
+<h2 align="left">✨ Bonuses</h2>
+
+1.	Regarder en haut et en bas
+2.	Texture sol + plafond
+3.	Collision contre les murs
+4.	Collision avec les sprites
+5.	Brouillard
+6.	Multi niveaux
+7.	Changement de FOV in-game
+8.	Crosshair
+9.	Minimap
+10.	Bouger la caméra avec la souris
+11.	Multi threading
+12.	Couleur a la place de texture
+13.	Render distance variable in-game
+14.	Divider modifiable in-game
+15.	Max FPS / TPS
+16.	Prendre un screenshot
