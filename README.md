@@ -76,10 +76,10 @@ make fclean
 
 <p align="left">Player movement:</p>
 <p align="left">
-  <img alt="key: W" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/W.png" width="30"/>
-  <img alt="key: A" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/A.png" width="30"/>
-  <img alt="key: S" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/S.png" width="30"/>
-  <img alt="key: D" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/D.png" width="30"/>
+  <img alt="key: W" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/W.png" width="60"/>
+  <img alt="key: A" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/A.png" width="60"/>
+  <img alt="key: S" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/S.png" width="60"/>
+  <img alt="key: D" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/D.png" width="60"/>
 </p>
 
 <p align="left">Camera rotation:</p>
