@@ -24,6 +24,8 @@
   </a>
 </p>
 
+<img alt="key: A" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/A.png" target="_blank" />
+
 <p align="left">Readme in progress...</p>
 
 <h2 align="left">🖼️ Gallery</h2>
