@@ -75,16 +75,20 @@ make fclean
 <h2 align="left">🎮 Controls</h2>
 
 <p align="left">Player movement:</p>
-<img alt="key: W" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/W.png"/>
-<img alt="key: A" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/A.png"/>
-<img alt="key: S" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/S.png"/>
-<img alt="key: D" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/D.png"/>
+<p align="left">
+  <img alt="key: W" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/W.png"/>
+  <img alt="key: A" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/A.png"/>
+  <img alt="key: S" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/S.png"/>
+  <img alt="key: D" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/D.png"/>
+</p>
 
 <p align="left">Camera rotation:</p>
-<img alt="key: arrow_up" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_up.png"/>
-<img alt="key: arrow_down" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_down.png"/>
-<img alt="key: arrow_left" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_left.png"/>
-<img alt="key: arrow_right" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_right.png"/>
+<p align="left">
+  <img alt="key: arrow_up" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_up.png"/>
+  <img alt="key: arrow_down" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_down.png"/>
+  <img alt="key: arrow_left" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_left.png"/>
+  <img alt="key: arrow_right" src="https://raw.githubusercontent.com/LoisDuplain/cub3D/main/readme-resources/arrow_right.png"/>
+</p>
 
 <h2 align="left">📝 Parsing</h2>
 <h2 align="left">✨ Bonuses</h2>
