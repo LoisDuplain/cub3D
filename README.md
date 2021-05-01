@@ -86,6 +86,36 @@ WASD
 ▲ ▼ ► ◄
 ```
 
+<p align="left">Screenshot:</p>
+
+```
+F2
+```
+
+<p align="left">Previous/next level:</p>
+
+```
+< / >
+```
+
+<p align="left">Decrease/increase render distance:</p>
+
+```
+K / L
+```
+
+<p align="left">Decrease/increase pixel divider:</p>
+
+```
+Page Down / Page Up
+```
+
+<p align="left">Decrease/increase FOV:</p>
+
+```
+NumPad Sub / NumPad Add
+```
+
 <h2 align="left">📝 Parsing</h2>
 <h2 align="left">✨ Bonuses</h2>
 
