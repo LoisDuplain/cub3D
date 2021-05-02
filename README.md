@@ -24,7 +24,7 @@
   </a>
 </p>
 
-<p align="left">Readme in progress...</p>
+<p align="left">Cub3D is a game engine written in C. It is inspired by one of the first FPS Wolfenstein3D.</p>
 
 <h2 align="left">🖼️ Gallery</h2>
 
@@ -117,6 +117,16 @@ NumPad Sub / NumPad Add
 ```
 
 <h2 align="left">📝 Parsing</h2>
+
+<p align="left">Walls:</p>
+
+```
+NO --> North Wall
+SO --> South Wall
+WE --> West Wall
+EA --> East Wall
+```
+
 <h2 align="left">✨ Bonuses</h2>
 
 - Look up and down
