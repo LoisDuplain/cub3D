@@ -63,13 +63,13 @@ make fclean
 <p align="left">To basically run:</p>
 
 ```bash
-./cub3D <map_path_1> <map_path_2> <map_path_...>
+./cub3D <map_path_1> <map_path_2> <map_path_...>                (default maps in ./maps folder)
 ```
 
 <p align="left">Automatically save first frame:</p>
 
 ```bash
-./cub3D <map_path_1> <map_path_2> <map_path_...> --save
+./cub3D <map_path_1> <map_path_2> <map_path_...> --save         (default maps in ./maps folder)
 ```
 
 <h2 align="left">🎮 Controls (QWERTY)</h2>
