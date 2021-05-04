@@ -130,6 +130,9 @@ EA --> East Wall
 <p align="left">You can put texture or color on wall:</p>
 
 ```
+XX  <r,g,b>
+XX  <path>.xpm
+
 XX  31,219,81                 --> Green
 XX  ./path/to/texture.xpm     --> Path to texture (default maps in ./maps folder)
 ```
