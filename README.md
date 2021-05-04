@@ -1,5 +1,7 @@
 <h1 align="center">🧱 cub3D 🎥</h1>
 
+![opengl](https://img.shields.io/badge/framework-OpenGL-blue?style=flat-square)
+
 <p align="center">
   <a href="https://fr.wikipedia.org/wiki/MacOS_Mojave" target="_blank">
     <img alt="platform: osx 10.14.x" src="https://img.shields.io/badge/platform-osx%20v10.14.x-red?style=flat-square"/>
@@ -10,9 +12,6 @@
   <a href="https://fr.wikipedia.org/wiki/OpenGL" target="_blank">
     <img alt="framework: opengl" src="https://img.shields.io/badge/framework-OpenGL-blue?style=flat-square"/>
   </a>
-  
-  ![opengl](https://img.shields.io/badge/framework-OpenGL-blue?style=flat-square)
-  
   <a href="https://developer.apple.com/documentation/appkit" target="_blank">
     <img alt="framework: appkit" src="https://img.shields.io/badge/framework-AppKit-blue?style=flat-square"/>
   </a>
