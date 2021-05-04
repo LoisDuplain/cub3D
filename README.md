@@ -8,7 +8,7 @@
     <img alt="language: c" src="https://img.shields.io/badge/language-C-purple?style=flat-square"/>
   </a>
   <a href="https://fr.wikipedia.org/wiki/OpenGL" target="_blank">
-    <img alt="framework: opengl" src="https://img.shields.io/badge/framework-OpenGL-green?style=flat-square"/>
+    <img alt="framework: opengl" src="https://img.shields.io/badge/framework-OpenGL-blue?style=flat-square"/>
   </a>
   <a href="https://developer.apple.com/documentation/appkit" target="_blank">
     <img alt="framework: appkit" src="https://img.shields.io/badge/framework-AppKit-blue?style=flat-square"/>
