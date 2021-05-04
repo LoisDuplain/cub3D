@@ -127,6 +127,13 @@ WE --> West Wall
 EA --> East Wall
 ```
 
+<p align="left">You can put texture or color on wall:</p>
+
+```
+XX  31,219,81                 --> Green
+XX  ./path/to/texture.xpm     --> Path to texture
+```
+
 <h2 align="left">✨ Bonuses</h2>
 
 - Look up and down
