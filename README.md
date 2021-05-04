@@ -11,7 +11,7 @@
     <img alt="framework: opengl" src="https://img.shields.io/badge/framework-OpenGL-green?style=flat-square"/>
   </a>
   <a href="https://developer.apple.com/documentation/appkit" target="_blank">
-    <img alt="framework: appkit" src="https://img.shields.io/badge/framework-AppKit-blue?style=flat-square"/>
+    <img alt="framework: appkit" src="https://img.shields.io/badge/framework-AppKit-green?style=flat-square"/>
   </a>
   <a href="https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html" target="_blank">
     <img alt="library: minilibx" src="https://img.shields.io/badge/library-MiniLibX-orange?style=flat-square"/>
