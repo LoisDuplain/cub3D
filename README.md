@@ -26,6 +26,7 @@
 
 <p align="left">
   Cub3D is a game engine written in C. It is inspired by one of the first FPS Wolfenstein3D.
+  <br>
   Created by Loïs Duplain. (42login: lduplain, 42mail: lduplain@student.42lyon.fr)
 </p>
 
