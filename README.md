@@ -20,7 +20,7 @@
     <img alt="library: best-libft" src="https://img.shields.io/badge/library-best--libft-orange?style=flat-square"/>
   </a>
   <a href="https://profile.intra.42.fr/users/lduplain" target="_blank">
-    <img alt="42 login: lduplain" src="https://img.shields.io/badge/42%20login-lduplain-black?style=flat-square"/>
+    <img alt="42 login: lduplain" src="https://img.shields.io/badge/42%20login-lduplain-2DD57B?style=flat-square"/>
   </a>
 </p>
 
