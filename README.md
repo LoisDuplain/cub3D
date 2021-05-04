@@ -204,3 +204,11 @@ Example:
 - Changing pixel divider in-game
 - Max frames per second and ticks per second
 - Take a screenshot
+
+<h2 align="left">🖥️ 42</h2>
+
+<a href="#">Subject</a>
+<p align="left">
+  Mark:
+  <img alt="42-project-mark" src="https://badge42.herokuapp.com/api/project/lduplain/cub3d"/>
+</p>
