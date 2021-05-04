@@ -216,3 +216,8 @@ Example:
   Mark:
   <img alt="42-project-mark" src="https://badge42.herokuapp.com/api/project/lduplain/cub3d"/>
 </p>
+
+<h2 align="left">⚖️ Copyright</h2>
+<p align="left">
+  Loïs Duplain (lduplain) © 2020
+</p>
