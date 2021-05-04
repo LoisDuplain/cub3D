@@ -118,6 +118,15 @@ NumPad Sub / NumPad Add
 
 <h2 align="left">📝 Parsing</h2>
 
+<p align="left">Resolution:</p>
+
+```
+R <width> <height>
+
+Example:
+R 1920 1080
+```
+
 <p align="left">Walls:</p>
 
 ```
@@ -133,8 +142,48 @@ EA --> East Wall
 XX  <r,g,b>
 XX  <path>.xpm
 
-XX  31,219,81                 --> Green
-XX  ./path/to/texture.xpm     --> Path to texture (default maps in ./maps folder)
+Example:
+XX  31,219,81                    --> Green
+XX  ./textures/debug/north.xpm   --> Path to texture (default textures in ./textures folder)
+```
+
+<p align="left">Floor/ceiling:</p>
+
+```
+F --> Floor
+C --> Ceiling
+```
+
+<p align="left">You can put texture or color on floor/ceiling:</p>
+
+```
+F  <r,g,b>
+C  <path>.xpm
+
+Example:
+F 255,0,0                        --> Red
+C ./textures/debug/ceiling.xpm   --> Path to texture (default textures in ./textures folder)
+```
+
+<p align="left">Map description:</p>
+
+```
+2     --> Sprite
+1     --> Wall
+0     --> Walkable
+Space --> Void
+N/S/W/E (North / South / West / East) --> Player spawn point and direction
+
+Example:
+1111111111111
+1000000000001
+1200000000021
+1001010101001
+120000S000021
+1001010101001
+1200000000021
+1000000000001
+1111111111111
 ```
 
 <h2 align="left">✨ Bonuses</h2>
