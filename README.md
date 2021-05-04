@@ -131,7 +131,7 @@ EA --> East Wall
 
 ```
 XX  31,219,81                 --> Green
-XX  ./path/to/texture.xpm     --> Path to texture
+XX  ./path/to/texture.xpm     --> Path to texture (default maps in ./maps folder)
 ```
 
 <h2 align="left">✨ Bonuses</h2>
