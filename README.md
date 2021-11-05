@@ -36,13 +36,13 @@
 <a href="https://www.youtube.com/watch?v=PiN-a9HSDn0"><img src="https://img.youtube.com/vi/PiN-a9HSDn0/0.jpg"></a>
 
 <p align="left">Screenshot - Map: ./maps/debug.cub</p>
-<img src="https://github.com/LoisDuplain/cub3D/tree/main/gallery/debug-screenshot.png">
+<img src="https://github.com/LoisDuplain/cub3D/blob/main/gallery/debug-screenshot.png?raw=true">
 
 <p align="left">Screenshot - Map: ./maps/minecraft.cub</p>
-<img src="https://github.com/LoisDuplain/cub3D/tree/main/gallery/minecraft-screenshot.png">
+<img src="https://github.com/LoisDuplain/cub3D/tree/main/gallery/minecraft-screenshot.png?raw=true">
 
 <p align="left">Screenshot - Map: ./maps/white-chamber.cub</p>
-<img src="https://github.com/LoisDuplain/cub3D/tree/main/gallery/white-chamber-screenshot.png">
+<img src="https://github.com/LoisDuplain/cub3D/tree/main/gallery/white-chamber-screenshot.png?raw=true">
 
 <h2 align="left">🏗️ Compile</h2>
 <p align="left">To basically compile program:</p>
