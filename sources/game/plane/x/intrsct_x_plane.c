@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   intrsct_x_plane.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 12:50:48 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/26 18:36:41 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/11/05 12:12:37 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_bool 	intrsct_x_plane(t_raycast_result *r_result, t_level *level,
+t_bool	intrsct_x_plane(t_raycast_result *r_result, t_level *level,
 	t_plane plane)
 {
 	float		dist;
