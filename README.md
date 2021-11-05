@@ -32,6 +32,7 @@
 
 <h2 align="left">🖼️ Gallery</h2>
 
+<p align="left">Gource (click on image):</p>
 <a href="https://www.youtube.com/watch?v=PiN-a9HSDn0"><img src="https://img.youtube.com/vi/PiN-a9HSDn0/0.jpg"></a>
 
 <h2 align="left">🏗️ Compile</h2>
