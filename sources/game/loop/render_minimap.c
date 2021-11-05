@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_minimap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lduplain <lduplain@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lduplain <lduplain@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 17:35:44 by lduplain          #+#    #+#             */
-/*   Updated: 2021/04/27 17:35:50 by lduplain         ###   ########lyon.fr   */
+/*   Updated: 2021/11/05 15:38:43 by lduplain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
