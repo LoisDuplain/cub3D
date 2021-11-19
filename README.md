@@ -223,7 +223,7 @@ Example:
 
 <h2 align="left">🖥️ 42</h2>
 
-<a href="https://github.com/LoisDuplain/42cursus/blob/master/cub3d/cub3d.pdf">Subject</a>
+<a href="https://github.com/LoisDuplain/42cursus/blob/master/cub3D/cub3D.pdf">Subject</a>
 <p align="left">
   Mark:
   <img alt="42-project-mark" src="https://badge42.herokuapp.com/api/project/lduplain/cub3d"/>
